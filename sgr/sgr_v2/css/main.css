@@ -1,0 +1,688 @@
+* {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #000;
+    font-size: 16px;
+}
+body {
+    padding-top: 55px;
+    padding-bottom: 0px;
+}
+body, header {
+    min-width: 385px;
+    background-color: #d8d8d8;
+    background-image: url('../img/bg.png');
+    background-repeat: repeat-x;
+    background-position: top left;
+    background-size: 3px;
+}
+header {
+    color: #000;
+    font-size: 36px;
+    padding: 15px 15px 15px 35px;
+    min-height: 60px !important;
+    font-family: inherit;
+    margin-bottom: 0px !important;
+    font-weight: bold;
+    min-width: 385px;
+}
+
+header img {
+    float: none;
+    clear: both;
+    display: block;
+    margin-top: -15px;
+    position: absolute;
+    right: 50%;
+    margin-right: -150px;
+    width: 300px;
+}
+
+.container {
+    width: 100%;
+}
+.navbar-form .form-control{
+    min-width: 135px;
+    margin: 0 10px;
+}
+.page {
+    display:none;
+    z-index: 1;
+    position: absolute;
+    min-width: 385px;
+}
+.page_indicador {
+    display:none;
+    z-index: 1;
+    position: relative;
+    min-width: 385px;
+}
+
+.page.active, .page_indicador.show {
+    display:block;
+    z-index: 2;
+}
+
+.barra {
+    padding: 10px;
+    background: #fff;
+    font-size: 35px;
+    min-width: 385px;
+}
+
+.barra span {
+    font-size: 28px;
+    float: left;
+    display: block;
+    margin: 0 5px;
+}
+
+.barra img {
+    float: left;
+    display: block;
+    margin: -5px 10px 0 10px;
+    cursor: pointer;
+}
+.barra a{
+    float: right;
+    margin: 5px 10px;
+    display: block;
+}
+
+.box-branco-container {
+text-align: center;
+}
+.box-branco {
+    display: block;
+    min-height: 250px;
+    margin: 10px 0;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 5px 5px 5px #7E7D7D;
+}
+
+.box-branco svg {
+    width: 100%;
+}
+.box-branco img {
+    width: 100%;
+    padding: 10px;
+}
+
+.box-indicador .row {
+    margin: 0;
+}
+
+.box-indicador div.indicador {
+    display: block;
+    min-height: 242px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+.box-indicador .titulo {
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    line-height: 20px;
+    padding: 3px;
+    margin-bottom: 5px;
+    height: 66px;
+    border-radius: 6px;
+    display: table;
+    width: 100%;
+}
+.box-indicador .titulo a {
+    text-align: center;
+    color: #fff;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    display: table-cell !important;
+    vertical-align: middle;
+    text-align: center;
+}
+.box-indicador .titulo a, .box-indicador .direita a{
+    text-decoration: none;
+    display: block;
+}
+
+.box-indicador .verde .titulo{
+    background-color: #179346;
+}
+
+.box-indicador .vermelho .titulo{
+    background-color: #E43229;
+}
+
+.box-indicador .amarelo .titulo {
+    background-color: #EFAF0A;
+}
+
+.box-indicador .azul .titulo{
+    background-color: #3576C4;
+}
+
+.box-indicador .roxo .titulo{
+    background-color: #841D4C;
+}
+
+.box-indicador .referencia{
+    font-size: 26px;
+    color: #fff;
+    padding: 2px 6px;
+    margin: 4px 2px 0px;
+    border-radius: 12px;
+    text-align: center;
+}
+.box-indicador .valores div {
+    clear: both;
+    display: block;
+    width: 100%;
+    float: left;
+    color: #fff;
+
+}
+.box-indicador .valores span {
+    display: block;
+    float: left;
+    min-width: 80px;
+    text-align: right;
+    margin: 0 5px 0 0;
+    line-height: 56px;
+    color: #fff;
+}
+.box-indicador .valores span.valor {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+.box-indicador .verde .referencia{
+    background-color: #17683C;
+    border-color: #17683C;
+}
+
+.box-indicador .vermelho .referencia{
+    background-color: #961E18;
+    border-color: #961E18;
+}
+
+.box-indicador .azul .referencia{
+    background-color: #375793;
+    border-color: #375793;
+}
+
+.box-indicador .amarelo .referencia{
+    background-color: #C17D0B;
+    border-color: #C17D0B;
+}
+
+.box-indicador .roxo .referencia{
+    background-color: #590D2F;
+    border-color: #590D2F;
+}
+
+.box-indicador .row {
+    margin: 0;
+}
+
+.box-indicador .verde {
+    background: rgba(30,128,68,1);
+    background: -moz-linear-gradient(top, rgba(30,128,68,1) 0%, rgba(14,170,63,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(30,128,68,1)), color-stop(100%, rgba(14,170,63,1)));
+    background: -webkit-linear-gradient(top, rgba(30,128,68,1) 0%, rgba(14,170,63,1) 100%);
+    background: -o-linear-gradient(top, rgba(30,128,68,1) 0%, rgba(14,170,63,1) 100%);
+    background: -ms-linear-gradient(top, rgba(30,128,68,1) 0%, rgba(14,170,63,1) 100%);
+    background: linear-gradient(to bottom, rgba(30,128,68,1) 0%, rgba(14,170,63,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e8044', endColorstr='#0eaa3f', GradientType=0 );
+    box-shadow: 8px 8px 8px rgba(30, 128, 68, 0.8);
+}
+
+.box-indicador .vermelho {
+    background: rgba(192,57,43,1);
+    background: -moz-linear-gradient(top, rgba(192,57,43,1) 0%, rgba(230,23,17,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(192,57,43,1)), color-stop(100%, rgba(230,23,17,1)));
+    background: -webkit-linear-gradient(top, rgba(192,57,43,1) 0%, rgba(230,23,17,1) 100%);
+    background: -o-linear-gradient(top, rgba(192,57,43,1) 0%, rgba(230,23,17,1) 100%);
+    background: -ms-linear-gradient(top, rgba(192,57,43,1) 0%, rgba(230,23,17,1) 100%);
+    background: linear-gradient(to bottom, rgba(192,57,43,1) 0%, rgba(230,23,17,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0392b', endColorstr='#e61711', GradientType=0 );
+    box-shadow: 8px 8px 8px rgba(192, 57, 43, 0.8);
+}
+
+.box-indicador .azul {
+    background: rgba(68,108,179,1);
+    background: -moz-linear-gradient(top, rgba(68,108,179,1) 0%, rgba(30,134,221,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(68,108,179,1)), color-stop(100%, rgba(30,134,221,1)));
+    background: -webkit-linear-gradient(top, rgba(68,108,179,1) 0%, rgba(30,134,221,1) 100%);
+    background: -o-linear-gradient(top, rgba(68,108,179,1) 0%, rgba(30,134,221,1) 100%);
+    background: -ms-linear-gradient(top, rgba(68,108,179,1) 0%, rgba(30,134,221,1) 100%);
+    background: linear-gradient(to bottom, rgba(68,108,179,1) 0%, rgba(30,134,221,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#446cb3', endColorstr='#1e86dd', GradientType=0 );
+    box-shadow: 8px 8px 8px rgba(68, 108, 179, 0.8);
+}
+
+.box-indicador .amarelo {
+    background: rgba(231,149,12,1);
+    background: -moz-linear-gradient(top, rgba(231,149,12,1) 0%, rgba(246,198,9,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(231,149,12,1)), color-stop(100%, rgba(246,198,9,1)));
+    background: -webkit-linear-gradient(top, rgba(231,149,12,1) 0%, rgba(246,198,9,1) 100%);
+    background: -o-linear-gradient(top, rgba(231,149,12,1) 0%, rgba(246,198,9,1) 100%);
+    background: -ms-linear-gradient(top, rgba(231,149,12,1) 0%, rgba(246,198,9,1) 100%);
+    background: linear-gradient(to bottom, rgba(231,149,12,1) 0%, rgba(246,198,9,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7950c', endColorstr='#f6c609', GradientType=0 );
+    box-shadow: 8px 8px 8px rgba(231, 149, 12, 0.8);
+}
+
+.box-indicador .roxo {
+    background: rgba(103, 10, 42, 1);
+    background: -moz-linear-gradient(top, rgba(103, 10, 42, 1) 0%, rgba(131, 56, 93, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(103, 10, 42, 1)), color-stop(100%, rgba(131, 56, 93, 1)));
+    background: -webkit-linear-gradient(top, rgba(103, 10, 42, 1) 0%, rgba(131, 56, 93, 1) 100%);
+    background: -o-linear-gradient(top, rgba(103, 10, 42, 1) 0%, rgba(131, 56, 93, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(103, 10, 42, 1) 0%, rgba(131, 56, 93, 1) 100%);
+    background: linear-gradient(to bottom, rgba(103, 10, 42, 1) 0%, rgba(131, 56, 93, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#670A2A', endColorstr='#83385D', GradientType=0 );
+    box-shadow: 8px 8px 8px rgba(103, 10, 42, 0.8);
+}
+
+.box-indicador .esquerda, .box-indicador .direita{
+    padding: 5px;
+}
+
+.box-indicador .esquerda{
+    text-align: left;
+}
+
+.box-indicador .direita{
+    text-align: center;
+}
+.box-indicador .direita img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+.box-indicador .direita span{
+    display: block;
+    font-size: 26px;
+    position: absolute;
+    bottom: -30px;
+    right: 50%;
+    margin-right: -55px;
+    color: #fff;
+
+}
+
+div.info {
+    text-align: left;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #B4B4B4;
+    margin: 10px;
+    -webkit-border-radius: 8px;
+}
+
+.box-branco div.info{
+    border:none;
+}
+
+.titulo-unidade {
+    font-size: 24px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.modal table.dados th {
+    text-align: center;
+}
+
+.modal table.dados img {
+    max-width: 22px;
+}
+
+table, table th, table td {
+    border-bottom: 1px solid #dedede;
+}
+table.dados td {
+    padding: 3px 0;
+}
+table a {
+    color: #009DDF;
+    text-decoration: none;
+}
+div.info h3 {
+    font-weight: bold;
+    color: #009DDF;
+    margin: 5px !important;
+    text-align: center;
+    font-size: 16px;
+}
+div.info span {
+    padding-bottom: 5px;
+    display: block;
+}
+
+g {
+    stroke:#ffffff;
+    stroke-width:2; 
+    cursor: pointer;
+}
+
+.vermelho{    
+    fill: #DC3912;
+}
+.verde{
+    fill: #109618;
+}
+.amarelo{
+    fill: #FF9900;
+}
+.disabled, .padrao{
+    fill: #666666;
+}
+
+.letraMapa, .letraMapa tspan{
+    font-size:62px;
+    font-style:normal;
+    font-weight:bold;
+    fill:#ffffff;
+    fill-opacity:1;
+    stroke:none;
+    font-family:verdana;
+    display: block;
+    clear: both;
+    cursor: pointer;
+}
+
+.letraMapaCapital, .letraMapaCapital tspan {
+    font-size:20px;
+    font-style:normal;
+    font-weight:bold;
+    fill:#ffffff;
+    fill-opacity:1;
+    stroke:none;
+    font-family:verdana;
+    display: block;
+    clear: both;
+    cursor: pointer;
+}
+
+.margin0 {
+    margin: 0px !important;
+}
+div.meta {
+    background-color: #3576C4;
+}
+div.realizado {
+    background-color: #f79537;
+}
+div.meta, div.realizado {
+    color: #ffffff;
+    font-size: 22px;
+    text-align: center;
+    -webkit-box-shadow: 3px 3px 2px 0 #797A7D;
+    box-shadow: 3px 3px 2px 0 #797A7D;
+    padding-top: 15px;
+    margin-top: 17px; 
+    margin-right: -10px;
+}
+div.meta span, div.realizado span{
+    color: #ffffff;
+    font-size: 30px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 11px 0;
+}
+
+#unidade-dados div.meta, #unidade-dados div.realizado {
+    padding-top: 8px;
+    margin: 10px 0 !important;
+}
+
+#unidade-dados div.meta span, #unidade-dados div.realizado span{
+
+}
+
+#estado-dados, #estado-fortaleza, #estado-interior{
+    text-align: center;
+}
+
+.titulo{    
+    font-size: 24px;
+}
+.close{
+    opacity: 0.6;
+}
+
+.close span{
+    font-size: 28px;
+}
+@media (max-width: 405px) {
+    .box-indicador .valores span{
+        display: block;
+        float: left;
+        min-width: 100%;
+        text-align: center;
+        margin: 0;
+        line-height: 31px;
+    }
+    .box-indicador .valores span.valor{
+        font-size: 26px;
+        font-weight: bold;
+        margin: 0 0 4px 0;
+        text-align: center;
+    }
+    header {
+        padding: 50px 0 0 0;
+        text-align: center;
+    }
+
+    header img {
+        float: none;
+        clear: both;
+        display: block;
+        margin-top: -108px;
+        position: absolute;
+        right: 50%;
+        margin-right: -111px;
+    }
+}
+@media (max-width: 678px) {
+    .navbar-fixed-top {
+        background-image: none;
+    }
+    header {
+        padding: 50px 0 0 0;
+        text-align: center;
+        font-size: 34px;
+    }
+}
+@media (max-width: 1199px) {
+    .barra span {
+        font-size: 20px;
+    }
+    .barra img {
+        width: 52px;
+        margin: -5px 0 0 0;
+    }
+    .page_indicador{
+        position: relative;
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 794px) {
+    .box-indicador .valores span{
+        display: block;
+        float: left;
+        min-width: 100%;
+        text-align: center;
+        margin: 0;
+        line-height: 31px;
+    }
+    .box-indicador .valores span.valor{
+        font-size: 26px;
+        font-weight: bold;
+        margin: 0 0 4px 0;
+        text-align: center;
+    }
+}
+@media (max-width: 767px) {
+    header {
+        padding: 48px 0 0 0;
+        text-align: center;
+        line-height: 32px;
+        font-size: 28px;
+    }
+
+    header img {
+        float: none;
+        margin-top: -45px;
+        position: absolute;
+        right: 50%;
+        margin-right: -130px;
+        width: 260px;
+    }
+    div.meta, div.realizado {
+        margin-right: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+    body{
+        padding-top: 75px !important;
+    }
+    .navbar-fixed-top {
+        background-image: none;
+    }
+    header {
+        padding: 50px 0 0 0;
+        text-align: center;
+        font-size: 34px;
+    }
+}
+@media (min-width: 768px) and (max-width: 821px){
+    body{
+        padding-top: 70px !important;
+    }
+    div.meta span, div.realizado span {
+        font-size: 18px;
+    }
+    div.meta, div.realizado {
+        font-size: 16px;
+    }
+}
+@media (min-width: 800px) and (max-width: 1040px)  {
+    div.meta span, div.realizado span {
+        font-size: 20px;
+    }
+    div.meta, div.realizado {
+        font-size: 18px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1570px) {
+    .box-indicador .valores span{
+        display: block;
+        float: left;
+        min-width: 100%;
+        text-align: center;
+        margin: 0;
+        line-height: 31px;
+    }
+    .box-indicador .valores span.valor{
+        font-size: 26px;
+        font-weight: bold;
+        margin: 0 0 4px 0;
+        text-align: center;
+    }
+    div.meta span, div.realizado span {
+        font-size: 20px;
+    }
+    div.meta, div.realizado {
+        font-size: 18px;
+    }
+}
+
+@media (max-height: 895px) and (min-height: 800px)  {
+    body {
+        padding-top: 80px;
+    }
+    header {
+        padding: 15px 15px 5px 35px;
+        min-height: 50px !important;
+    }
+    .box-indicador div.indicador {
+        min-height: 230px;
+    }
+    .box-indicador .referencia {
+        margin: 4px 2px 15px;
+    }
+    .box-indicador .valores span {
+        font-size: 17px;
+        min-width: 78px;
+        margin-right: 5px;
+        line-height: 48px;
+    }
+    .box-indicador .direita img {
+        width: 50%;
+    }
+    .box-indicador .valores span.valor {
+        font-size: 18px;
+    }
+    .box-indicador .direita span {
+        font-size: 22px;
+    }
+}
+@media (min-height: 960px) {
+    body {
+        padding-top: 100px;
+    }
+    header {
+        padding: 25px 15px 15px 35px;
+    }
+    header img {
+        margin-right: 60px;
+    }
+    .box-indicador .ind-11423 .titulo, 
+    .box-indicador .ind-25169 .titulo, 
+    .box-indicador .ind-15628 .titulo {
+        line-height: 60px;
+    }
+    .box-indicador div.indicador {
+        min-height: 270px;
+    }
+    .box-indicador .titulo {
+        font-size: 22px;
+        line-height: 28px;
+        min-height: 70px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .box-indicador .titulo a{
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .box-indicador .referencia {
+        font-size: 26px;
+    }
+    .box-indicador .valores span {
+        font-size: 18px;
+        min-width: 92px;
+        margin-right: 5px;
+        line-height: 54px;
+    }
+    .box-indicador .valores span.valor {
+        font-size: 24px;
+    }
+    .box-indicador .direita span {
+        font-size: 26px;
+    }
+}
+#page_1, #page_2, #page_3 {
+    padding: 0 !important;
+}
+header, .navbar-fixed-top {
+    padding-bottom: 0;
+}

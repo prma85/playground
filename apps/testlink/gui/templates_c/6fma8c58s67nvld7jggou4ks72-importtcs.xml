@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Baixa de OS" >
+<node_order><![CDATA[1]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="2752" name="SGD 49707">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[824]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Desenvolver a tela de aplica&ccedil;&atilde;o de filtro para o monitoramento das ordens de servi&ccedil;os.</p>
+]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2760" name="SGD 51163">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[828]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Atividades a serem executadas: 1. Lado PRAX 1.1. Bloquear qualquer altera&ccedil;&atilde;o em uma programa&ccedil;&atilde;o quando o intervalo do tempo da &uacute;ltima atualiza&ccedil;&atilde;o para a hora atual for maior que um tempo parametrizado, cerca de 30 minutos; 1.2. A O.S. continuar&aacute; com o status de pendente de execu&ccedil;&atilde;o quando a mesma for impedida no lado do mobile; 1.3. Criar uma tabela de acompanhamento que incluir</p>
+]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+<testsuite name="Consultar Programação" >
+<node_order><![CDATA[1]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="2818" name="Filtrar por Unidade Administrativa">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[829]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2820" name="Filtrar por Data Inicio e Data Fim">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[830]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2822" name="Consultar por EMEI">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[831]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2824" name="Filtrar por Equipe executora">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[832]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2826" name="Consultar por Status">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[833]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2828" name="Consultar por número da Programação">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[834]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2830" name="Consultar por número de Atendimento">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[835]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2832" name="Consultar por Número da OS">
+	<node_order><![CDATA[7]]></node_order>
+	<externalid><![CDATA[836]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2834" name="Consultar por Código do Serviço">
+	<node_order><![CDATA[8]]></node_order>
+	<externalid><![CDATA[837]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2836" name="Consultar por Data de Solicitação">
+	<node_order><![CDATA[9]]></node_order>
+	<externalid><![CDATA[838]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2838" name="Consultar por Membro da equipe">
+	<node_order><![CDATA[10]]></node_order>
+	<externalid><![CDATA[839]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2840" name="Verificar paginação">
+	<node_order><![CDATA[11]]></node_order>
+	<externalid><![CDATA[840]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2842" name="Excluir Programação">
+	<node_order><![CDATA[12]]></node_order>
+	<externalid><![CDATA[841]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+</testsuite><testsuite name="Criar Nova Programação" >
+<node_order><![CDATA[2]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="2845" name="Criar Programação de serviços (Exceto CORTE POR DEBITO)">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[842]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2847" name="Criar Progrmação de serviços (Somente CORTE POR DEBITO)">
+	<node_order><![CDATA[101]]></node_order>
+	<externalid><![CDATA[843]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2849" name="Selecionar quantidade de serviços por programação">
+	<node_order><![CDATA[102]]></node_order>
+	<externalid><![CDATA[844]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	testar nas quantdiades:</p>
+<p>
+	&nbsp;Zero - 0</p>
+<p>
+	&lt; 200</p>
+<p>
+	= 200</p>
+<p>
+	&gt;200</p>
+]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2851" name="Incluir na programaçao Serviços por numero da OS">
+	<node_order><![CDATA[103]]></node_order>
+	<externalid><![CDATA[845]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2853" name="Selecionar serviços por Data inicial e Final de solicitação">
+	<node_order><![CDATA[104]]></node_order>
+	<externalid><![CDATA[846]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2855" name="Selecionar serviços por Data inicio e Fim de Previsão">
+	<node_order><![CDATA[105]]></node_order>
+	<externalid><![CDATA[847]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2857" name="Selecionar serviço por valor mínimo de débito">
+	<node_order><![CDATA[106]]></node_order>
+	<externalid><![CDATA[848]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2859" name="Selecionar por Localidade/Setor/Quadra">
+	<node_order><![CDATA[107]]></node_order>
+	<externalid><![CDATA[849]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2861" name="Selecionar por proiridade/orgão público/grande cliente/ grande consulmidor">
+	<node_order><![CDATA[108]]></node_order>
+	<externalid><![CDATA[850]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2863" name="Selecionar ordenações">
+	<node_order><![CDATA[109]]></node_order>
+	<externalid><![CDATA[851]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+</testsuite><testsuite name="Alterar Programação" >
+<node_order><![CDATA[3]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="2866" name="Modificar OS pra cima e pra baixo">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[852]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2868" name="Excluir OS selecionada">
+	<node_order><![CDATA[101]]></node_order>
+	<externalid><![CDATA[853]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2870" name="Excluir OS's selecionadas">
+	<node_order><![CDATA[102]]></node_order>
+	<externalid><![CDATA[854]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2872" name="Refazer Filtros da Programação">
+	<node_order><![CDATA[103]]></node_order>
+	<externalid><![CDATA[855]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2874" name="Alterar dados da Programação (equipe executora/ unidade)">
+	<node_order><![CDATA[104]]></node_order>
+	<externalid><![CDATA[856]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+</testsuite><testsuite name="Monitorar Programação" >
+<node_order><![CDATA[4]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="2877" name="Detalhar OS">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[857]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+</testsuite><testsuite name="Detalhar Programação" >
+<node_order><![CDATA[5]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="2880" name="Pesquisar OS por Status">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[858]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2882" name="Pesquisar OS por Número da OS">
+	<node_order><![CDATA[101]]></node_order>
+	<externalid><![CDATA[859]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2884" name="Pesquisar OS somente não impressas">
+	<node_order><![CDATA[102]]></node_order>
+	<externalid><![CDATA[860]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+</testsuite><testsuite name="Imprimir Programação" >
+<node_order><![CDATA[6]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="2887" name="Pesquisar OS somente não impressas">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[861]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2889" name="Pesquisar OS por Número da OS">
+	<node_order><![CDATA[101]]></node_order>
+	<externalid><![CDATA[862]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2891" name="Pesquisar OS por Status">
+	<node_order><![CDATA[102]]></node_order>
+	<externalid><![CDATA[863]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2893" name="Imprimir OS's">
+	<node_order><![CDATA[103]]></node_order>
+	<externalid><![CDATA[864]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="2895" name="Imprimir Resumo">
+	<node_order><![CDATA[104]]></node_order>
+	<externalid><![CDATA[865]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+</testsuite><testsuite name="Baixar OS" >
+<node_order><![CDATA[7]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="3005" name="Manutenção de Materiais">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[869]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3007" name="Baixa do Serviço 07">
+	<node_order><![CDATA[101]]></node_order>
+	<externalid><![CDATA[870]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3009" name="Baixa do Serviço 11">
+	<node_order><![CDATA[102]]></node_order>
+	<externalid><![CDATA[871]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3011" name="Baixa do Serviço 21">
+	<node_order><![CDATA[103]]></node_order>
+	<externalid><![CDATA[872]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3013" name="Baixa do Serviço 65">
+	<node_order><![CDATA[104]]></node_order>
+	<externalid><![CDATA[873]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3015" name="Baixa do Serviço 75">
+	<node_order><![CDATA[105]]></node_order>
+	<externalid><![CDATA[874]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3017" name="Baixa do Serviço 76">
+	<node_order><![CDATA[106]]></node_order>
+	<externalid><![CDATA[875]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3019" name="Baixa do Serviço 95">
+	<node_order><![CDATA[107]]></node_order>
+	<externalid><![CDATA[876]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3021" name="Baixa do Serviço 83">
+	<node_order><![CDATA[108]]></node_order>
+	<externalid><![CDATA[877]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3023" name="Baixa do Serviço 84">
+	<node_order><![CDATA[109]]></node_order>
+	<externalid><![CDATA[878]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3025" name="Baixa do Serviço 284">
+	<node_order><![CDATA[110]]></node_order>
+	<externalid><![CDATA[879]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3027" name="Baixa do Serviço 295">
+	<node_order><![CDATA[111]]></node_order>
+	<externalid><![CDATA[880]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+
+<testcase internalid="3029" name="Baixa do Serviço 303">
+	<node_order><![CDATA[112]]></node_order>
+	<externalid><![CDATA[881]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+<custom_fields>
+	<custom_field>
+		<name><![CDATA[CF_DES_VALIDACAO]]></name>
+		<value><![CDATA[]]></value>
+	</custom_field>
+</custom_fields></testcase>
+</testsuite><testsuite name="Relatórios" >
+<node_order><![CDATA[8]]></node_order>
+<details><![CDATA[]]></details> 
+</testsuite></testsuite>

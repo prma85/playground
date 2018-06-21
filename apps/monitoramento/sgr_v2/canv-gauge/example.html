@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Gauge Test</title>
+	<script src="gauge.min.js"></script>
+	<style>body{padding:0;margin:0}</style>
+</head>
+<body>
+	<p><input type="button" onclick="showGauge()" value="Show Gauge"></p>
+	<canvas id="gauge"></canvas>
+	<div id="console"></div>
+<script>
+function showGauge() {
+
+	var gauge = new Gauge({
+		renderTo    : 'gauge',
+		width       : 400,
+		height      : 400,
+		glow        : true,
+		units       : 'Atingido',
+		title       : false,
+		minValue    : 0,
+		maxValue    : 120,
+		majorTicks  : ['0','10','20','30','40','50','60','70','80','90','100','110','120'],
+		minorTicks  : 2,
+		strokeTicks : false,
+		highlights  : [
+			{ from : 0,   to : 80, color : 'rgba(255, 30,  0, .55)' },
+			{ from : 80, to : 100, color : 'rgba(255, 255, 0, .55)' },
+			{ from : 100, to : 120, color : 'rgba(0,   255, 0, .55)' }
+		],
+		colors      : {
+			plate      : '#fff',
+			majorTicks : '#222',
+			minorTicks : '#333',
+			title      : '#000',
+			units      : '#222',
+			numbers    : '#222',
+			needle     : { start : 'rgba(20, 20, 20, 1)', end : 'rgba(0, 0, 0, .9)' }
+		}
+	});
+
+	gauge.onready = function() {
+		setInterval( function() {
+			gauge.setValue( Math.random() * 120);
+		}, 2000);
+	};
+
+	gauge.draw();
+};
+</script>
+
+</html>

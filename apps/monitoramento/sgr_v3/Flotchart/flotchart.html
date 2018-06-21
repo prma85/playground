@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Gráfico - Cagece</title>
+	<link href="examples.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.flot.categories.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.flot.resize.js"></script>
+	<script type="text/javascript">
+
+
+	$(function () {
+
+		var d1 = [[1, 85], [2, 86], [3, 87], [4, 88], [5, 87], [6, 89], [7, 87], [8, 85], [9, 89], [10, 87], [11, 85], [12, 85]];
+
+		var d2 = [[1, 95], [2, 90], [3, 87], [4, 90], [5, 87], [6, 92], [7, 80], [8, 90], [9, 87], [10, 84], [11, 82] ];
+
+		var placeholder = $("#placeholder");
+				
+		$.plot(placeholder, [
+			{ label: "Previsto", data: d1 },
+			{ label: "Realizado", data: d2 }
+		
+		], {
+			series: {
+				lines: { show: true,
+						lineWidth: 8},
+				points: { show: false },
+				
+			},
+			legend: { position: "sw",
+			},
+			shadowSize: 8,
+			colors: [ "#3576C4","#EFAF0A"],
+			xaxis: {
+				show: true,
+				position: "bottom",
+				ticks: [
+					[ 1, "Janeiro" ], [ 2, "Fevereiro" ],[3, "Março" ], [ 4, "Abril" ],
+					[ 5, "Maio" ], [ 6, "Junho" ],[7, "Julho" ], [ 8, "Agosto" ],
+					[ 9, "Setembro" ], [ 10, "Outubro" ],[11, "Novembro" ], [ 12, "Dezembro" ]
+				]
+			},
+			yaxis: {
+				show: true,
+				position: "left",
+				ticks: 5,
+				tickDecimals: 2,
+				autoscaleMargin: 1
+			},
+			grid: {
+				backgroundColor: { colors: [ "#fff", "#eee" ] },
+				borderWidth: {
+					top: 1,
+					right: 1,
+					bottom: 2,
+					left: 2
+				},
+				clickable: true,
+			}
+		});
+		
+		placeholder.resize(function () {
+			$(".message").text("Placeholder is now "
+				+ $(this).width() + "x" + $(this).height()
+				+ " pixels");
+		});
+
+		$(".demo-container").resizable({
+			maxWidth: 900,
+			maxHeight: 500,
+			minWidth: 450,
+			minHeight: 250
+		});
+		
+
+	});	
+
+	</script>
+</head>
+<body>
+
+	<div id="content">
+
+		<div class="demo-container">
+			<div id="placeholder" class="demo-placeholder"></div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>

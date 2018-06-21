@@ -1,0 +1,149 @@
+body{
+	background: #fff; width: 1343px; height: 745px; display: block;
+}
+
+#content {background: #fff;}
+
+#title {
+height: 48px;
+color: #000;
+/* border-bottom: 3px solid #000; */
+display: block;
+padding: 5px 0;
+}
+
+#title  img {
+float: left;
+margin-right: 10px;
+width: 170px;
+height: 48px;
+}
+
+#title h1 {
+float: left;
+clear: right;
+text-align: center;
+margin: 0px;
+width: 1040px;
+font-size: 30px;
+color: #000;
+display: block;
+height: 48px;
+line-height: 48px;
+}
+
+div.legenda {
+float: left;
+clear: right;
+margin-top: 5px;
+width: 120px;
+}
+
+div.legenda p{
+font-size: 18px;
+font-weight: bold;
+}
+
+div.container_graf {
+	width: 100%;
+	border-bottom: 3px solid #000;
+	height: 22.45%;
+	clear: both;
+}
+div.container_graf div {
+	height: 94%;
+	display: block;
+	float: left;
+}
+
+div.container_graf div.info  {
+background: #f7f7f7;
+width: 316px;
+border: 1px solid #ccc;
+border-radius: 10px;
+margin: 10px;
+padding: 10px;
+height: 75%;
+}
+
+div.container_graf div.graf {
+background: url('grafico3.jpg') center center transparent no-repeat;
+width: 707px;
+padding: 0;
+height:90%;
+margin: 9px;
+}
+
+div.container_graf div.graf div.dados{
+width: 640px;
+margin: 0px 26px 44px 49px;
+padding: 0;
+height: 75%;
+}
+
+div.container_graf div.graf div.dados div.mes{
+margin: 0 9px 0 0;
+padding: 0;
+height: 100%;
+width: 45px;
+position: relative;
+}
+
+div.container_graf div.graf div.dados div.mes div{
+width: 49%;
+position: absolute;
+bottom: 0;
+height: 60%;
+}
+
+div.container_graf div.graf div.dados .prev{
+background: #2489CE;
+left: 0;
+}
+
+div.container_graf div.graf div.dados .real{
+background: #5FB221;
+right: 0;
+}
+
+div.container_graf div.trimestral {
+background: url('grafico4.jpg') center center transparent no-repeat;
+}
+
+div.container_graf div.trimestral div.dados{
+width: 616px;
+margin: 0px 5px 44px 61px;
+height: 75%;
+}
+
+div.container_graf div.trimestral div.dados div.mes{
+margin: 0 38px 0 0;
+padding: 0;
+height: 100%;
+width: 125px;
+}
+
+div.container_graf div.graf div.dados div.dez{
+margin: 0;
+}
+
+div.container_graf div.meter {
+width: 218px;
+background: #f7f7f7;
+border: 1px solid #ccc;
+border-radius: 10px;
+margin: 10px;
+padding: 10px;
+height: 75%;
+}
+
+#container_graf4 {
+border: none;
+}
+
+.info h2 {text-align: center;font-size: 24px;line-height: 34px;margin-top: 0;padding-top: 10%;}
+#container_graf4 .info h2 {padding-top: 4%;}
+.info p {font-size: 15px;}
+.meter h3 {text-align: center; font-size: 16px; line-height: 16px; margin: 0;}
+div.container_graf .gauge {float: left; display: block;}
+div.container_graf .dados_meter{float: left; display: block; clear: right; width: 95px; padding: 9px 0 0 5px;}

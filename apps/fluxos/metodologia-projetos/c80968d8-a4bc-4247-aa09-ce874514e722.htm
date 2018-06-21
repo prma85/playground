@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=100" />
+	<title>6 - Gerenciamento de Mudanças</title>
+	<link type="text/css" href="css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+	<link href="css/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <link media="screen" type="text/css" href="css/main.css" rel="stylesheet" />
+	<!--[if IE 7]>
+	<link media="screen" type="text/css" href="css/main_ie7.css" rel="stylesheet" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/ui.tabs.paging.js"></script>
+	<script type="text/javascript" src="js/jquery.maphilight.min.js"></script>
+	<script type="text/javascript" src="js/jquery.watermarkinput.js"></script>
+	<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+	<!--<script type="text/javascript" src="js/shiftzoom.js"></script>-->
+	<script type="text/javascript" src="js/jquery.hashtable-1.1.js"></script>
+	<script type="text/javascript">
+		/* Textbox Watermark plugin */
+		$(function($) {
+			$("#q").Watermark('Pesquisar');
+		});
+
+		/* Shiftzoom plugin */
+		//if (document.images && document.createElement && document.getElementById) {
+		//	document.writeln('<style type="text/css">');
+		//	document.writeln('	img.shiftzoom { visibility: hidden; }');
+		//	document.writeln('<\/style>');
+		//}
+
+		$(document).ready(function() { 
+
+			/* Tabs plugin */
+			$("#tabs").tabs({
+				selected: 2
+				, select: function(event, ui) {
+					var url = $.data(ui.tab, 'load.tabs');
+					if (url) {
+						location.href = url;
+						return false;
+					}
+					return true;
+				}
+			});
+
+			$("#tabs").tabs('paging');
+
+			/* Autocomplete plugin */
+			var ht = new jQuery.Hashtable();
+			ht.add("Solicitação de mudança","8dc7a7b6-87f4-4ad4-a6ff-3eadee701bdf");
+ht.add("6.1 - Analisar a solicitação de mudança","0459c59b-c722-4786-a36b-503ec8c8c4cf");
+ht.add("6.2 - Realizar decisão sobre fazer a mudança","c246bb11-d016-498f-a322-f96a9fd39a72");
+ht.add("6.3 - Planejar a Implementação da mudança","3d5ce731-d80a-45fc-8eb0-14a19d868602");
+ht.add("6.4 - Liberar a mudança","a3ad2313-2cd9-4532-962d-2faebaa8e22a");
+ht.add("6.5 - Gerenciar a Configuração","3852d1af-98b3-42aa-bfcb-397d11ecae0e");
+ht.add("Fim","9b127c70-4d98-47cd-9c39-8cd4734b316a");
+
+			var data = 'Solicitação de mudança|6.1 - Analisar a solicitação de mudança|6.2 - Realizar decisão sobre fazer a mudança|6.3 - Planejar a Implementação da mudança|6.4 - Liberar a mudança|6.5 - Gerenciar a Configuração|Fim'.split('|');
+			$("#q").autocomplete(data, { matchContains: true});
+			$('#q').result(function(event, data, formatted) {
+				var val = ht.get(formatted.toString());
+				var anchor = '#' + val;
+				var dia = anchor + '_doc';
+				$(dia).dialog('open');
+			});
+
+			/* Show/hide Pan & Zoom */
+			//$('#diagramimagepan').hide();
+
+			//$('#pan').click(function() {
+			//	$(this).toggleClass("down");
+
+			//	if ($(this).hasClass("down")) {
+			//		$('#diagramimage').hide();
+			//		$('#diagramimagepan').show('slow');
+			//		$(this).text('Visão Normal');
+			//	} else {
+			//		$('#diagramimagepan').hide();
+			//		$('#diagramimage').show('slow');
+			//		$(this).text('Visão Pan & Zoom');
+			//	}
+			//});
+			
+			/* Dialog plugin */
+			var minWidth = 610;
+			if ($(".docelem img").hasClass("imageForm")) {
+				var width = $(".docelem .imageForm").width();
+			} else {
+				var width = minWidth;
+			};
+			$('.docelem').dialog({ 
+				autoOpen: false, 
+				width: (width + 30),
+				height: 480, 
+				modal: true,
+				show: 'slide'
+			});
+			$('.docelem').dialog('option', 'minWidth', 640);
+			
+			$('.diagelem').click(function() {
+				var t = $(this).attr('href');
+				t = t.replace('#', '');
+				var dia = $(this).attr('href') + '_doc';
+				
+				$(dia).dialog('open');
+			});
+
+			/* Map Highlight plugin */
+			$(function() {
+				$('.map').maphilight();
+			});
+
+            // Set height diagramimage
+            if($.browser.msie){                         
+                $("#diagram-image").height($("#diagramimage").height());               
+            }
+		});
+	</script>
+	
+   
+
+	<script type="text/javascript" src="js/cufon-yui.js"></script>
+	<script type="text/javascript" src="js/BeauSansRegular.js"></script>    
+    <!--<script type="text/javascript">
+	    // <![CDATA[
+	    Cufon.replace('h1');
+	    Cufon.replace('h2');
+	    Cufon.replace('h3');
+	    //Cufon.replace('h4');
+	    Cufon.replace('.ui-dialog-title');
+	    Cufon.replace('.layout-type a', {
+	        hover: true
+	    });
+	    Cufon.replace('.BizAgi li a', {
+	        hover: true
+	    });
+
+	    Cufon.replace('.tabs a', {
+	        hover: true
+	    });
+	    Cufon.replace('#topnav a', {
+	        hover: true
+	    });
+
+	    //]]>
+	</script>-->
+</head>
+<body>
+
+	<div id="contentwrapper">
+		<div id="header">
+			<h1>
+				metodologia de gerenciamento de projetos da geinf</h1>
+		</div>
+		<div id="tabs">
+			<ul class="tabs">
+				<li><a href="index.html" title="tabs-1">Metodologia do escritório de projetos</a></li>
+<li><a href="26c673a2-13ff-46a0-afab-2bb538aef91a.htm" title="tabs-2">1.6 - Coordenar a implementação do projeto
+</a></li>
+<li><a href="#tabs-0" title="tabs-0">6 - Gerenciamento de Mudanças</a></li>
+
+			</ul>
+			<div id="content">
+				<div id="tabs-0">
+					<div class="layout-type">
+						<ul id="topnav">
+							<li class="home"><a href="default.htm">Principal</a></li>
+						</ul>
+						<ul>
+							<li><span class="search"><input id="q" name="q" type="text" style="color:#3A3A3A"/></span></li>
+						</ul>
+					</div>
+					<div>
+						<a href="index.html"><< Ir para Matriz</a> Metodologia do escritório de projetos
+					</div>
+					<div id="diagram-image">
+						<div id="diagramimage" align="center">
+							<div id="documentation" style="visibility: hidden;">
+							<div id="8dc7a7b6-87f4-4ad4-a6ff-3eadee701bdf_doc" class="docelem" title="Solicitação de mudança">
+<a name="8dc7a7b6-87f4-4ad4-a6ff-3eadee701bdf" id="8dc7a7b6-87f4-4ad4-a6ff-3eadee701bdf"></a>
+<img class="icon" src="diagrams/bpmnimg/MessageStart.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">As mudanças podem ser solicitadas por qualquer parte interessada envolvida no projeto. Embora possam ser iniciadas verbalmente, devem ser sempre registradas de maneira escrita e introduzidas no gerenciamento de mudanças e/ou no sistema de gerenciamento de configurações. </span></p><br> </p>
+
+</div>
+<div id="0459c59b-c722-4786-a36b-503ec8c8c4cf_doc" class="docelem" title="6.1 - Analisar a solicitação de mudança">
+<a name="0459c59b-c722-4786-a36b-503ec8c8c4cf" id="0459c59b-c722-4786-a36b-503ec8c8c4cf"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">As solicitações de mudança estão condicionadas a uma analise da solicitação, onde serão levantadas as informações a respeito dos impactos estimados no tempo e custos. É feito sempre um paralelo com a técnica e-se, levando em consideração a aprovação e a não aprovação da mudança. Poderá ainda ser realizado as atividades do Gerenciamento de Riscos, para a solicitação de mudança, a fim de identificar riscos adicionais a analise realizada.</span></p><br> </p>
+
+</div>
+<div id="c246bb11-d016-498f-a322-f96a9fd39a72_doc" class="docelem" title="6.2 - Realizar decisão sobre fazer a mudança">
+<a name="c246bb11-d016-498f-a322-f96a9fd39a72" id="c246bb11-d016-498f-a322-f96a9fd39a72"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">A autorização de uma mudança pode ser feita pelo próprio Gerente de Projetos (quando não existem impactos ou quando o mesmo tem poder suficientes para isso) ou deverá ser aprovada junto ao um Comitê de Mudanças </span></p><br> </p>
+
+</div>
+<div id="3d5ce731-d80a-45fc-8eb0-14a19d868602_doc" class="docelem" title="6.3 - Planejar a Implementação da mudança">
+<a name="3d5ce731-d80a-45fc-8eb0-14a19d868602" id="3d5ce731-d80a-45fc-8eb0-14a19d868602"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Após uma mudança ser aprovada, deverá ser realizado o planejamento de como a mudança será aplicada e como será repassado para equipe, para que todos entendam o real motivo da mudança e seus benefícios para o projeto, para que assim, colaborem com o sucesso da mesma.</span></p><br> </p>
+
+</div>
+<div id="a3ad2313-2cd9-4532-962d-2faebaa8e22a_doc" class="docelem" title="6.4 - Liberar a mudança">
+<a name="a3ad2313-2cd9-4532-962d-2faebaa8e22a" id="a3ad2313-2cd9-4532-962d-2faebaa8e22a"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Para uma mudança ser liberada, é feito a comparação com o plano original da mudança e o que de fato foi feito. Caso esteja tudo conforme planejado, é feito a liberação da mudança, porém se não estiver, caso seja encontrado algum problema na implementação da mesma ou diferença no plano original, será feito uma analise no produto final da mudança, a fim de determinar onde está o problema e ser indicado a sua correção, para que então a mudança possa ser liberada.</span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final será preencido a Liberação da Mudança</span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Liberação de mudanças.odt" target="_blank">SPL - Liberação de mudanças.odt</a></p>
+</div>
+<div id="3852d1af-98b3-42aa-bfcb-397d11ecae0e_doc" class="docelem" title="6.5 - Gerenciar a Configuração">
+<a name="3852d1af-98b3-42aa-bfcb-397d11ecae0e" id="3852d1af-98b3-42aa-bfcb-397d11ecae0e"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">O gerenciamento da configuração fornece uma maneira padronizada, efetiva e eficiente de gerenciar, de maneira centralizada, as mudanças e linhas de base aprovadas dentro de um projeto. O controle de configuração é focado na especificação das entregas e dos processos, enquanto o controle de mudanças é focado na identificação, documentação e controle de mudanças e as linhas de base do produto. </span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Algumas funções dessa atividade são: Identificação da configuração, Registro da situação da configuração, Verificação e auditoria da configuração.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final de uma mudança, o gerenciamento da configuração é acionado e são gerados os relatórios de configurações e registro de mudanças.</span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Relatório de Configuração.odt" target="_blank">SPL - Relatório de Configuração.odt</a></p><h4>Arquivo anexo 2</h4><p><a href="diagrams/attachments/SPL - Registro de Mudanças.xls" target="_blank">SPL - Registro de Mudanças.xls</a></p>
+</div>
+<div id="9b127c70-4d98-47cd-9c39-8cd4734b316a_doc" class="docelem" title="Fim">
+<a name="9b127c70-4d98-47cd-9c39-8cd4734b316a" id="9b127c70-4d98-47cd-9c39-8cd4734b316a"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneEnd.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Finalização da solicitação</span></p><br> </p>
+
+</div>
+
+							</div>
+							<img src="diagrams/c80968d8-a4bc-4247-aa09-ce874514e722.png" border="0" usemap="#map" class="map" />
+							<map name="map">
+								<area shape="circle" class="diagelem" coords="61,50,15" title="As mudanças podem ser solicitadas por qualquer parte interessada envolvida no projeto. Embora possam ser iniciadas verbalmente, devem ser sempre registradas de maneira escrita e introduzidas no gerenciamento de mudanças e/ou no sistema de gerenciamento de configurações. 
+" href="#8dc7a7b6-87f4-4ad4-a6ff-3eadee701bdf" />
+<area shape="rect" class="diagelem" coords="154,20,249,80" title="As solicitações de mudança estão condicionadas a uma analise da solicitação, onde serão levantadas as informações a respeito dos impactos estimados no tempo e custos. É feito sempre um paralelo com a técnica e-se, levando em consideração a aprovação e a não aprovação da mudança. Poderá ainda ser realizado as atividades do Gerenciamento de Riscos, para a solicitação de mudança, a fim de identificar riscos adicionais a analise realizada.
+" href="#0459c59b-c722-4786-a36b-503ec8c8c4cf" />
+<area shape="rect" class="diagelem" coords="320,20,420,80" title="A autorização de uma mudança pode ser feita pelo próprio Gerente de Projetos (quando não existem impactos ou quando o mesmo tem poder suficientes para isso) ou deverá ser aprovada junto ao um Comitê de Mudanças 
+" href="#c246bb11-d016-498f-a322-f96a9fd39a72" />
+<area shape="rect" class="diagelem" coords="504,20,598,80" title="Após uma mudança ser aprovada, deverá ser realizado o planejamento de como a mudança será aplicada e como será repassado para equipe, para que todos entendam o real motivo da mudança e seus benefícios para o projeto, para que assim, colaborem com o sucesso da mesma.
+" href="#3d5ce731-d80a-45fc-8eb0-14a19d868602" />
+<area shape="rect" class="diagelem" coords="504,148,598,208" title="Para uma mudança ser liberada, é feito a comparação com o plano original da mudança e o que de fato foi feito. Caso esteja tudo conforme planejado, é feito a liberação da mudança, porém se não estiver, caso seja encontrado algum problema na implementação da mesma ou diferença no plano original, será feito uma analise no produto final da mudança, a fim de determinar onde está o problema e ser indicado a sua correção, para que então a mudança possa ser liberada. Ao final será preencido a Liberação da Mudança
+" href="#a3ad2313-2cd9-4532-962d-2faebaa8e22a" />
+<area shape="rect" class="diagelem" coords="322,148,418,208" title="O gerenciamento da configuração fornece uma maneira padronizada, efetiva e eficiente de gerenciar, de maneira centralizada, as mudanças e linhas de base aprovadas dentro de um projeto. O controle de configuração é focado na especificação das entregas e dos processos, enquanto o controle de mudanças é focado na identificação, documentação e controle de mudanças e as linhas de base do produto. Algumas funções dessa atividade são: Identificação da configuração, Registro da situação da configuração, Verificação e auditoria da configuração.Ao final de uma mudança, o gerenciamento da configuração é acionado e são gerados os relatórios de configurações e registro de mudanças.
+" href="#3852d1af-98b3-42aa-bfcb-397d11ecae0e" />
+<area shape="circle" class="diagelem" coords="202,178,15" title="Finalização da solicitação
+" href="#9b127c70-4d98-47cd-9c39-8cd4734b316a" />
+
+							</map>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

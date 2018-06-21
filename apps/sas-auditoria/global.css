@@ -1,0 +1,846 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	margin: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+#titulo {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 26px;
+	color: white;
+	position: absolute;
+	padding-top: 1.6em;
+	left: 13em;
+}
+
+.font-rotulo,label {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.font-normal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.button {
+	height: 23px;
+	width: 100px;
+	cursor: pointer;
+}
+
+.erro {
+	border-radius: 4px;
+	border: groove 1px #0099E4;
+}
+
+hr {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	height: 3px;
+	background-color: #0099E4;
+}
+
+.colIcon {
+	width: 1px;
+	text-align: center;
+}
+
+.odd-row {
+	background-color: #F0FFF0;
+}
+
+.even-row {
+	background-color: #FCFFFE;
+}
+
+.even-row-sub {
+	background-color: #9AFF9A;
+}
+
+.alignLeft {
+	text-align: left;
+}
+
+.cursor {
+	cursor: pointer;
+	border: 0;
+}
+
+.formInput {
+	width: 100%;
+	float: left;
+}
+
+.formSelect {
+	width: 50%;
+	float: left;
+}
+
+.formSelectMany {
+	height: 100px;
+}
+
+.col1 {
+	vertical-align: top;
+	width: 21%;
+	text-align: right;
+}
+
+.col2 {
+	width: 60%;
+	background-color: #C2DFED;
+}
+
+.col2 .topico {
+	text-align: center;
+	background-color: #6CA6CD;
+	color: white;
+}
+
+/* Propriedades do richfaces */
+.rf-au {
+	width: 50% !important;
+	float: left !important;
+}
+
+.rf-au-inp {
+	width: 300px !important;
+}
+
+.rf-dt {
+	border-collapse: separate !important;
+	border-radius: 5px !important;
+}
+
+/* .rf-fu
+{
+	width: 50% !important;	
+}
+
+.rf-fu-lst
+{
+	height: 50px !important;
+} */
+
+/* Mascaras */
+.maskCnpj {
+	width: 100px;
+}
+
+.maskEstado {
+	width: 18px;
+}
+
+.maskNumero {
+	width: 45px;
+}
+
+.maskNumero10 {
+	width: 50%;
+}
+
+.maskCep {
+	width: 60px;
+}
+
+@charset "utf-8";
+/* CSS Document
+** Author: Mário Araújo C. Neto
+** Email: macndesign@gmail.com
+** Company: Cagece - Companhia de Água e Esgoto do Ceará
+** Project: PRAX - Sistema Comercial
+*/
+
+/*
+** Registrar aqui os elementos com z-index:
+** pnlAguarde = 1 (span que contém a imagem de carregando)
+** table #tbDados-nb = 3 (controle de paginação)
+** pnlParametros = 1 (panel que contém os filtros da tela de consulta)
+** pnlParametrosAberto = 1 (painel que contém os filtros da tela de consulta em estado aberto)
+** pnlConButtonsBar = 1 (painel que contém os botões referentes aos filtros)
+** pnlConButtonsBarAberto = 1 (painel que contém os botões referentes aos filtros em estado aberto)
+*/
+
+/*
+** Prefixos:
+** paineis = pnl
+** alinhamento = alg
+** fonte = fnt
+** paleta (cores) = plt
+** componentes = wid
+** botões = btn (extender da classe btnCommonClass)
+*/
+label {
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.stable {
+	width: 99%;
+}
+
+.rf-edt {
+	border: none !important;
+}
+
+.odd-row {
+	background-color: #FCFFFE;
+}
+
+.even-row {
+	background-color: #E9E8E8;
+	border-color: #999999;
+	color: #000000;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	padding: 5px;
+	vertical-align: baseline;
+}
+
+.odd-row:hover,.even-row:hover {
+	background-color: #D2E2F2 !important;
+	color: black !important;
+	z-index: 9999999999999999 !important;
+}
+
+.active-row {
+	background-color: #D2E2F2 !important;
+	color: black !important;
+	z-index: 9999999999999999 !important;
+}
+
+.row-selection {
+	background-color: #D2E2F2 !important;
+	color: black !important;
+	z-index: 99999999999999999 !important;
+	font-weight: bold;
+}
+
+.rf-edt-scrl {
+	overflow-x: none !important;
+	z-index: 999999999999999999;
+}
+
+.tblResultado {
+	width: 100% !important;
+	overflow: hidden !important;
+}
+
+.rich-edt-rsz-cntr,.rich-edt-rsz {
+	display: none !important;
+}
+
+.pnlBaseBoard1 {
+	bottom: 10px;
+	clear: both;
+	display: block;
+	position: fixed;
+	right: 0;
+}
+
+.AFRequiredIconStyle {
+	color: orange;
+	cursor: pointer !important;
+	display: block !important;
+	float: left !important;
+	font-family: Courier, sans-serif !important;
+	font-weight: bold !important;
+	height: 10px !important;
+	margin-bottom: 1px !important;
+	margin-right: 2px !important;
+}
+
+.af_messages_body {
+	background-color: #FEFDED !important;
+	padding: 10px !important;
+}
+
+.af_messages {
+	background-color: #FFFFCC !important;
+	border: 1px solid #FFCC66 !important;
+	color: #336633 !important;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	font-size: 10px !important;
+	font-weight: normal !important;
+	padding: 10px !important;
+}
+
+.af_messages_header {
+	border-color: #CCCCCC !important;
+	border-style: solid !important;
+	border-width: 0 0 1px !important;
+	color: #669966 !important;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	font-size: 1.5em !important;
+	font-weight: bold !important;
+	margin: 0 0 3px !important;
+	padding: 0 3px !important;
+	text-transform: uppercase !important;
+	vertical-align: bottom !important;
+}
+
+.af_messages_error {
+	color: #CC0000;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	font-size: 1.5em !important;
+	font-weight: bold !important;
+	margin: 0 !important;
+	padding: 3px !important;
+	text-transform: uppercase !important;
+}
+
+.rf-edt-tbl-ftr,.rf-edt-ftr {
+	padding: 0px !important;
+	border: none !important;
+}
+
+.rf-edt-ftr-emp,.rich-edt-ftr-fzn {
+	display: none !important;
+}
+
+.rf-edt-tbl-hdr,.rich-edt-hdr,.rf-edt-hdr-c-cnt,.rf-edt-hdr {
+	background-image: none !important;
+	color: #006497 !important;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	font-size: 10px !important;
+	font-weight: bold !important;
+}
+
+.rf-dt-ftr-c {
+	padding: 0px !important;
+	border: none !important;
+}
+
+.rf-edt-r-sel {
+	background-color: #D2E2F2 !important;
+}
+
+.widStatusIndicator {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	background-color: red;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 3px 29px 3px 4px;
+	font-size: 12px;
+	color: #fff;
+	z-index: 9999;
+	background-image: url(/prax/img/loadPoints.gif);
+	background-position: 125px 8px;
+	background-repeat: no-repeat;
+}
+
+textarea,input[type="text"],input[type="password"],select {
+	background-image: none !important;
+}
+
+/* input[type="submit"],input[type="button"] {
+	font-size: 11px !important;
+	color: #006497 !important;
+	font-weight: bolder !important;
+	cursor: pointer !important;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	vertical-align: middle !important;
+	padding: 0px !important;
+	margin: 0px !important;
+	text-align: center !important;
+	font-weight: bolder !important;
+	border: 1px solid black !important;
+	cursor: pointer !important;
+	vertical-align: middle !important;
+	background-image: url("/prax-sic/resources/img/btnNovo.png") !important;
+	background-repeat: repeat-x !important;
+	height: 18px !important;
+	width: 84px !important;
+}
+
+input[type="submit"]:hover,input[type="button"]:hover {
+	border: 1px solid black !important;
+	cursor: pointer !important;
+	vertical-align: middle !important;
+	background-image: url("/prax-sic/resources/img/btnNovoHover.png")
+		!important;
+	background-repeat: repeat-x !important;
+	height: 18px !important;
+	width: 84px !important;
+	vertical-align: middle !important;
+}
+
+*/
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	font-size: 10px !important;
+}
+
+.rf-ds-btn-first,.rf-ds-btn-prev,.rf-ds-btn-next,.rf-ds-btn-last {
+	background-image: none !important;
+	background-color: #ffffff !important;
+	border: none !important;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	font-size: 10px !important;
+	font-weight: normal !important;
+}
+
+a {
+	cursor: pointer !important;
+}
+
+a label {
+	cursor: pointer !important;
+	color: #000000 !important;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.rf-ds-dis label {
+	font-weight: normal;
+}
+
+.rf-dt-shdr-c {
+	background-image: none !important;
+}
+
+.rf-dt-shdr-c {
+	background-color: white !important;
+	border-color: #999999 !important;
+	color: #006497 !important;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+	font-size: 10px !important;
+	font-weight: bold !important;
+	padding: 5px !important;
+	text-align: left !important;
+	vertical-align: bottom !important;
+}
+
+.paginacao {
+	position: fixed;
+	bottom: 3px;
+	left: 3px;
+	z-index: 3;
+}
+
+/*end posicionamentos especificos*/
+.pnlParametros {
+	/*pnlParametros - Contém os filtros da tela de consulta. Não será mais necessário definir um tamanho final(height) pois agora ele tem um tamanho fixo e em caso de muitos filtros é gerada uma barra de rolagem na vertical.*/
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 75px;
+	overflow: hidden;
+	background-image: url("/prax-sic/resources/img/fundoCinza.gif")
+		!important;
+	background-position: top;
+	background-repeat: repeat-x;
+	background-color: #EFF0E8;
+	padding: 10px;
+	z-index: 1;
+}
+
+.pnlParametrosAberto {
+	/*pnlParametrosAberto - Abertura total do container de parametros, já com barra de rolagem automática.*/
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 248px;
+	overflow: auto;
+	background-image: url("/prax-sic/resources/img/fundoCinza.gif")
+		!important;
+	background-position: top;
+	background-repeat: repeat-x;
+	background-color: #EFF0E8;
+	padding: 10px;
+	z-index: 1;
+	
+}
+
+.pnlParametrosFluido {
+	/*pnlParametros - Contém os filtros da tela de consulta. Não será mais necessário definir um tamanho final(height) pois agora ele tem um tamanho fixo e em caso de muitos filtros é gerada uma barra de rolagem na vertical.*/
+	display: block;
+	background-image: url("/prax-sic/resources/img/fundoCinza.gif")
+		!important;
+	background-position: top;
+	background-repeat: repeat-x;
+	background-color: #EFF0E8;
+	padding: 5px;
+	border: solid 1px #ccc;
+}
+
+.pnlParametrosFluidoTop {
+	/*pnlParametros - Contém os filtros da tela de consulta. Não será mais necessário definir um tamanho final(height) pois agora ele tem um tamanho fixo e em caso de muitos filtros é gerada uma barra de rolagem na vertical.*/
+	display: block;
+	background-image: url("/prax-sic/resources/img/fundoCinza.gif")
+		!important;
+	background-position: top;
+	background-repeat: repeat-x;
+	background-color: #EFF0E8;
+	padding: 10px;
+	border-width: 1px 1px 0px 1px;
+	border-color: #ccc;
+	border-style: solid;
+}
+
+.pnlParametrosFluidoBottom {
+	/*pnlParametros - Contém os filtros da tela de consulta. Não será mais necessário definir um tamanho final(height) pois agora ele tem um tamanho fixo e em caso de muitos filtros é gerada uma barra de rolagem na vertical.*/
+	display: block;
+	background-color: #EFF0E8;
+	padding: 10px;
+	border-width: 0px 1px 1px 1px;
+	border-color: #ccc;
+	border-style: solid;
+	text-align: right;
+}
+
+.pnlConButtonsBar {
+	/*pnlConButtonsBar - Barra de botões referentes ao container dos filtros de parametro, em tamanho padrão.*/
+	position: fixed;
+	top: 78px; /*71px*/
+	left: 0px;
+	right: 0px;
+	display: block;
+	clear: both;
+	margin-top: 7px;
+	border-bottom: solid 1px #ccc;
+	background-color: #EFF0E8;
+	z-index: 2;
+}
+
+.pnlConButtonsBarDireita {
+	float: right;
+	margin-right: 10px;
+	z-index: 3;
+	margin-right: 10px;
+}
+
+.pnlConButtonsBarAberto {
+	/*pnlConButtonsBarAberto - Barra de botões referentes ao container dos filtros de parametro, em tamanho máximo.*/
+	position: fixed;
+	top: 251px;
+	left: 0px;
+	right: 0px;
+	display: block;
+	clear: both;
+	margin-top: 7px;
+	border-bottom: solid 1px #ccc;
+	background-color: #EFF0E8;
+	z-index: 1;
+}
+
+.pnlResultado {
+	/*pnlResultado - Painel que contém a grid de resultados da consulta com barra de rolagem automática.*/
+	display: block;
+	position: fixed;
+	top: 112px;
+	left: 0px;
+	right: 0px;
+	bottom: 28px;
+	overflow: auto;
+}
+
+.pnlResultadoSemParametros {
+	/*pnlResultado - Painel que contém a grid de resultados da consulta com barra de rolagem automática.*/
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 30px;
+	overflow: auto;
+	background-color: #fff;
+}
+
+.pnlBaseBoard {
+	/*pnlBaseBoard - Barra de ferramentas do rodapé da tela de consulta, serve como base para botões e componentes de paginação.*/
+	clear: both;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	display: block;
+	width: 100%;
+	background-image: url("/prax-sic/resources/img/fundoCinza.gif")
+		!important;
+	border-top: solid 1px #ccc;
+}
+
+.pnlAguarde {
+	/*pnlAguarde - Elemento que posiciona o indicador de que algo está sendo carregado.*/
+	position: fixed;
+	bottom: 6px;
+	left: 5px;
+	z-index: 1;
+}
+
+.pnlPaddingStd {
+	/*pnlPaddingStd - Espaçamento interno padrão da maioria dos elementos do sistema.*/
+	padding: 5px;
+}
+
+.pnlPaddingGrd { /*pnlPaddingStd - Espaçamento interno grande*/
+	padding: 15px;
+}
+/* end panels */
+
+/* start css align prefixo:alg */
+.algFloatLeft {
+	float: left;
+} /*algFloatLeft - Faz os elementos flutuarem para a esquerda.*/
+.algFloatNone {
+	float: none;
+} /*algFloatNone - Define como vazio o valor de outro tipo float.*/
+.algFloatRight {
+	float: right;
+} /*algFloatRight - Faz os elementos flutuarem para a direita.*/
+.algTextLeft {
+	text-align: left;
+} /*algTextLeft - Alinha à esquerda o texto interno de um elemento.*/
+.algTextCenter {
+	text-align: center;
+} /*algTextLeft - Alinha ao centro o texto interno de um elemento.*/
+.algTextRight {
+	text-align: right;
+} /*algTextRight - Alinha à direita o texto interno de um elemento.*/
+.algSeparador {
+	border: solid 1px #dedede;
+}
+/*algSeparador - Utilizado junto à tag <tr:separator> para dividir conteúdos de natureza diferente, ex. conjunto de componentes e conjunto de botões.*/
+.algClearBoth {
+	clear: both;
+}
+/*algClearBoth - Força uma quebra de linha mesmo que seja de elementos flutuantes, recomendado usar com tags <br> ou <hr>.*/
+.algWidthTotal {
+	width: 100%;
+} /*algWidthTotal - Força ao elemento ocupar toda a largura da tela.*/
+.algWidthMetade {
+	width: 50%;
+} /*algWidthMetade - Força ao elemento ocupar toda a largura da tela.*/
+.algMiddle {
+	vertical-align: middle;
+} /*algMiddle - Posiciona o o conteúdo no meio do elemento.*/
+.algMrgTopAvisoErro {
+	margin-top: 17px;
+}
+/*algMrgTopAvisoErro - Específico para o texto qualquer tag de aviso que contenha apenas uma linha.*/
+.algMrgStd {
+	margin: 5px;
+}
+
+/* end css align */
+
+/* start css font prefixo:fnt */
+.fntStd {
+	font-size: 10px;
+} /*fntStd - Tamanho de fonte padrão para o sistema.*/
+.fntGrd00 {
+	font-size: large;
+}
+
+.fntGrd01 {
+	font-size: 2em;
+}
+
+.fntGrd02 {
+	font-size: xx-large;
+}
+
+.fntGrd03 {
+	font-size: 5em;
+}
+
+.fntGrd04 {
+	font-size: 8em;
+}
+
+.fntBold {
+	font-weight: bold;
+}
+/*fntBold - Fonte em negrito usado para títulos e campos de preenchimento requerido*/
+/* end css font */
+
+/* Fonte especifica em vermelho prefixo:vft */
+.vftStd {
+	font-size: 10px;
+} /*fntStd - Tamanho de fonte padrão para o sistema.*/
+.vftGrd00 {
+	font-size: large;
+}
+
+.vftGrd01 {
+	font-size: 2em;
+}
+
+.vftGrd02 {
+	font-size: xx-large;
+}
+
+.vftGrd03 {
+	font-size: 5em;
+}
+
+.vftGrd04 {
+	font-size: 8em;
+}
+
+.vftBold {
+	font-weight: italic;
+}
+/*fntBold - Fonte em negrito usado para títulos e campos de preenchimento requerido*/
+.vftRed {
+	color: #FF0000;
+}
+/* end css font */
+
+/* start css paleta prefixo:plt */
+.pltClrBlue {
+	color: #006497;
+} /*pltClrBlue - Cor utilizada em fontes azuis do sistema.*/
+.pltBgdBlue {
+	background-color: #006497;
+}
+/*pltBgdBlue - Cor de fundo azul claro, se necessário for um realce no elemento.*/
+.pltBdrGray {
+	border: solid 1px #ccc;
+}
+/*pltBdrGray - Borba cinza utilizada em alguns elementos panels do sistema.*/
+.pltBgdParametrosConsulta {
+	background-color: #EFF0E8;
+}
+/*pltBgdParametrosConsulta - Cor de fundo do container de parâmetros.*/
+.pltBgdImpar {
+	background-color: #efefef;
+}
+/*pltBgdImpar - Cor de fundo de elemento impar geralmente utilizado em linhas para uma melhor visualização e discriminação entre dados semelhantes.*/
+.pltBgdParametrosImg {
+	background-image: url("/prax-sic/resources/img/fundoCinza.gif")
+		!important;
+	background-position: top;
+	background-repeat: repeat-x;
+	background-color: #EFF0E8;
+}
+
+.pltBgdGreen {
+	background-color: #85c226;
+}
+
+.pltBgdWhite {
+	background-color: #fff;
+}
+
+.pltClrGreen {
+	color: #85c226;
+}
+
+.pltBgdAbertura {
+	background: url("/prax-sic/resources/img/grgrad.gif") repeat-x top
+		!important;
+}
+
+.pltClrWhite {
+	color: #fff;
+}
+/* end css paleta */
+
+/* start components prefixo:wid */
+.widFieldsetHidden {
+	border: none;
+}
+
+.widFieldset {
+	/*widFieldset - Cor da borda e espaçamento interno de um componente fieldset ou <tr:panelCaptionGroup> da tela de consulta.*/
+	border: solid 1px #bbb;
+	padding: 0 5px 5px 5px;
+}
+
+.widFieldset,legend {
+	/*.widFieldset, legend - Margem inferior de um componente fieldset ou <tr:panelCaptionGroup> da tela de consulta.*/
+	margin-bottom: 0px;
+}
+
+.widStdFieldset {
+	/*widFieldset - Cor da borda e espaçamento interno de um componente fieldset ou <tr:panelCaptionGroup> padrão.*/
+	border: solid 1px;
+	padding: 8px;
+	margin-top: 5px;
+	border: solid 1px #ddd;
+}
+
+.widFieldset,legend,.x5q {
+	/*.widFieldset, legend, .x5q - Cor do título <legend> de um componente fieldset.*/
+	color: #006497;
+}
+
+.corpo {
+	margin: 15px;
+}
+
+select {
+	font-size: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	height: 21px;
+}
+
+
+/* Form do dialogo de datas. */
+#a {
+	margin-left: -10px;
+	margin-top: -10px;
+	position: relative !important;
+	display: block;
+	width: 290px !important;
+	height: 260px !important;
+}
+
+
+
+
+/* TOPO SISTEMA */
+.topo-sistema {
+	background-image: url("layout-sistemas_r1_c2.jpg")
+		!important;
+	height: 101px;
+}
+
+.topo-logo-sistema {
+	background-image: url("layout-sistemas_r1_c1.jpg")
+		!important;
+	width: 330px;
+	height: 81px;
+	float: left;
+}
+
+.topo-logo-sistema h1 {
+	font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial,
+		sans-serif;
+	font-size: 45px;
+	margin: 5px 5px 0 5px;
+	color: #fff;
+	text-shadow: 3px 3px 4px #000000;
+}
+
+.topo-logo-sistema h3 {
+	font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial,
+		sans-serif;
+	font-size: 18px;
+	margin: -7px 5px 5px 5px;
+	color: #333;
+	text-shadow: 3px 3px 4px #999;
+}
+
+.topo-logo-cagece {
+	width: 297px;
+	height: 101px;
+	float: right;
+}
+
+
+

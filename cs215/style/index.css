@@ -1,0 +1,247 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 18-Aug-2017, 10:49:29 AM
+    Author     : paulo
+*/
+
+.crlr {
+    clear: right;
+    display: block;
+}
+.w45 {
+    width: 45%;
+    float: left;
+    display: block;
+    z-index: 2;
+    position: relative;
+}
+.mrg5 {
+    margin-right: 5%;
+}
+.form_home {
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: whitesmoke;
+    padding: 10px;
+}
+.form_home h2 {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px #fff;
+}
+.front-bg {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    left: -50%;
+    background: #000;
+    top: 0;
+    z-index: 1;
+}
+.front-bg img {
+    display: block;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7;
+}
+.lefthome h1, .lefthome p{
+    color: white !important;
+    font-weight: bold;
+    font-size: 26px;
+}
+.lefthome h1{
+    font-size: 32px;
+}
+html, body, #main {
+    height: 100%;
+    background: #00d1b2;
+}
+
+body {
+    font-size: 14px;
+    line-height: 20px;
+}
+.nav {
+    backface-visibility: hidden;
+    border-bottom: 1px solid #e6ecf0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    height: 2.5rem;
+}
+.nav h1 {
+    background-image: url('logo.png');
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    font-size: 26px;
+    text-shadow: 2px 2px #d9eadb;
+    padding-top: 8px;
+}
+
+.user_menu {
+    display: block;
+    clear: both;
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+.user_menu ul {
+    list-style: none;
+    display: inline;
+    margin: 0 10px;
+    padding: 0;
+}
+
+.user_menu li {
+    list-style: none;
+    display: inline;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #d9eadb;
+    border-radius: 8px;
+}
+
+aside .box {
+    text-align: center;
+}
+aside .box h2{
+    font-weight: bold;
+    color: #00d1b2;
+    margin-bottom: 10px;
+}
+aside .box form {
+    margin-top: 10px;
+}
+
+.user_menu li.active {
+    background: #00d1b2;
+    color: #fff !important;
+}
+.user_menu li.active a{
+    color: #fff !important;
+}
+
+aside {
+    float: left;
+    width: 290px;
+    position: fixed;
+}
+
+#main {
+    float: right;
+    width: 590px;
+}
+.user_details div{
+    width: 100%;
+    text-align: center;
+}
+.user_details img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 2px solid #fff;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    transition: box-shadow .15s ease-in-out;
+}
+.control #count{
+    text-align: right;
+    width: 100%;
+    display: block;
+}
+
+.avatar_post {
+   height: 76px;
+    width: 76px;
+    float: left;
+    display: block;
+    margin-right: 10px;
+}
+.avatar_post img {
+        border-radius: 50%;
+    height: 76px;
+    width: 76px;
+    border: 2px solid #fff;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    transition: box-shadow .15s ease-in-out;
+}
+
+.content_post {
+    float: left;
+    clear: right;
+    display: block;
+}
+
+.clr{
+    display: block;
+    height: 0;
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#allposts .breadcrumb{
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+}
+#allposts .breadcrumb ul{
+    margin: 0;
+}
+#hit_email, #hit_password {
+    transition: box-shadow .15s ease-in-out;
+}
+.dpn {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+
+  .mrg5 {
+      margin-right: 0;
+  }
+
+  .w45 {
+        width: 90%;
+        float: left;
+        display: block;
+        z-index: 2;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    aside, #main {
+        float: none;
+        width: 90%;
+        position: static;
+        margin: 0 auto;
+    }
+
+    .user_statistics {
+      display: none;
+    }
+
+    aside {
+      margin-bottom: 15px;
+    }
+}

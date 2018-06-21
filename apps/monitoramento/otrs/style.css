@@ -1,0 +1,182 @@
+body {
+	margin: 0 auto;
+	width: 1338px;
+}
+
+.topo {
+	background: url('images/image-topo.jpg') no-repeat ;
+	width: 1104px;
+	height: 93px;
+}
+	.texto {
+		padding: 50px  0 0 193px ;
+	}
+	
+	.topo p {
+		float: left;
+		font-family: verdana;
+		font-size: 16px;
+		font-weight: bold;
+		color: #B8DB7C;
+		margin: 10px 8px;
+	}	
+		 .titulo2 {
+			padding-right: 68px;
+		}.titulo3 {
+			padding-right: 31px;
+		}.titulo4 {
+			padding-right: 14px;
+		}.titulo5 {
+			padding-right: 98px;
+		}
+.preto {
+	background-image: url('images/image-24h.jpg') ;
+	width: 193px;
+	height: 125px;
+}
+.vermelho {
+	background-image: url('images/image-4-24h.jpg') ;
+	width: 193px;
+	height: 130px;
+}
+.laranja {
+	background-image: url('images/image-2-4-hs.jpg') ;
+	width: 193px;
+	height: 131px;
+}
+.amarelo {
+	background-image: url('images/image-1-2hs.jpg') ;
+	width: 193px;
+	height: 130px;
+}
+.verde {
+	background-image: url('images/image-0-1h.jpg') ;
+	width: 193px;
+	height: 141px;
+}
+.colunas{
+	float: left;
+}
+.coluna1 {
+	border: 0 none;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 193px;
+	
+	}
+	.n-preto, .n-vermelho, .n-laranja, .n-amarelo, .n-verde {
+		margin: 0 0 0 39px;
+		padding: 25px;
+		font-family: verdana;
+		font-size: 50px;
+		color: #FFF;
+		font-weight: bold;
+	}
+		.n-vermelho {
+			padding-top: 31px;
+		}
+		
+		.n-laranja {
+			padding-top: 33px;
+		}
+		.n-amarelo {
+			padding-top: 35px;
+		}
+		.n-verde {
+			padding-top: 35px;
+		}
+	
+			
+.coluna2 {
+	background-image: url('images/image-meio.jpg') ;
+	width: 911px;
+	height: 657px;
+	float:left;
+	font-family: verdana;
+	font-size: 12px;
+	font-weight: bold;
+}
+.tabela-lista {
+	width: 899px;
+	height: 110px;
+	padding: 10px 0 10px 10px;
+	clear: both;
+	display: block;
+}	
+
+.direita {
+	margin-left: 1104px;
+	margin-top: -93px;
+}
+	.direita p {
+		float: left;
+		font-family: verdana;
+		font-size: 82px;
+		font-weight: bold;
+		color: #FFF;
+		margin: 10px;
+	}
+
+.fecdia {
+		background: url('images/image-fec-dia.jpg') no-repeat ;
+		 width: 232px;
+		 height: 255px;
+}
+	.fecdia p {
+			margin: 10px 22px 22px 22px;
+	}
+.fecmes {
+	background: url('images/image-fec-mes.jpg') no-repeat ;
+	width: 232px;
+	height: 244px;
+}
+	/*.fecmes p {
+			margin: 99px 22px 22px 22px;
+			font-size: 62px;
+	}*/
+	
+	.fecmes p {
+		font-size: 65px;
+		margin: 110px 10px 22px;
+		width: 202px;
+		text-align: center;
+	}
+.pendentes {
+	background: url('images/image-pendentes.jpg') no-repeat ;
+	width: 232px;
+	height: 251px;
+}
+	.pendentes p {
+			margin: 99px 22px 22px 22px;
+	}
+
+.coluna2 tr {
+	
+}
+	.coluna2 tr td {
+		padding: 3px 10px 3px 0;
+		font-size: 11px;
+		border-bottom: 1px solid #ccc;
+	}
+	.coluna2 tr td.id {
+		width: 90px;
+		text-align: center;
+	}
+	.coluna2 tr td.solicitante {
+		width: 170px;
+	}
+	.coluna2 tr td.categoria {
+		width: 125px;
+	}
+	.coluna2 tr td.unidade {
+		width: 80px;
+	}
+	.coluna2 tr td.tecnico {
+		width: 170px;
+	}
+	.coluna2 tr td.criacao {
+		width: 195px;
+	}
+	

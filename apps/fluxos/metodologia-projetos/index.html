@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=100" />
+	<title>Metodologia do escritório de projetos</title>
+	<link type="text/css" href="css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+	<link href="css/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <link media="screen" type="text/css" href="css/main.css" rel="stylesheet" />
+	<!--[if IE 7]>
+	<link media="screen" type="text/css" href="css/main_ie7.css" rel="stylesheet" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/ui.tabs.paging.js"></script>
+	<script type="text/javascript" src="js/jquery.maphilight.min.js"></script>
+	<script type="text/javascript" src="js/jquery.watermarkinput.js"></script>
+	<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+	<!--<script type="text/javascript" src="js/shiftzoom.js"></script>-->
+	<script type="text/javascript" src="js/jquery.hashtable-1.1.js"></script>
+	<script type="text/javascript">
+		/* Textbox Watermark plugin */
+		$(function($) {
+			$("#q").Watermark('Pesquisar');
+		});
+
+		/* Shiftzoom plugin */
+		//if (document.images && document.createElement && document.getElementById) {
+		//	document.writeln('<style type="text/css">');
+		//	document.writeln('	img.shiftzoom { visibility: hidden; }');
+		//	document.writeln('<\/style>');
+		//}
+
+		$(document).ready(function() { 
+
+			/* Tabs plugin */
+			$("#tabs").tabs({
+				selected: 0
+				, select: function(event, ui) {
+					var url = $.data(ui.tab, 'load.tabs');
+					if (url) {
+						location.href = url;
+						return false;
+					}
+					return true;
+				}
+			});
+
+			$("#tabs").tabs('paging');
+
+			/* Autocomplete plugin */
+			var ht = new jQuery.Hashtable();
+			ht.add("index","a11ec817-f912-43e2-9d52-b20cd1e2cace");
+ht.add("Gerenciamento de projetos","73c02a33-f2e9-42b9-b2ec-68e08c7967fc");
+ht.add("Inicio","a1cd34d2-165d-4f4b-88cf-c4a76b35b8f6");
+ht.add("1.1 - Analisar requisitos de alto nível ","fc405cf0-311a-4e73-826d-47aa103d4d86");
+ht.add("1.2 - Realizar estudo de viabilidade ","f53fe0c1-8da5-42fd-beb6-b695c6c88057");
+ht.add("1.3 - Elaborar termo de abertura do projeto ","aecf9cf6-90c7-4249-918d-b671e263706e");
+ht.add("1.4 - Realizar priorização dos projetos ","47ad7bf7-b284-4619-b295-a779b3dff2f0");
+ht.add("2.1 - Analisar requisitos detalhados","75e76ab5-6854-4924-bd37-355ae21605fa");
+ht.add("2.2 - Definir pacotes de trabalho / entregáveis ","a036ae73-2ef8-4d86-b500-35ed8e170184");
+ht.add("2.3 - Criar a EAP","4a57c6a7-b6c8-49a8-851c-a3b015591f50");
+ht.add("2.4 - Validar o escopo","402c161c-9ee6-4f37-9d27-d9d1f145d2c9");
+ht.add("Elemento","49a11e01-4404-43da-aa24-1a9bf17cb4d5");
+ht.add("3.1 - Especificar atividades ","aaff9fba-0722-4253-915f-2f170c1050ff");
+ht.add("3.2 - Estimar tempo e recursos das atividades ","07e512e9-6b10-4268-b256-b146862c898f");
+ht.add("4.3 - Adquirir recursos","205d5203-6605-48d8-a6b0-fdd6d415d6d0");
+ht.add("4.4 - Alocar recursos no projeto ","923158bf-d5e7-4fca-817a-423728c4aa52");
+ht.add("3.3 - Desenvolver cronograma de entregas","52562404-1793-431b-ae93-d66df0265904");
+ht.add("1.5 - Elaborar plano detalhado do projeto ","2931011d-19ad-4812-ae52-f12bd4d1bbc8");
+ht.add("1.7 - Monitorar e avaliar projeto","3e7dd178-3bb4-4bd9-9e4f-f8e27e578b73");
+ht.add("1.8 - Finalizar projeto ","612932ab-26f1-49b1-af98-0f371b9f01ab");
+ht.add("Fim","307eca3c-5125-482b-8a43-deba08b373f7");
+ht.add("5.3 - Monitorar riscos ","b3c7a046-8b1c-49a8-99d8-eaa856eac28d");
+ht.add("1.6 - Coordenar a implementação do projeto ","26c673a2-13ff-46a0-afab-2bb538aef91a");
+ht.add("4.1 - Definir recursos do projeto ","431b3b35-cc39-41d6-833a-5958f77e4af4");
+ht.add("4.2 - Definir custos do projeto ","00eeef3e-2c99-4b3c-830b-a0461745b231");
+ht.add("5.1 - Analisar riscos ","5229abcb-73b7-4d3e-ae7e-28cf2eca0544");
+ht.add("5.2 - Planejar resposta a riscos ","1f16be17-481e-4f25-929f-fc151310cf51");
+ht.add("7.1 - Definir entrega","d22d40bf-9cf2-4dbc-b1b0-3967d200333a");
+ht.add("7.2 - Definir o plano de qualidade","e981376f-5f60-4c3c-a190-b059bc998498");
+ht.add("6 - Gerenciamento de Mudanças","c80968d8-a4bc-4247-aa09-ce874514e722");
+ht.add("Iniciação ","8bba96f0-f72d-4e20-a602-8948d930f93c");
+ht.add("Planejamento","bdba734b-f106-4652-9de1-62e43ce2f14c");
+ht.add("Execurção / Monitoramento e Controle","a58fd9ee-93e7-452c-9a2d-70a04d92d52b");
+ht.add("Finalização","18361bc7-0983-4f90-91b3-dc439576d62b");
+
+			var data = 'Metodologia do escritório de projetos|Gerenciamento de projetos|Inicio|1.1 - Analisar requisitos de alto nível |1.2 - Realizar estudo de viabilidade |1.3 - Elaborar termo de abertura do projeto |1.4 - Realizar priorização dos projetos |2.1 - Analisar requisitos detalhados|2.2 - Definir pacotes de trabalho / entregáveis |2.3 - Criar a EAP|2.4 - Validar o escopo|Elemento|3.1 - Especificar atividades |3.2 - Estimar tempo e recursos das atividades |4.3 - Adquirir recursos|4.4 - Alocar recursos no projeto |3.3 - Desenvolver cronograma de entregas|1.5 - Elaborar plano detalhado do projeto |1.7 - Monitorar e avaliar projeto|1.8 - Finalizar projeto |Fim|5.3 - Monitorar riscos |1.6 - Coordenar a implementação do projeto |4.1 - Definir recursos do projeto |4.2 - Definir custos do projeto |5.1 - Analisar riscos |5.2 - Planejar resposta a riscos |7.1 - Definir entrega|7.2 - Definir o plano de qualidade|6 - Gerenciamento de Mudanças|Iniciação |Planejamento|Execurção / Monitoramento e Controle|Finalização'.split('|');
+			$("#q").autocomplete(data, { matchContains: true});
+			$('#q').result(function(event, data, formatted) {
+				var val = ht.get(formatted.toString());
+				var anchor = '#' + val;
+				var dia = anchor + '_doc';
+				$(dia).dialog('open');
+			});
+
+			/* Show/hide Pan & Zoom */
+			//$('#diagramimagepan').hide();
+
+			//$('#pan').click(function() {
+			//	$(this).toggleClass("down");
+
+			//	if ($(this).hasClass("down")) {
+			//		$('#diagramimage').hide();
+			//		$('#diagramimagepan').show('slow');
+			//		$(this).text('Visão Normal');
+			//	} else {
+			//		$('#diagramimagepan').hide();
+			//		$('#diagramimage').show('slow');
+			//		$(this).text('Visão Pan & Zoom');
+			//	}
+			//});
+			
+			/* Dialog plugin */
+			var minWidth = 610;
+			if ($(".docelem img").hasClass("imageForm")) {
+				var width = $(".docelem .imageForm").width();
+			} else {
+				var width = minWidth;
+			};
+			$('.docelem').dialog({ 
+				autoOpen: false, 
+				width: (width + 30),
+				height: 480, 
+				modal: true,
+				show: 'slide'
+			});
+			$('.docelem').dialog('option', 'minWidth', 640);
+			
+			$('.diagelem').click(function() {
+				var t = $(this).attr('href');
+				t = t.replace('#', '');
+				var dia = $(this).attr('href') + '_doc';
+				
+				$(dia).dialog('open');
+			});
+
+			/* Map Highlight plugin */
+			$(function() {
+				$('.map').maphilight();
+			});
+
+            // Set height diagramimage
+            if($.browser.msie){                         
+                $("#diagram-image").height($("#diagramimage").height());               
+            }
+		});
+	</script>
+	
+   
+
+	<script type="text/javascript" src="js/cufon-yui.js"></script>
+	<script type="text/javascript" src="js/BeauSansRegular.js"></script>    
+    <!--<script type="text/javascript">
+	    // <![CDATA[
+	    Cufon.replace('h1');
+	    Cufon.replace('h2');
+	    Cufon.replace('h3');
+	    //Cufon.replace('h4');
+	    Cufon.replace('.ui-dialog-title');
+	    Cufon.replace('.layout-type a', {
+	        hover: true
+	    });
+	    Cufon.replace('.BizAgi li a', {
+	        hover: true
+	    });
+
+	    Cufon.replace('.tabs a', {
+	        hover: true
+	    });
+	    Cufon.replace('#topnav a', {
+	        hover: true
+	    });
+
+	    //]]>
+	</script>-->
+</head>
+<body>
+
+	<div id="contentwrapper">
+		<div id="header">
+			<h1>
+				metodologia de gerenciamento de projetos da geinf</h1>
+		</div>
+		<div id="tabs">
+			<ul class="tabs">
+				<li><a href="#tabs-0" title="tabs-0">Metodologia do escritório de projetos</a></li>
+<li><a href="26c673a2-13ff-46a0-afab-2bb538aef91a.htm" title="tabs-1">1.6 - Coordenar a implementação do projeto
+</a></li>
+<li><a href="c80968d8-a4bc-4247-aa09-ce874514e722.htm" title="tabs-2">6 - Gerenciamento de Mudanças</a></li>
+
+			</ul>
+			<div id="content">
+				<div id="tabs-0">
+					<div class="layout-type">
+						<ul id="topnav">
+							<li class="home"><a href="default.htm">Principal</a></li>
+						</ul>
+						<ul>
+							<li><span class="search"><input id="q" name="q" type="text" style="color:#3A3A3A"/></span></li>
+						</ul>
+					</div>
+					<div>
+						<!--|#bpm_back_to_parent#|--> <a href="#a11ec817-f912-43e2-9d52-b20cd1e2cace" class="diagelem"><h2>Metodologia do escritório de projetos</h2></a>
+					</div>
+					<div id="diagram-image">
+						<div id="diagramimage" align="center">
+							<div id="documentation" style="visibility: hidden;">
+							<div id="a11ec817-f912-43e2-9d52-b20cd1e2cace_doc" class="docelem" title="Metodologia do escritório de projetos">
+<a name="a11ec817-f912-43e2-9d52-b20cd1e2cace" id="a11ec817-f912-43e2-9d52-b20cd1e2cace"></a>
+
+<h4>Versão</h4><p>1.0</p><h4>Autor</h4><p>207447</p>
+
+
+</div>
+<div id="73c02a33-f2e9-42b9-b2ec-68e08c7967fc_doc" class="docelem" title="Gerenciamento de projetos">
+<a name="73c02a33-f2e9-42b9-b2ec-68e08c7967fc" id="73c02a33-f2e9-42b9-b2ec-68e08c7967fc"></a>
+<img class="icon" src="diagrams/bpmnimg/Participant.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><br> </p>
+
+</div>
+<div id="a1cd34d2-165d-4f4b-88cf-c4a76b35b8f6_doc" class="docelem" title="Inicio">
+<a name="a1cd34d2-165d-4f4b-88cf-c4a76b35b8f6" id="a1cd34d2-165d-4f4b-88cf-c4a76b35b8f6"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneStart.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">É detectado uma necessidade que deve ser tretada como projeto</span></p><br> </p>
+
+</div>
+<div id="fc405cf0-311a-4e73-826d-47aa103d4d86_doc" class="docelem" title="1.1 - Analisar requisitos de alto nível
+">
+<a name="fc405cf0-311a-4e73-826d-47aa103d4d86" id="fc405cf0-311a-4e73-826d-47aa103d4d86"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Nessa atividade será feito o levantamento de requisitos de alto nível e preenchimento inicial do documento "Relatório de Viabilidade", onde será informado o resumo executivo e quais são os requisitos, e os dados iniciais de identificação do projeto.</span></p><p><span style="font-family:Segoe UI;font-size:8pt;">Os requisitos de alto nível são requisitos em uma visão macro do projeto. É o produto (ou produtos) gerado como resultado do projeto, e as principais funções e necessidades desse produtos. Esses requisitos serão usados mais adiante, onde serão detalhados.</span></p><br> </p><h4>Executantes</h4><p><a href="performers.htm" target="_blank">Gerente de Projetos</a></p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Relatório de Viabilidade (1).odt" target="_blank">SPL - Relatório de Viabilidade (1).odt</a></p>
+</div>
+<div id="f53fe0c1-8da5-42fd-beb6-b695c6c88057_doc" class="docelem" title="1.2 - Realizar estudo de viabilidade
+">
+<a name="f53fe0c1-8da5-42fd-beb6-b695c6c88057" id="f53fe0c1-8da5-42fd-beb6-b695c6c88057"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Nessa atividade será feito a analise de viabilidade do projeto. É feito um estudo em relação a soluções já existentes no mercado, feito um melhor detalhamento do projeto, e feito uma analise dos beneficios que o projeto irá trazer x o seu custo. Levará em consideração também os riscos iniciais do projeto.</span></p><br> </p><h4>Executantes</h4><p><a href="performers.htm" target="_blank">Gerente de Projetos</a></p>
+
+</div>
+<div id="aecf9cf6-90c7-4249-918d-b671e263706e_doc" class="docelem" title="1.3 - Elaborar termo de abertura do projeto
+">
+<a name="aecf9cf6-90c7-4249-918d-b671e263706e" id="aecf9cf6-90c7-4249-918d-b671e263706e"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Preencimento do formulário SPL 30 - Termo de Abertura do projeto (TAP). O Tap é o principal documento do projeto e informa a organização que o projeto existe. Nele se encontrará as informações sobre o projeto, sem um nível de detalhamento aprofundado, informações sobre resultados esperados e justificativas do porque do projeto existir.</span></p><br> </p><h4>Executantes</h4><p><a href="performers.htm" target="_blank">Gerente de Projetos</a></p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL_030 - Termo de Abertura (1).odt" target="_blank">SPL_030 - Termo de Abertura (1).odt</a></p>
+</div>
+<div id="47ad7bf7-b284-4619-b295-a779b3dff2f0_doc" class="docelem" title="1.4 - Realizar priorização dos projetos
+">
+<a name="47ad7bf7-b284-4619-b295-a779b3dff2f0" id="47ad7bf7-b284-4619-b295-a779b3dff2f0"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Priorização de projetos realizada pelo Comitê de Governança de TI baseado no TAP e no Relatório de Viabilidade</span></p><br> </p>
+
+</div>
+<div id="75e76ab5-6854-4924-bd37-355ae21605fa_doc" class="docelem" title="2.1 - Analisar requisitos detalhados">
+<a name="75e76ab5-6854-4924-bd37-355ae21605fa" id="75e76ab5-6854-4924-bd37-355ae21605fa"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Atividade onde serão detalhados junto ao cliente, supervisões e demais unidades envolvidas, os requisitos do projeto, a fim de determinar todas as necessidades e caracteristicas do projeto e do produto. Deverá ser criado os documentos: Matriz de rastreabilidade de requisitos, Relatório de Requisitos, Plano de Gerenciamento de Requisitos (parte do plano do projeto)</span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Matriz de Rastreabilidade de requisitos (2).odt" target="_blank">SPL - Matriz de Rastreabilidade de requisitos (2).odt</a></p><h4>Arquivo anexo 2</h4><p><a href="diagrams/attachments/SPL - Relatório de Requisitos (2).odt" target="_blank">SPL - Relatório de Requisitos (2).odt</a></p>
+</div>
+<div id="a036ae73-2ef8-4d86-b500-35ed8e170184_doc" class="docelem" title="2.2 - Definir pacotes de trabalho / entregáveis
+">
+<a name="a036ae73-2ef8-4d86-b500-35ed8e170184" id="a036ae73-2ef8-4d86-b500-35ed8e170184"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Nessa atividade consiste em dividir os requisitos por funcionalidades / partes, que atendem as necessidades e urgências do cliente. Teremos um planejamento voltado ao cliente. As funcionalidades / partes serão organizadas por prioridade (a ser definido no Gerenciamento de Entregas). Cada pacote de trabalho irá representar uma entrega (um marco) para o cliente, como parte do todo do projeto / produto. A partir dai poderemos então definir nossa EAP, orientada aos pacotes de trabalho e realizar o planejamento correto do projeto, para atender todos os requisitos acordados com o cliente. Ao final deverá ser preencida a Declaração do escopo do projeto</span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Declaração de Escopo do Projeto.odt" target="_blank">SPL - Declaração de Escopo do Projeto.odt</a></p>
+</div>
+<div id="4a57c6a7-b6c8-49a8-851c-a3b015591f50_doc" class="docelem" title="2.3 - Criar a EAP">
+<a name="4a57c6a7-b6c8-49a8-851c-a3b015591f50" id="4a57c6a7-b6c8-49a8-851c-a3b015591f50"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Criar a EAP é o processo de subdivisão das entregas e dos pacotes de trabalho do projeto em componentes menores e de gerenciamento mais fácil. A estrutura analítica do projeto (EAP) é uma decomposição hierárquica orientada as entregas do trabalho a ser executado pela equipe para atingir os objetivos do projeto e criar as entregas requisitadas, sendo que cada nível descendente da EAP representa uma definição gradualmente mais detalhada da definição do trabalho do projeto.</span></p><br> </p>
+
+</div>
+<div id="402c161c-9ee6-4f37-9d27-d9d1f145d2c9_doc" class="docelem" title="2.4 - Validar o escopo">
+<a name="402c161c-9ee6-4f37-9d27-d9d1f145d2c9" id="402c161c-9ee6-4f37-9d27-d9d1f145d2c9"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">É nessa atividade onde será feito a validação de toda a documentação de escopo produzida até o momento. O cliente poderá realizar a consulta da documentação, verificar as priorizações dos pacotes de trabalho, verificar a EAP e dicionário da EAP, a fim de certifica-se que todas as suas necessidades serão atendidas e foram documentadas. Essa é uma forma de proteger o cliente e o projeto de dúvidas quando ao real trabalho que deve ser feito para atingir os objetivos proposto com o projeto. Ao final será atualizado a Declaração do escopo do projeto e demais documentos, conforme necessário.</span></p><br> </p>
+
+</div>
+<div id="49a11e01-4404-43da-aa24-1a9bf17cb4d5_doc" class="docelem" title="Elemento">
+<a name="49a11e01-4404-43da-aa24-1a9bf17cb4d5" id="49a11e01-4404-43da-aa24-1a9bf17cb4d5"></a>
+<img class="icon" src="diagrams/bpmnimg/ParallelGateway.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Inicio de atividades paralelas - As atividades a partir desse ponto ocorrem em paralelo</span></p><br> </p>
+
+</div>
+<div id="aaff9fba-0722-4253-915f-2f170c1050ff_doc" class="docelem" title="3.1 - Especificar atividades
+">
+<a name="aaff9fba-0722-4253-915f-2f170c1050ff" id="aaff9fba-0722-4253-915f-2f170c1050ff"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Na identificação das atividades do projeto devem-se considerar todas as tarefas que podem influenciar no andamento do projeto, são elas, mas não se limitam: as fases de entrega, as restrições, premissas, fatores ambientais, os ativos do processo organizacional (políticas procedimentos, diretrizes e lições apreendidas), as atividades para construção da solução, o planejamento do projeto, a finalização, os ações para atuar nos riscos, as aquisições, os recursos, a comunicação, a garantia da qualidade, as mudanças e seus impactos e a integração. Ao final será preencida a lista de marcos </span></p><br> </p>
+
+</div>
+<div id="07e512e9-6b10-4268-b256-b146862c898f_doc" class="docelem" title="3.2 - Estimar tempo e recursos das atividades
+">
+<a name="07e512e9-6b10-4268-b256-b146862c898f" id="07e512e9-6b10-4268-b256-b146862c898f"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa etapa busca-se estimar o esforço necessário para terminar as atividades identificadas e os tipos e quantidades de materiais, pessoas, equipamentos ou suprimentos necessários para realizar cada atividade no tempo esperado.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">A estimativa de tempo da atividade deve ser realizada pela pessoa ou grupo de pessoas do projeto que estão mais familiarizados com a natureza do trabalho da atividade específica. A estimativa do tempo é elaborada progressivamente, considerando a qualidade e os dados de entrada. Todos os dados e premissas usados para estimar a atividade devem ser documentados e servir para comparativos futuro e lições aprendidas.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Os recursos estimados para atividade poderão ter um efeito na duração da atividade, já que os recursos destinados para ela influenciam significativa a duração da maioria das atividades. Como exemplo: se recursos adicionais são acrescentados a uma atividade pode reduzir o tempo necessário para sua conclusão ou recursos com menor nível de habilidade destinado para uma atividade, pode impactar em um tempo maior para sua conclusão.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final existe a atualização da Planilha de Recursos e da Lista de Atividades e Marcos. </span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Planilha dos Recursos.ods" target="_blank">SPL - Planilha dos Recursos.ods</a></p>
+</div>
+<div id="b1f7e9f7-c0ad-405f-a14e-b7cca8f57fbb_doc" class="docelem" title="Elemento">
+<a name="b1f7e9f7-c0ad-405f-a14e-b7cca8f57fbb" id="b1f7e9f7-c0ad-405f-a14e-b7cca8f57fbb"></a>
+<img class="icon" src="diagrams/bpmnimg/ParallelGateway.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Fim de atividades em paralelo - Ponto de encontro das atividades que aconteceram em paralelo. Isso significa que a atividade seguinte só poderá ser executada após todas as anteriores terem sido realizadas com sucesso.</span></p><br> </p>
+
+</div>
+<div id="205d5203-6605-48d8-a6b0-fdd6d415d6d0_doc" class="docelem" title="4.3 - Adquirir recursos">
+<a name="205d5203-6605-48d8-a6b0-fdd6d415d6d0" id="205d5203-6605-48d8-a6b0-fdd6d415d6d0"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;"> Nessa etapa busca-se planejar e realizar as aquisições do projeto. Até o limite de valor de R$ 8.000,00 (oito mil reais) a modalidade pode ser: compra direta, com três propostas, ou cotação eletrônica. Sem limite de valor temos licitação, conforme a norma SAD_046, . Outra possibilidade é a dispensa de licitação para casos emergências, sendo a possibilidade de celebração direta de contrato entre a administração pública e o particular, nos casos estabelecidos no art. 24, da Lei n° 8.666/93.</span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Em anexo o modelo de termo de referência para aquisição </span></p><br> </p>
+
+</div>
+<div id="923158bf-d5e7-4fca-817a-423728c4aa52_doc" class="docelem" title="4.4 - Alocar recursos no projeto
+">
+<a name="923158bf-d5e7-4fca-817a-423728c4aa52" id="923158bf-d5e7-4fca-817a-423728c4aa52"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa etapa busca-se alocar os recursos necessários nas atividades no prazo necessário para garantir o bom andamento do projeto. Confirmar a disponibilidade dos recursos conforme planejado. Garantir a obtenção dos recursos conforme o cronograma e mobilizara a equipe necessária para as designações do projeto. Gerenciar mudanças para otimizar o desempenho do projeto.</span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Na mobilização dos recursos humanos, a equipe pode ou não ter o controle direto sobre a seleção dos membros da equipe.</span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final existe a atualização da Planilha de Recursos.</span></p><br> </p>
+
+</div>
+<div id="52562404-1793-431b-ae93-d66df0265904_doc" class="docelem" title="3.3 - Desenvolver cronograma de entregas">
+<a name="52562404-1793-431b-ae93-d66df0265904" id="52562404-1793-431b-ae93-d66df0265904"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa etapa busca-se identificar as dependências entre as atividades, analisar as sequências das atividades, alocar os recursos necessários e aplicar as restrições necessárias visando criar o cronograma do projeto.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Na sequenciação será criada uma rede de dependências entre as atividades. Cada atividade é conectada a uma ou mais predecessoras e sucessoras. Pode-se aplicar uso do tempo de antecipação e espera para prover um cronograma mais realístico.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final será criado o cronograma inicial dentro do SGP (Sistema de Gestão de Projetos)</span></p><br> </p>
+
+</div>
+<div id="2931011d-19ad-4812-ae52-f12bd4d1bbc8_doc" class="docelem" title="1.5 - Elaborar plano detalhado do projeto
+">
+<a name="2931011d-19ad-4812-ae52-f12bd4d1bbc8" id="2931011d-19ad-4812-ae52-f12bd4d1bbc8"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Nessa atividade serão reúnidos todos os planos e documentos gerados ao longo do planejamento e unidos em um único documento que será conhecido como o Plano do Projeto.</span></p><p> </p><p><span style="font-family:Segoe UI;font-size:8pt;">Cada ação, dúvida, necessidade, confirmação de informação, tipo de resposta necessária, entre outras coisas, deverá constar no plano do projeto.</span></p><br> </p>
+
+</div>
+<div id="dfddaf1d-8782-49ce-b57f-199670e64888_doc" class="docelem" title="Elemento">
+<a name="dfddaf1d-8782-49ce-b57f-199670e64888" id="dfddaf1d-8782-49ce-b57f-199670e64888"></a>
+<img class="icon" src="diagrams/bpmnimg/ParallelGateway.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Inicio de atividades paralelas - As atividades a partir desse ponto ocorrem em paralelo</span></p><br> </p>
+
+</div>
+<div id="3e7dd178-3bb4-4bd9-9e4f-f8e27e578b73_doc" class="docelem" title="1.7 - Monitorar e avaliar projeto">
+<a name="3e7dd178-3bb4-4bd9-9e4f-f8e27e578b73" id="3e7dd178-3bb4-4bd9-9e4f-f8e27e578b73"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">É nessa atividade que as informações coletadas na atividade 1.6 e em outras atividades de monitoramento são acompanhadas e avaliados para saber a real situação do projeto pelo GP. a atividade ainda inclui a coleta, medição e distribuição de informações de desempenho e avaliação das medições e tendências para efetuar melhorias no processo. Nessa atividade são gerados relatórios e tomadas ações preventivas para evitar problemas futuros ou ações de otimização do desempenho do projeto. </span></p><br> </p><h4>Tipo de loop</h4><p>Padrão <br> </p><h4>Máximo ciclo</h4><p>0 <br> </p><h4>Tempo de teste</h4><p>Depois <br>  <br> </p>
+
+</div>
+<div id="40c46f3e-ea6b-4e1d-ba56-9c6bf168a7ee_doc" class="docelem" title="Elemento">
+<a name="40c46f3e-ea6b-4e1d-ba56-9c6bf168a7ee" id="40c46f3e-ea6b-4e1d-ba56-9c6bf168a7ee"></a>
+<img class="icon" src="diagrams/bpmnimg/ParallelGateway.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Fim de atividades em paralelo - Ponto de encontro das atividades que aconteceram em paralelo. Isso significa que a atividade seguinte só poderá ser executada após todas as anteriores terem sido realizadas com sucesso.</span></p><br> </p>
+
+</div>
+<div id="612932ab-26f1-49b1-af98-0f371b9f01ab_doc" class="docelem" title="1.8 - Finalizar projeto
+">
+<a name="612932ab-26f1-49b1-af98-0f371b9f01ab" id="612932ab-26f1-49b1-af98-0f371b9f01ab"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa atividade é onde ocorre o recolhimento das lições aprendidas, finalização formal com o aceite do cliente, finalização das aquisições e arquivamento do projeto e seus documentos. É a atividade de encerramento de todas as atividades, de todos os processos de gerenciamento do projeto. O GP irá averiguar o encerramento de todas as entregas anteriores para saber se o projeto teve todos os pacotes de trabalho completados de forma correta, como planejado. Inclui também a transferência formal da responsabilidade do projeto para o cliente e os setores a que cabem.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Além disso, é feito pelo Escritório de Projetos a avaliação do projeto, coletando informações de indicadores e informações do cliente. Essa avaliação será anexada a finalização do projeto e adicionado as bases históricas, como parte das lições aprendidas. O motivo dessa avaliação é detectar falhas que possam ter ocorrido nos processos, pontos de melhoria e oportunidades futuras.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Essa atividade poderá ser executada quando todos os pacotes de trabalho foram aceitos e não houver mais atividades do projeto a serem executadas, ou quando por alguma razão de força maior, houver a decisão sobre o cancelamento do projeto. No caso de cancelamento, deverá constar nas lições aprendidas, o motivo (em formato de justificativa formal) que levaram o cancelamento do projeto, o aceite formal do cliente concordando com o cancelamento e informações de todo o trabalho realizado até o momento da finalização. </span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Finalização do Projeto.odt" target="_blank">SPL - Finalização do Projeto.odt</a></p>
+</div>
+<div id="307eca3c-5125-482b-8a43-deba08b373f7_doc" class="docelem" title="Fim">
+<a name="307eca3c-5125-482b-8a43-deba08b373f7" id="307eca3c-5125-482b-8a43-deba08b373f7"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneEnd.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Finalização do projeto e repasse para operação.</span></p><br> </p>
+
+</div>
+<div id="b3c7a046-8b1c-49a8-99d8-eaa856eac28d_doc" class="docelem" title="5.3 - Monitorar riscos
+">
+<a name="b3c7a046-8b1c-49a8-99d8-eaa856eac28d" id="b3c7a046-8b1c-49a8-99d8-eaa856eac28d"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa etapa busca-se aplicar as ações do plano de resposta aos riscos; acompanhar e atualizar os riscos já identificados; monitorar, planejar e tratar os riscos residuais; identificar, planejar e tratar os novos riscos e avaliar a eficácia de resposta ao risco durante todo o projeto.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Outras finalidades indiretas do processo de monitoramento dos riscos: analisar se as premissas são válidas; analisar se as políticas e os procedimentos de gerenciamento dos riscos estão sendo seguidos e rever se as reservas de contingências, custo e tempo, estão de acordo ou devem ser adequados.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;">O responsável pela resposta ao risco deve informar periodicamente ao gerente do projeto sobre a eficácia do plano, os efeitos imprevistos e qualquer correção necessária para tratar o risco de forma adequada.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final, haverá atualização no documento de Riscos, caso necessário.</span></p><br> </p><h4>Tipo de loop</h4><p>Padrão <br> </p><h4>Máximo ciclo</h4><p>0 <br> </p><h4>Tempo de teste</h4><p>Depois <br>  <br> </p>
+
+</div>
+<div id="26c673a2-13ff-46a0-afab-2bb538aef91a_doc" class="docelem" title="1.6 - Coordenar a implementação do projeto
+">
+<a name="26c673a2-13ff-46a0-afab-2bb538aef91a" id="26c673a2-13ff-46a0-afab-2bb538aef91a"></a>
+<img class="icon" src="diagrams/bpmnimg/SubProcess.png" border="0" />
+
+<p><span class="InLinkBtn"><a href="26c673a2-13ff-46a0-afab-2bb538aef91a.htm">1.6 - Coordenar a implementação do projeto
+</a></span></p><h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Coordenar a implementação do projeto é a atividade de realização do trabalho definido no Plano detalhado do projeto para que os objetivos do mesmo sejam atingidos. O GP orienta o desempenho das atividades planejas referente a um pacote de trabalho e gerencia diversas interfaces técnicas e organizacionais que existem dentro do projeto. Essa atividade possui como uma de suas saídas, as entregas dos pacotes de trabalho planejados. Nessa atividade são fornecidas informações para o Gerenciamento de entregas, que serão usadas para realizar a verificação do trabalho atual realizado e o seu desempenho, e essas informações constituem também entradas para a atividade de avaliação.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Ilustrado aqui como um sub-processo. Durante o sub-processo serão gerados também indicadores do projeto.</span></p><br> </p><h4>Tipo de loop</h4><p>Padrão <br> </p><h4>Máximo ciclo</h4><p>0 <br> </p><h4>Tempo de teste</h4><p>Depois <br>  <br> </p>
+
+</div>
+<div id="431b3b35-cc39-41d6-833a-5958f77e4af4_doc" class="docelem" title="4.1 - Definir recursos do projeto
+">
+<a name="431b3b35-cc39-41d6-833a-5958f77e4af4" id="431b3b35-cc39-41d6-833a-5958f77e4af4"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;"> Nessa etapa busca-se confirmar os recursos necessários do projeto; especificar as  características e a quantidade; definir o período de tempo necessário de uso do recurso; as formas que serão adquiridos os recursos e qual o período previsto que o recurso deverá estar disponível para o projeto.</span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Deverão ocorrer reuniões diárias com as equipes do projeto, de TI e da área de negocio, para definir e detalhar os requisitos dos recursos, alinhado as expectativas das partes interessadas, a necessidade das atividades e a perspectiva de evolução da solução. </span></p><br> </p>
+
+</div>
+<div id="00eeef3e-2c99-4b3c-830b-a0461745b231_doc" class="docelem" title="4.2 - Definir custos do projeto
+">
+<a name="00eeef3e-2c99-4b3c-830b-a0461745b231" id="00eeef3e-2c99-4b3c-830b-a0461745b231"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa etapa busca se estimar o custo total do projeto. Inicialmente poderá ser em ordens de grandeza, com valores podendo ser estimados por: experiência, cotações anteriores, novas cotações ou baseado em contratos atuais ou anteriores, sempre aplicando a correção do período. No decorrer do processo de contratação e alocação os valores deverão ser adequados para refletir o custo final do projeto. </span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final existe a atualização da Planilha de Recursos.</span></p><br> </p>
+
+</div>
+<div id="5229abcb-73b7-4d3e-ae7e-28cf2eca0544_doc" class="docelem" title="5.1 - Analisar riscos
+">
+<a name="5229abcb-73b7-4d3e-ae7e-28cf2eca0544" id="5229abcb-73b7-4d3e-ae7e-28cf2eca0544"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa etapa busca-se identificar todos os riscos do projeto, positivos e negativos. Fazer a análise qualitativa e quantitativa de impacto do risco ao projeto. Podendo impactar as seguintes área do projeto: Escopo, Qualidade, Prazo e Custo. Com os seguintes níveis de impacto: Muito Baixo, Baixo, Médio, Alto e Muito Alto. </span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">As premissas e restrições do projeto são base para a identificação preliminar dos riscos. Deve-se usar no processo de identificação do risco a EAR - Estrutura Analítica de Risco lista um universo de riscos na área de TI. Podem ser usadas no processo técnicas de entrevistas, opiniões especializadas, brainstorming e análise das partes interessadas, para que seja alcançada a análise mais ampla dos riscos, minimizando os riscos negativos e maximizando as oportunidades dos riscos positivos.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">A atividade de análise de risco poderá ser acionada a qualquer momento no projeto, no decorrer do seu ciclo de vida. A acionamento poderá ser pelo monitoramento de riscos, com a identificação de novos riscos ou adequação de riscos já existente ou por solicitações de mudanças.</span></p><br> </p>
+
+</div>
+<div id="1f16be17-481e-4f25-929f-fc151310cf51_doc" class="docelem" title="5.2 - Planejar resposta a riscos
+">
+<a name="1f16be17-481e-4f25-929f-fc151310cf51" id="1f16be17-481e-4f25-929f-fc151310cf51"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Nessa etapa busca-se planejar ações e destinar recursos a serem usados caso o risco venha a ocorrer, para evitá-lo ou minimizá-lo. A reserva de recurso será a contingência necessária para aplicar a estratégia adotada no planejamento da respostas aos riscos</span></p><br> </p>
+
+</div>
+<div id="d22d40bf-9cf2-4dbc-b1b0-3967d200333a_doc" class="docelem" title="7.1 - Definir entrega">
+<a name="d22d40bf-9cf2-4dbc-b1b0-3967d200333a" id="d22d40bf-9cf2-4dbc-b1b0-3967d200333a"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">É nessa atividade que acontecerá a priorização de pacotes de trabalho pelo cliente. Essa atividade visa atender as reais necessidades do cliente, entregando o que ele realmente precisa para cada momento do projeto.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Após realizada a definição de quais serão os pacotes de trabalho do projeto, no gerenciamento do escopo, é feito a priorização, e a mesma poderá se repetir sempre que for necessário, ou seja, quando houver uma mudança de prioridades no projeto. Essa nova priorização acontecerá através de uma solicitação de mudanças.</span></p><br> </p>
+
+</div>
+<div id="e981376f-5f60-4c3c-a190-b059bc998498_doc" class="docelem" title="7.2 - Definir o plano de qualidade">
+<a name="e981376f-5f60-4c3c-a190-b059bc998498" id="e981376f-5f60-4c3c-a190-b059bc998498"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">É nessa atividade que serão identificados e definidos os requisitos e/ou padrões de qualidade do projeto e do produto, além da documentação de como demostrará conformidade. Em seguida deverá ser feito o plano da qualidade, que informará como será implantado a qualidade no projeto, e inclui o controle da qualidade, as abordagens de melhoria continua de processos para o projeto. No plano ainda conterá as métricas de qualidade, que são informações de como um processo ou produto ou pacote de trabalho será medido, quais os valores adotados para o seu padrão e os desvios aceitáveis.  </span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Também nessa atividade, serão criados os check-lists do projeto, que serão verificados na validação da entrega. Esse check-list será voltado ao pacote de trabalho e poderá ser diferente para cada pacote. É uma lista de verificação de principais pontos ligados a trabalhos realizados, funcionalidades implementadas e medidas tomadas para evitar riscos futuros (medidas de performance, segurança e outros).</span></p><p> </p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final será gerado o Plano de Qualidade</span></p><br> </p>
+
+</div>
+<div id="c80968d8-a4bc-4247-aa09-ce874514e722_doc" class="docelem" title="6 - Gerenciamento de Mudanças">
+<a name="c80968d8-a4bc-4247-aa09-ce874514e722" id="c80968d8-a4bc-4247-aa09-ce874514e722"></a>
+<img class="icon" src="diagrams/bpmnimg/SubProcess.png" border="0" />
+
+<p><span class="InLinkBtn"><a href="c80968d8-a4bc-4247-aa09-ce874514e722.htm">6 - Gerenciamento de Mudanças</a></span></p><h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Processo de gerenciamento de mudança. Ilustrado aqui como um sub-processo. Esse sub-processo poderá ser invocado a qualquer momento durante todo o ciclo de vida do projeto.</span></p><br> </p>
+
+</div>
+<div id="8bba96f0-f72d-4e20-a602-8948d930f93c_doc" class="docelem" title="Iniciação ">
+<a name="8bba96f0-f72d-4e20-a602-8948d930f93c" id="8bba96f0-f72d-4e20-a602-8948d930f93c"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="bdba734b-f106-4652-9de1-62e43ce2f14c_doc" class="docelem" title="Planejamento">
+<a name="bdba734b-f106-4652-9de1-62e43ce2f14c" id="bdba734b-f106-4652-9de1-62e43ce2f14c"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="a58fd9ee-93e7-452c-9a2d-70a04d92d52b_doc" class="docelem" title="Execurção / Monitoramento e Controle">
+<a name="a58fd9ee-93e7-452c-9a2d-70a04d92d52b" id="a58fd9ee-93e7-452c-9a2d-70a04d92d52b"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="18361bc7-0983-4f90-91b3-dc439576d62b_doc" class="docelem" title="Finalização">
+<a name="18361bc7-0983-4f90-91b3-dc439576d62b" id="18361bc7-0983-4f90-91b3-dc439576d62b"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+
+							</div>
+							<img src="diagrams/metodologia.png" border="0" usemap="#map" class="map" />
+							<map name="map">
+								<area shape="rect" class="diagelem" coords="20,20,70,998" title="
+" href="#73c02a33-f2e9-42b9-b2ec-68e08c7967fc" />
+<area shape="circle" class="diagelem" coords="125,67,15" title="É detectado uma necessidade que deve ser tretada como projeto
+" href="#a1cd34d2-165d-4f4b-88cf-c4a76b35b8f6" />
+<area shape="rect" class="diagelem" coords="187,37,277,97" title="Nessa atividade será feito o levantamento de requisitos de alto nível e preenchimento inicial do documento &quot;Relatório de Viabilidade&quot;, onde será informado o resumo executivo e quais são os requisitos, e os dados iniciais de identificação do projeto.Os requisitos de alto nível são requisitos em uma visão macro do projeto. É o produto (ou produtos) gerado como resultado do projeto, e as principais funções e necessidades desse produtos. Esses requisitos serão usados mais adiante, onde serão detalhados.
+" href="#fc405cf0-311a-4e73-826d-47aa103d4d86" />
+<area shape="rect" class="diagelem" coords="329,37,419,97" title="Nessa atividade será feito a analise de viabilidade do projeto. É feito um estudo em relação a soluções já existentes no mercado, feito um melhor detalhamento do projeto, e feito uma analise dos beneficios que o projeto irá trazer x o seu custo. Levará em consideração também os riscos iniciais do projeto.
+" href="#f53fe0c1-8da5-42fd-beb6-b695c6c88057" />
+<area shape="rect" class="diagelem" coords="460,37,562,97" title="Preencimento do formulário SPL 30 - Termo de Abertura do projeto (TAP). O Tap é o principal documento do projeto e informa a organização que o projeto existe. Nele se encontrará as informações sobre o projeto, sem um nível de detalhamento aprofundado, informações sobre resultados esperados e justificativas do porque do projeto existir.
+" href="#aecf9cf6-90c7-4249-918d-b671e263706e" />
+<area shape="rect" class="diagelem" coords="605,37,695,97" title="Priorização de projetos realizada pelo Comitê de Governança de TI baseado no TAP e no Relatório de Viabilidade
+" href="#47ad7bf7-b284-4619-b295-a779b3dff2f0" />
+<area shape="rect" class="diagelem" coords="605,159,695,219" title="Atividade onde serão detalhados junto ao cliente, supervisões e demais unidades envolvidas, os requisitos do projeto, a fim de determinar todas as necessidades e caracteristicas do projeto e do produto. Deverá ser criado os documentos: Matriz de rastreabilidade de requisitos, Relatório de Requisitos, Plano de Gerenciamento de Requisitos (parte do plano do projeto)
+" href="#75e76ab5-6854-4924-bd37-355ae21605fa" />
+<area shape="rect" class="diagelem" coords="466,156,557,223" title="Nessa atividade consiste em dividir os requisitos por funcionalidades / partes, que atendem as necessidades e urgências do cliente. Teremos um planejamento voltado ao cliente. As funcionalidades / partes serão organizadas por prioridade (a ser definido no Gerenciamento de Entregas). Cada pacote de trabalho irá representar uma entrega (um marco) para o cliente, como parte do todo do projeto / produto. A partir dai poderemos então definir nossa EAP, orientada aos pacotes de trabalho e realizar o planejamento correto do projeto, para atender todos os requisitos acordados com o cliente. Ao final deverá ser preencida a Declaração do escopo do projeto
+" href="#a036ae73-2ef8-4d86-b500-35ed8e170184" />
+<area shape="rect" class="diagelem" coords="329,159,419,219" title="Criar a EAP é o processo de subdivisão das entregas e dos pacotes de trabalho do projeto em componentes menores e de gerenciamento mais fácil. A estrutura analítica do projeto (EAP) é uma decomposição hierárquica orientada as entregas do trabalho a ser executado pela equipe para atingir os objetivos do projeto e criar as entregas requisitadas, sendo que cada nível descendente da EAP representa uma definição gradualmente mais detalhada da definição do trabalho do projeto.
+" href="#4a57c6a7-b6c8-49a8-851c-a3b015591f50" />
+<area shape="rect" class="diagelem" coords="187,159,277,219" title="É nessa atividade onde será feito a validação de toda a documentação de escopo produzida até o momento. O cliente poderá realizar a consulta da documentação, verificar as priorizações dos pacotes de trabalho, verificar a EAP e dicionário da EAP, a fim de certifica-se que todas as suas necessidades serão atendidas e foram documentadas. Essa é uma forma de proteger o cliente e o projeto de dúvidas quando ao real trabalho que deve ser feito para atingir os objetivos proposto com o projeto. Ao final será atualizado a Declaração do escopo do projeto e demais documentos, conforme necessário.
+" href="#402c161c-9ee6-4f37-9d27-d9d1f145d2c9" />
+<area shape="poly" class="diagelem" coords="105,189,125,169,145,189,125,209" title="Inicio de atividades paralelas - As atividades a partir desse ponto ocorrem em paralelo
+" href="#49a11e01-4404-43da-aa24-1a9bf17cb4d5" />
+<area shape="rect" class="diagelem" coords="187,253,277,318" title="Na identificação das atividades do projeto devem-se considerar todas as tarefas que podem influenciar no andamento do projeto, são elas, mas não se limitam: as fases de entrega, as restrições, premissas, fatores ambientais, os ativos do processo organizacional (políticas procedimentos, diretrizes e lições apreendidas), as atividades para construção da solução, o planejamento do projeto, a finalização, os ações para atuar nos riscos, as aquisições, os recursos, a comunicação, a garantia da qualidade, as mudanças e seus impactos e a integração. Ao final será preencida a lista de marcos 
+" href="#aaff9fba-0722-4253-915f-2f170c1050ff" />
+<area shape="rect" class="diagelem" coords="331,250,421,320" title="Nessa etapa busca-se estimar o esforço necessário para terminar as atividades identificadas e os tipos e quantidades de materiais, pessoas, equipamentos ou suprimentos necessários para realizar cada atividade no tempo esperado.A estimativa de tempo da atividade deve ser realizada pela pessoa ou grupo de pessoas do projeto que estão mais familiarizados com a natureza do trabalho da atividade específica. A estimativa do tempo é elaborada progressivamente, considerando a qualidade e os dados de entrada. Todos os dados e premissas usados para estimar a atividade devem ser documentados e servir para comparativos futuro e lições aprendidas.Os recursos estimados para atividade poderão ter um efeito na duração da atividade, já que os recursos destinados para ela influenciam significativa a duração da maioria das atividades. Como exemplo: se recursos adicionais são acrescentados a uma atividade pode reduzir o tempo necessário para sua conclusão ou recursos com menor nível de habilidade destinado para uma atividade, pode impactar em um tempo maior para sua conclusão.Ao final existe a atualização da Planilha de Recursos e da Lista de Atividades e Marcos. 
+" href="#07e512e9-6b10-4268-b256-b146862c898f" />
+<area shape="poly" class="diagelem" coords="491,285,511,265,531,285,511,305" title="Fim de atividades em paralelo - Ponto de encontro das atividades que aconteceram em paralelo. Isso significa que a atividade seguinte só poderá ser executada após todas as anteriores terem sido realizadas com sucesso.
+" href="#b1f7e9f7-c0ad-405f-a14e-b7cca8f57fbb" />
+<area shape="rect" class="diagelem" coords="605,255,695,315" title=" Nessa etapa busca-se planejar e realizar as aquisições do projeto. Até o limite de valor de R$ 8.000,00 (oito mil reais) a modalidade pode ser: compra direta, com três propostas, ou cotação eletrônica. Sem limite de valor temos licitação, conforme a norma SAD_046, . Outra possibilidade é a dispensa de licitação para casos emergências, sendo a possibilidade de celebração direta de contrato entre a administração pública e o particular, nos casos estabelecidos no art. 24, da Lei n° 8.666/93. Em anexo o modelo de termo de referência para aquisição 
+" href="#205d5203-6605-48d8-a6b0-fdd6d415d6d0" />
+<area shape="rect" class="diagelem" coords="605,357,695,417" title="Nessa etapa busca-se alocar os recursos necessários nas atividades no prazo necessário para garantir o bom andamento do projeto. Confirmar a disponibilidade dos recursos conforme planejado. Garantir a obtenção dos recursos conforme o cronograma e mobilizara a equipe necessária para as designações do projeto. Gerenciar mudanças para otimizar o desempenho do projeto. Na mobilização dos recursos humanos, a equipe pode ou não ter o controle direto sobre a seleção dos membros da equipe. Ao final existe a atualização da Planilha de Recursos.
+" href="#923158bf-d5e7-4fca-817a-423728c4aa52" />
+<area shape="rect" class="diagelem" coords="605,446,695,511" title="Nessa etapa busca-se identificar as dependências entre as atividades, analisar as sequências das atividades, alocar os recursos necessários e aplicar as restrições necessárias visando criar o cronograma do projeto.Na sequenciação será criada uma rede de dependências entre as atividades. Cada atividade é conectada a uma ou mais predecessoras e sucessoras. Pode-se aplicar uso do tempo de antecipação e espera para prover um cronograma mais realístico.Ao final será criado o cronograma inicial dentro do SGP (Sistema de Gestão de Projetos)
+" href="#52562404-1793-431b-ae93-d66df0265904" />
+<area shape="rect" class="diagelem" coords="605,537,695,601" title="Nessa atividade serão reúnidos todos os planos e documentos gerados ao longo do planejamento e unidos em um único documento que será conhecido como o Plano do Projeto. Cada ação, dúvida, necessidade, confirmação de informação, tipo de resposta necessária, entre outras coisas, deverá constar no plano do projeto.
+" href="#2931011d-19ad-4812-ae52-f12bd4d1bbc8" />
+<area shape="poly" class="diagelem" coords="630,678,650,658,670,678,650,698" title="Inicio de atividades paralelas - As atividades a partir desse ponto ocorrem em paralelo
+" href="#dfddaf1d-8782-49ce-b57f-199670e64888" />
+<area shape="rect" class="diagelem" coords="465,742,557,802" title="É nessa atividade que as informações coletadas na atividade 1.6 e em outras atividades de monitoramento são acompanhadas e avaliados para saber a real situação do projeto pelo GP. a atividade ainda inclui a coleta, medição e distribuição de informações de desempenho e avaliação das medições e tendências para efetuar melhorias no processo. Nessa atividade são gerados relatórios e tomadas ações preventivas para evitar problemas futuros ou ações de otimização do desempenho do projeto. 
+" href="#3e7dd178-3bb4-4bd9-9e4f-f8e27e578b73" />
+<area shape="poly" class="diagelem" coords="337,864,357,844,377,864,357,884" title="Fim de atividades em paralelo - Ponto de encontro das atividades que aconteceram em paralelo. Isso significa que a atividade seguinte só poderá ser executada após todas as anteriores terem sido realizadas com sucesso.
+" href="#40c46f3e-ea6b-4e1d-ba56-9c6bf168a7ee" />
+<area shape="rect" class="diagelem" coords="312,926,402,986" title="Nessa atividade é onde ocorre o recolhimento das lições aprendidas, finalização formal com o aceite do cliente, finalização das aquisições e arquivamento do projeto e seus documentos. É a atividade de encerramento de todas as atividades, de todos os processos de gerenciamento do projeto. O GP irá averiguar o encerramento de todas as entregas anteriores para saber se o projeto teve todos os pacotes de trabalho completados de forma correta, como planejado. Inclui também a transferência formal da responsabilidade do projeto para o cliente e os setores a que cabem.Além disso, é feito pelo Escritório de Projetos a avaliação do projeto, coletando informações de indicadores e informações do cliente. Essa avaliação será anexada a finalização do projeto e adicionado as bases históricas, como parte das lições aprendidas. O motivo dessa avaliação é detectar falhas que possam ter ocorrido nos processos, pontos de melhoria e oportunidades futuras.Essa atividade poderá ser executada quando todos os pacotes de trabalho foram aceitos e não houver mais atividades do projeto a serem executadas, ou quando por alguma razão de força maior, houver a decisão sobre o cancelamento do projeto. No caso de cancelamento, deverá constar nas lições aprendidas, o motivo (em formato de justificativa formal) que levaram o cancelamento do projeto, o aceite formal do cliente concordando com o cancelamento e informações de todo o trabalho realizado até o momento da finalização. 
+" href="#612932ab-26f1-49b1-af98-0f371b9f01ab" />
+<area shape="circle" class="diagelem" coords="511,956,15" title="Finalização do projeto e repasse para operação.
+" href="#307eca3c-5125-482b-8a43-deba08b373f7" />
+<area shape="rect" class="diagelem" coords="468,834,558,894" title="Nessa etapa busca-se aplicar as ações do plano de resposta aos riscos; acompanhar e atualizar os riscos já identificados; monitorar, planejar e tratar os riscos residuais; identificar, planejar e tratar os novos riscos e avaliar a eficácia de resposta ao risco durante todo o projeto.Outras finalidades indiretas do processo de monitoramento dos riscos: analisar se as premissas são válidas; analisar se as políticas e os procedimentos de gerenciamento dos riscos estão sendo seguidos e rever se as reservas de contingências, custo e tempo, estão de acordo ou devem ser adequados.O responsável pela resposta ao risco deve informar periodicamente ao gerente do projeto sobre a eficácia do plano, os efeitos imprevistos e qualquer correção necessária para tratar o risco de forma adequada.Ao final, haverá atualização no documento de Riscos, caso necessário.
+" href="#b3c7a046-8b1c-49a8-99d8-eaa856eac28d" />
+<area shape="rect" class="diagelem" coords="456,646,546,706" title="Coordenar a implementação do projeto é a atividade de realização do trabalho definido no Plano detalhado do projeto para que os objetivos do mesmo sejam atingidos. O GP orienta o desempenho das atividades planejas referente a um pacote de trabalho e gerencia diversas interfaces técnicas e organizacionais que existem dentro do projeto. Essa atividade possui como uma de suas saídas, as entregas dos pacotes de trabalho planejados. Nessa atividade são fornecidas informações para o Gerenciamento de entregas, que serão usadas para realizar a verificação do trabalho atual realizado e o seu desempenho, e essas informações constituem também entradas para a atividade de avaliação.Ilustrado aqui como um sub-processo. Durante o sub-processo serão gerados também indicadores do projeto.
+" href="#26c673a2-13ff-46a0-afab-2bb538aef91a" />
+<area shape="rect" class="diagelem" coords="187,357,277,417" title=" Nessa etapa busca-se confirmar os recursos necessários do projeto; especificar as  características e a quantidade; definir o período de tempo necessário de uso do recurso; as formas que serão adquiridos os recursos e qual o período previsto que o recurso deverá estar disponível para o projeto. Deverão ocorrer reuniões diárias com as equipes do projeto, de TI e da área de negocio, para definir e detalhar os requisitos dos recursos, alinhado as expectativas das partes interessadas, a necessidade das atividades e a perspectiva de evolução da solução. 
+" href="#431b3b35-cc39-41d6-833a-5958f77e4af4" />
+<area shape="rect" class="diagelem" coords="329,357,419,417" title="Nessa etapa busca se estimar o custo total do projeto. Inicialmente poderá ser em ordens de grandeza, com valores podendo ser estimados por: experiência, cotações anteriores, novas cotações ou baseado em contratos atuais ou anteriores, sempre aplicando a correção do período. No decorrer do processo de contratação e alocação os valores deverão ser adequados para refletir o custo final do projeto.  Ao final existe a atualização da Planilha de Recursos.
+" href="#00eeef3e-2c99-4b3c-830b-a0461745b231" />
+<area shape="rect" class="diagelem" coords="187,448,277,508" title="Nessa etapa busca-se identificar todos os riscos do projeto, positivos e negativos. Fazer a análise qualitativa e quantitativa de impacto do risco ao projeto. Podendo impactar as seguintes área do projeto: Escopo, Qualidade, Prazo e Custo. Com os seguintes níveis de impacto: Muito Baixo, Baixo, Médio, Alto e Muito Alto. As premissas e restrições do projeto são base para a identificação preliminar dos riscos. Deve-se usar no processo de identificação do risco a EAR - Estrutura Analítica de Risco lista um universo de riscos na área de TI. Podem ser usadas no processo técnicas de entrevistas, opiniões especializadas, brainstorming e análise das partes interessadas, para que seja alcançada a análise mais ampla dos riscos, minimizando os riscos negativos e maximizando as oportunidades dos riscos positivos.A atividade de análise de risco poderá ser acionada a qualquer momento no projeto, no decorrer do seu ciclo de vida. A acionamento poderá ser pelo monitoramento de riscos, com a identificação de novos riscos ou adequação de riscos já existente ou por solicitações de mudanças.
+" href="#5229abcb-73b7-4d3e-ae7e-28cf2eca0544" />
+<area shape="rect" class="diagelem" coords="329,448,419,508" title="Nessa etapa busca-se planejar ações e destinar recursos a serem usados caso o risco venha a ocorrer, para evitá-lo ou minimizá-lo. A reserva de recurso será a contingência necessária para aplicar a estratégia adotada no planejamento da respostas aos riscos
+" href="#1f16be17-481e-4f25-929f-fc151310cf51" />
+<area shape="rect" class="diagelem" coords="187,539,277,599" title="É nessa atividade que acontecerá a priorização de pacotes de trabalho pelo cliente. Essa atividade visa atender as reais necessidades do cliente, entregando o que ele realmente precisa para cada momento do projeto.Após realizada a definição de quais serão os pacotes de trabalho do projeto, no gerenciamento do escopo, é feito a priorização, e a mesma poderá se repetir sempre que for necessário, ou seja, quando houver uma mudança de prioridades no projeto. Essa nova priorização acontecerá através de uma solicitação de mudanças.
+" href="#d22d40bf-9cf2-4dbc-b1b0-3967d200333a" />
+<area shape="rect" class="diagelem" coords="329,539,419,599" title="É nessa atividade que serão identificados e definidos os requisitos e/ou padrões de qualidade do projeto e do produto, além da documentação de como demostrará conformidade. Em seguida deverá ser feito o plano da qualidade, que informará como será implantado a qualidade no projeto, e inclui o controle da qualidade, as abordagens de melhoria continua de processos para o projeto. No plano ainda conterá as métricas de qualidade, que são informações de como um processo ou produto ou pacote de trabalho será medido, quais os valores adotados para o seu padrão e os desvios aceitáveis.   Também nessa atividade, serão criados os check-lists do projeto, que serão verificados na validação da entrega. Esse check-list será voltado ao pacote de trabalho e poderá ser diferente para cada pacote. É uma lista de verificação de principais pontos ligados a trabalhos realizados, funcionalidades implementadas e medidas tomadas para evitar riscos futuros (medidas de performance, segurança e outros). Ao final será gerado o Plano de Qualidade
+" href="#e981376f-5f60-4c3c-a190-b059bc998498" />
+<area shape="rect" class="diagelem" coords="149,659,239,719" title="Processo de gerenciamento de mudança. Ilustrado aqui como um sub-processo. Esse sub-processo poderá ser invocado a qualquer momento durante todo o ciclo de vida do projeto.
+" href="#c80968d8-a4bc-4247-aa09-ce874514e722" />
+<area shape="rect" class="diagelem" coords="70,20,100,122" title="" href="#8bba96f0-f72d-4e20-a602-8948d930f93c" />
+<area shape="rect" class="diagelem" coords="70,122,100,627" title="" href="#bdba734b-f106-4652-9de1-62e43ce2f14c" />
+<area shape="rect" class="diagelem" coords="70,627,100,908" title="" href="#a58fd9ee-93e7-452c-9a2d-70a04d92d52b" />
+<area shape="rect" class="diagelem" coords="70,908,100,998" title="" href="#18361bc7-0983-4f90-91b3-dc439576d62b" />
+
+							</map>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

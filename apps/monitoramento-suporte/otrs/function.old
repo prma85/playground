@@ -1,0 +1,150 @@
+<?php
+$sql = "select
+			t.id as id,
+			t.customer_id as solicitante,
+			case when substr(s.name,1,instr(s.name,'::',1)-1) is not null
+				then substr(s.name,1,instr(s.name,'::',1)-1)
+				else trim(s.name) end as categoria,
+			case when substr(s.name,1,instr(s.name,'::',1)-1) is not null
+				then substr(s.name,instr(s.name,'::',1)+2,length(s.name))
+				else '' end as subcategoria,
+			t.title as assunto,
+			col.col_dsc_apelido as tecnico,
+			uad.uad_sgl_unidade_administrativa as unidade,
+			case when tst.name='open' then 'Aberto'
+			  when tst.name='new' then 'Novo' end as status,
+			to_char(t.create_time,'DD/MM/YYYY HH24:MI:SS') as criacao,
+			(to_date('".date("d/m/Y H:i:s")."','DD/MM/RRRR HH24:MI:SS') - to_date(t.create_time,'DD/MM/RRRR HH24:MI:SS'))*24 as decorrido_hora,
+			(to_date('".date("d/m/Y H:i:s")."','DD/MM/RRRR HH24:MI:SS') - to_date(t.create_time,'DD/MM/RRRR HH24:MI:SS'))*1440 as decorrido_minuto,
+			tst.id as state
+		from
+			ticket t,
+			ticket_state ts,
+			ticket_state_type tst,
+			service s,
+			col_colaborador col,
+			uad_unidade_administrativa uad
+		where t.type_id=ts.id
+			and ts.type_id=tst.id
+			and t.service_id=s.id
+			and tst.id not in (3,21,41,42,43,44)
+			and lower(t.customer_user_id)=trim(lower(col.col_dsc_login))
+			and uad.uad_cod_unidade_administrativa=col.uad_cod_unidade_administrativa";
+  
+$sql2 = "SELECT *
+		from
+			 ticket t,
+			 ticket_state ts,
+			 ticket_state_type tst,
+			 service s,
+			 col_colaborador col,
+			 uad_unidade_administrativa uad
+		where t.type_id=ts.id
+		  and ts.type_id=tst.id
+		  and t.service_id=s.id
+		  and lower(t.customer_user_id)=trim(lower(col.col_dsc_login))
+		  and uad.uad_cod_unidade_administrativa=col.uad_cod_unidade_administrativa
+		ORDER BY T.CREATE_TIME desc";
+  
+ echo '<pre>';
+$abertos = retornaOracle ($sql,1);
+$fechadosHoje	= retornaOracle ("select count (*) as total from ticket where ticket_state_id in (2,21) and to_date(change_time,'DD/MM/YYYY')=to_date(sysdate,'DD/MM/YYYY')");
+$fechadosMes 	= retornaOracle ("select count (*) as total from ticket where ticket_state_id in (2,21) and create_time>='01/Aug/2012' AND change_time<=LAST_DAY(SYSDATE)");
+$pendentes 		= retornaOracle ("select count (*) as total from ticket where ticket_state_id in (41,42,43,44) and create_time>='01/Aug/2012'");
+$debug = retornaOracle ($sql2);
+//var_dump ($abertos);
+echo '</pre>';
+function retornaOracle($sql, $total=0) {
+	PutEnv("ORACLE_SID=CGORA2");
+	PutEnv("ORACLE_HOME=/opt/oracle_10_2");
+	PutEnv("TNS_ADMIN=/opt/oracle_10_2");
+	
+	$lista = array();
+	$prepare = '';
+	$i = 0;
+	$verde = $amarelo = $laranja = $vermelho = $preto = $hoje = $mes = $finalizados_mes = $finalizados_dia = 0;
+	
+	$conn = oci_connect('OTRS', '0TRS', 'CGORA2','AL32UTF8');
+	if (!$conn) {
+		$e = oci_error();
+		trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+	}
+	
+	$prepare = oci_parse($conn,$sql) or die ('Existe um erro na sua consulta SQL');
+	oci_execute($prepare) or die ('Existe um erro na sua consulta SQL <br />'.$sql);
+	while ($result = oci_fetch_object($prepare,OCI_ASSOC)){
+		$lista[$i] = $result;
+		
+		if (isset($lista[$i]->CRIACAO)){
+			if (isset($lista[$i]->DECORRIDO_MINUTO)) {
+				$lista[$i]->DECORRIDO_HORA = number_format($lista[$i]->DECORRIDO_HORA,4,',','.');
+				$lista[$i]->DECORRIDO_MINUTO = number_format($lista[$i]->DECORRIDO_MINUTO,4,',','');
+				
+				if ($lista[$i]->DECORRIDO_MINUTO <= 60) {
+					$lista[$i]->STATUS = "verde";
+					$verde++;
+				} elseif ($lista[$i]->DECORRIDO_MINUTO > 60 && $lista[$i]->DECORRIDO_MINUTO <= 120) {
+					$lista[$i]->STATUS = "amarelo";
+					$amarelo++;
+				} elseif ($lista[$i]->DECORRIDO_MINUTO > 120 && $lista[$i]->DECORRIDO_MINUTO <= 240) {
+					$lista[$i]->STATUS = "laranja";
+					$laranja++;
+				} elseif ($lista[$i]->DECORRIDO_MINUTO > 240 && $lista[$i]->DECORRIDO_MINUTO <= 1440) {
+					$lista[$i]->STATUS = "vermelho";
+					$vermelho++;
+				} elseif ($lista[$i]->DECORRIDO_MINUTO > 1440) {
+					$lista[$i]->STATUS = "preto";
+					$preto++;
+				}
+			}
+		}
+		
+		if (isset($lista[$i]->SOLICITANTE)){
+			$lista[$i]->SOLICITANTE = trim(ucwords(strtolower(htmlentities($lista[$i]->SOLICITANTE))));
+		}
+		
+		if (isset($lista[$i]->TECNICO)){
+			$lista[$i]->TECNICO = trim(ucwords(strtolower(htmlentities($lista[$i]->TECNICO))));
+		}
+		
+		if (isset($lista[$i]->UNIDADE)){
+			$lista[$i]->UNIDADE=trim($lista[$i]->UNIDADE);
+		}
+		
+		$i++;
+	}
+	
+	oci_close($conn);
+	
+	if (count($lista) != 0) {
+		if ($total==1) {
+			foreach ($lista as $item) {
+				$item->TOTAL = $i;
+				
+				if (isset($item->STATUS)){
+					$item->TOTAL_VERDE = str_pad($verde, 3, "0", STR_PAD_LEFT);
+					$item->TOTAL_AMARELO = str_pad($amarelo, 3, "0", STR_PAD_LEFT);
+					$item->TOTAL_LARANJA = str_pad($laranja, 3, "0", STR_PAD_LEFT);
+					$item->TOTAL_VERMELHO = str_pad($vermelho, 3, "0", STR_PAD_LEFT);
+					$item->TOTAL_PRETO = str_pad($preto, 3, "0", STR_PAD_LEFT);
+					
+				}
+			}
+		}
+	}
+	
+	if (count($lista) == 1) {
+		$obj = $lista[0];
+		$lista = $obj;
+		if (isset($lista->TOTAL)){
+			$string = $lista->TOTAL;
+			$lista = (int)$string;
+		}
+	}
+	
+	if (count($lista) == 0) {
+		$lista = null;
+	}
+	
+	return $lista;
+}

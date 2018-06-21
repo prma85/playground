@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=100" />
+	<title>1.6 - Coordenar a implementação do projeto
+</title>
+	<link type="text/css" href="css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+	<link href="css/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <link media="screen" type="text/css" href="css/main.css" rel="stylesheet" />
+	<!--[if IE 7]>
+	<link media="screen" type="text/css" href="css/main_ie7.css" rel="stylesheet" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/ui.tabs.paging.js"></script>
+	<script type="text/javascript" src="js/jquery.maphilight.min.js"></script>
+	<script type="text/javascript" src="js/jquery.watermarkinput.js"></script>
+	<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+	<!--<script type="text/javascript" src="js/shiftzoom.js"></script>-->
+	<script type="text/javascript" src="js/jquery.hashtable-1.1.js"></script>
+	<script type="text/javascript">
+		/* Textbox Watermark plugin */
+		$(function($) {
+			$("#q").Watermark('Pesquisar');
+		});
+
+		/* Shiftzoom plugin */
+		//if (document.images && document.createElement && document.getElementById) {
+		//	document.writeln('<style type="text/css">');
+		//	document.writeln('	img.shiftzoom { visibility: hidden; }');
+		//	document.writeln('<\/style>');
+		//}
+
+		$(document).ready(function() { 
+
+			/* Tabs plugin */
+			$("#tabs").tabs({
+				selected: 1
+				, select: function(event, ui) {
+					var url = $.data(ui.tab, 'load.tabs');
+					if (url) {
+						location.href = url;
+						return false;
+					}
+					return true;
+				}
+			});
+
+			$("#tabs").tabs('paging');
+
+			/* Autocomplete plugin */
+			var ht = new jQuery.Hashtable();
+			ht.add("3.4 - Gerenciar atividades do cronograma ","956ac2cf-9ef5-4451-b001-ea3641fe9e84");
+ht.add("4.5 - Gerenciar recursos","b7054e99-ed7e-40eb-a2e7-ce03f00384a2");
+ht.add("7.3 - Validar a entrega","86d198d6-8d2b-4616-b8ab-c89caf6ff510");
+ht.add("7.4 - Finalizar entrega ","810f4007-5f03-464b-8e31-6e249ef8e297");
+ht.add("Fim do projeto?","734a7875-66bd-4b2c-9cdf-f69500b9497c");
+ht.add("Elemento","6c20a6e8-8086-4fb5-96f7-cd91e75b9af6");
+ht.add("Fim","2bf736ce-f1d9-4249-8f4a-9178a939cd36");
+ht.add("Inicio","61a16e31-316b-4bf3-b885-da1107111794");
+
+			var data = '3.4 - Gerenciar atividades do cronograma |4.5 - Gerenciar recursos|7.3 - Validar a entrega|7.4 - Finalizar entrega |Fim do projeto?|Elemento|Fim|Inicio'.split('|');
+			$("#q").autocomplete(data, { matchContains: true});
+			$('#q').result(function(event, data, formatted) {
+				var val = ht.get(formatted.toString());
+				var anchor = '#' + val;
+				var dia = anchor + '_doc';
+				$(dia).dialog('open');
+			});
+
+			/* Show/hide Pan & Zoom */
+			//$('#diagramimagepan').hide();
+
+			//$('#pan').click(function() {
+			//	$(this).toggleClass("down");
+
+			//	if ($(this).hasClass("down")) {
+			//		$('#diagramimage').hide();
+			//		$('#diagramimagepan').show('slow');
+			//		$(this).text('Visão Normal');
+			//	} else {
+			//		$('#diagramimagepan').hide();
+			//		$('#diagramimage').show('slow');
+			//		$(this).text('Visão Pan & Zoom');
+			//	}
+			//});
+			
+			/* Dialog plugin */
+			var minWidth = 610;
+			if ($(".docelem img").hasClass("imageForm")) {
+				var width = $(".docelem .imageForm").width();
+			} else {
+				var width = minWidth;
+			};
+			$('.docelem').dialog({ 
+				autoOpen: false, 
+				width: (width + 30),
+				height: 480, 
+				modal: true,
+				show: 'slide'
+			});
+			$('.docelem').dialog('option', 'minWidth', 640);
+			
+			$('.diagelem').click(function() {
+				var t = $(this).attr('href');
+				t = t.replace('#', '');
+				var dia = $(this).attr('href') + '_doc';
+				
+				$(dia).dialog('open');
+			});
+
+			/* Map Highlight plugin */
+			$(function() {
+				$('.map').maphilight();
+			});
+
+            // Set height diagramimage
+            if($.browser.msie){                         
+                $("#diagram-image").height($("#diagramimage").height());               
+            }
+		});
+	</script>
+	
+   
+
+	<script type="text/javascript" src="js/cufon-yui.js"></script>
+	<script type="text/javascript" src="js/BeauSansRegular.js"></script>    
+    <!--<script type="text/javascript">
+	    // <![CDATA[
+	    Cufon.replace('h1');
+	    Cufon.replace('h2');
+	    Cufon.replace('h3');
+	    //Cufon.replace('h4');
+	    Cufon.replace('.ui-dialog-title');
+	    Cufon.replace('.layout-type a', {
+	        hover: true
+	    });
+	    Cufon.replace('.BizAgi li a', {
+	        hover: true
+	    });
+
+	    Cufon.replace('.tabs a', {
+	        hover: true
+	    });
+	    Cufon.replace('#topnav a', {
+	        hover: true
+	    });
+
+	    //]]>
+	</script>-->
+</head>
+<body>
+
+	<div id="contentwrapper">
+		<div id="header">
+			<h1>
+				metodologia de gerenciamento de projetos da geinf</h1>
+		</div>
+		<div id="tabs">
+			<ul class="tabs">
+				<li><a href="index.html" title="tabs-1">Metodologia do escritório de projetos</a></li>
+<li><a href="#tabs-0" title="tabs-0">1.6 - Coordenar a implementação do projeto
+</a></li>
+<li><a href="c80968d8-a4bc-4247-aa09-ce874514e722.htm" title="tabs-2">6 - Gerenciamento de Mudanças</a></li>
+
+			</ul>
+			<div id="content">
+				<div id="tabs-0">
+					<div class="layout-type">
+						<ul id="topnav">
+							<li class="home"><a href="default.htm">Principal</a></li>
+						</ul>
+						<ul>
+							<li><span class="search"><input id="q" name="q" type="text" style="color:#3A3A3A"/></span></li>
+						</ul>
+					</div>
+					<div>
+						<a href="index.html"><< Ir para Matriz</a> Metodologia do escritório de projetos
+					</div>
+					<div id="diagram-image">
+						<div id="diagramimage" align="center">
+							<div id="documentation" style="visibility: hidden;">
+							<div id="956ac2cf-9ef5-4451-b001-ea3641fe9e84_doc" class="docelem" title="3.4 - Gerenciar atividades do cronograma">
+<a name="956ac2cf-9ef5-4451-b001-ea3641fe9e84" id="956ac2cf-9ef5-4451-b001-ea3641fe9e84"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">Nessa etapa busca-se aplicar acompanhar, atualizar e garantir que as atividades previstas no cronograma sejam implementadas, no prazo previsto. Deverá ser alimentado o percentual de execução, replanejar atividades, identificar novas atividades e atividades que não serão executadas durante todo o projeto.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Dentre essas ações nas atividades identificadas no projeto podemos especificar, mas não limitar, as seguintes: aplicar e acompanhar atividades necessárias para comunicação com todas as partes interessadas, uma das ações mais importante do projeto, garantido em muitas vezes o sucesso ou insucesso do projeto; incluir no cronograma as atividades de mudanças aprovadas, no processo de gerenciamento das mudanças, e acompanhar e garantir a implementação das mesmas; garantir a implementação das atividades testes e garantia da qualidade, previstas no plano de qualidade.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Ao final, são realizados as atualizações de documentos do projeto, conforme necessário</span></p><br> </p>
+
+</div>
+<div id="b7054e99-ed7e-40eb-a2e7-ce03f00384a2_doc" class="docelem" title="4.5 - Gerenciar recursos">
+<a name="b7054e99-ed7e-40eb-a2e7-ce03f00384a2" id="b7054e99-ed7e-40eb-a2e7-ce03f00384a2"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Nessa etapa busca-se aplicar acompanhar, atualizar e garantir que os recursos necessários para o projeto estejam disponíveis na data prevista no cronograma. Deve ser garantida a execução de todas as atividades previstas nesse processo para viabilizar o bom andamento do projeto. </span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Segoe UI;font-size:8pt;">As diversas atividades envolvidas nos processos de gerenciamento dos recursos do projeto compõem o ciclo de vida dos contratos relacionados ao projeto. Com esse gerenciamento e uma definição detalhada dos termos e condições das aquisições, poderá evitar, mitigar ou transferir alguns riscos do projeto.</span></p><br> </p>
+
+</div>
+<div id="86d198d6-8d2b-4616-b8ab-c89caf6ff510_doc" class="docelem" title="7.3 - Validar a entrega">
+<a name="86d198d6-8d2b-4616-b8ab-c89caf6ff510" id="86d198d6-8d2b-4616-b8ab-c89caf6ff510"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">A validação da entrega é uma atividade que ocorre sempre que uma entrega é concluída. É feito a verificação dos relatórios de qualidade, para verificar se tudo foi realizado conforme planejado, se o produto gerado na entrega atende os requisitos do cliente (funcionais e não funcionais), requisitos de qualidade e, principalmente, se atende o escopo do projeto, conforme especificado na declaração de escopo do projeto.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;">Além dessa verificação, normalmente realizada pelo GP do projeto, é feito uma verificação do produto pelo cliente, a fim de determinar a sua satisfação com o produto gerado e sua usabilidade. Com isso, o cliente irá fornecer o seu aceite formal da entrega (que poderá ser documento escrito ou eletrônico, como e-mail), para que assim, o pacote de trabalho possa ser finalizado.</span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Avaliação de Entrega (1).odt" target="_blank">SPL - Avaliação de Entrega (1).odt</a></p>
+</div>
+<div id="810f4007-5f03-464b-8e31-6e249ef8e297_doc" class="docelem" title="7.4 - Finalizar entrega
+">
+<a name="810f4007-5f03-464b-8e31-6e249ef8e297" id="810f4007-5f03-464b-8e31-6e249ef8e297"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Times New Roman;font-size:8pt;">A finalização da entrega é uma atividade que ocorre logo após a validação do produto gerado pelo pacote de trabalho e tratará o tramite entre o projeto e a operação do produto, ou seja, a finalização da entrega irá tratar de todos os itens necessários para que o cliente possa usar o produto criado sem nenhuma dependência.</span></p><p><span style="font-family:Times New Roman;font-size:8pt;"></span></p><p><span style="font-family:Times New Roman;font-size:8pt;">A finalização da entrega inclui, mas não está limitado a, realização de treinamentos, criação de manuais, transferência de conhecimentos, implantação em ambiente de produção, documentação de funcionalidades, documentação de aquisições, arquivamento de itens de configuração, recolhimento de lições aprendidas, atualização de sistemas, atualização de diretivas de segurança, analise de tendências futuras, relatório de necessidades de capacidade, sugestões de projetos futuros, relatório de relacionamento de recursos de TI com o produto entregue, etc.</span></p><br> </p>
+<h4>Arquivo anexo</h4><p><a href="diagrams/attachments/SPL - Check-list de entrega - Generico (1).odt" target="_blank">SPL - Check-list de entrega - Generico (1).odt</a></p><h4>Arquivo anexo 2</h4><p><a href="diagrams/attachments/SPL - Homologação de Entregas (1).odt" target="_blank">SPL - Homologação de Entregas (1).odt</a></p>
+</div>
+<div id="734a7875-66bd-4b2c-9cdf-f69500b9497c_doc" class="docelem" title="Fim do projeto?">
+<a name="734a7875-66bd-4b2c-9cdf-f69500b9497c" id="734a7875-66bd-4b2c-9cdf-f69500b9497c"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Condicional para verificar, após realizada uma entrega, se o projeto também foi finalizado ou se existem mais entregas a serem realizadas.</span></p><br> </p>
+<h4>Portões</h4><p>&nbsp;Sim</p><p>&nbsp;Não</p>
+</div>
+<div id="6c20a6e8-8086-4fb5-96f7-cd91e75b9af6_doc" class="docelem" title="Elemento">
+<a name="6c20a6e8-8086-4fb5-96f7-cd91e75b9af6" id="6c20a6e8-8086-4fb5-96f7-cd91e75b9af6"></a>
+<img class="icon" src="diagrams/bpmnimg/ParallelGateway.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Fim de atividades em paralelo - Ponto de encontro das atividades que aconteceram em paralelo. Isso significa que a atividade seguinte só poderá ser executada após todas as anteriores terem sido realizadas com sucesso.</span></p><br> </p>
+
+</div>
+<div id="2bf736ce-f1d9-4249-8f4a-9178a939cd36_doc" class="docelem" title="Fim">
+<a name="2bf736ce-f1d9-4249-8f4a-9178a939cd36" id="2bf736ce-f1d9-4249-8f4a-9178a939cd36"></a>
+<img class="icon" src="diagrams/bpmnimg/MessageEnd.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Finaliza a execursão do projeto e sinaliza que o mesmo passará pelos tramites de finalização (atividade 1.8)</span></p><br> </p>
+
+</div>
+<div id="61a16e31-316b-4bf3-b885-da1107111794_doc" class="docelem" title="Inicio">
+<a name="61a16e31-316b-4bf3-b885-da1107111794" id="61a16e31-316b-4bf3-b885-da1107111794"></a>
+<img class="icon" src="diagrams/bpmnimg/ParallelMultipleIntermediate.png" border="0" />
+
+<h4>Descrição</h4><p><p><span style="font-family:Segoe UI;font-size:8pt;">Inicio do desenvolvimento do projeto, logo após a conclusão do plano do projeto</span></p><br> </p>
+
+</div>
+
+							</div>
+							<img src="diagrams/26c673a2-13ff-46a0-afab-2bb538aef91a.png" border="0" usemap="#map" class="map" />
+							<map name="map">
+								<area shape="rect" class="diagelem" coords="198,20,288,80" title="Nessa etapa busca-se aplicar acompanhar, atualizar e garantir que as atividades previstas no cronograma sejam implementadas, no prazo previsto. Deverá ser alimentado o percentual de execução, replanejar atividades, identificar novas atividades e atividades que não serão executadas durante todo o projeto.Dentre essas ações nas atividades identificadas no projeto podemos especificar, mas não limitar, as seguintes: aplicar e acompanhar atividades necessárias para comunicação com todas as partes interessadas, uma das ações mais importante do projeto, garantido em muitas vezes o sucesso ou insucesso do projeto; incluir no cronograma as atividades de mudanças aprovadas, no processo de gerenciamento das mudanças, e acompanhar e garantir a implementação das mesmas; garantir a implementação das atividades testes e garantia da qualidade, previstas no plano de qualidade.Ao final, são realizados as atualizações de documentos do projeto, conforme necessário
+" href="#956ac2cf-9ef5-4451-b001-ea3641fe9e84" />
+<area shape="rect" class="diagelem" coords="198,132,288,192" title="Nessa etapa busca-se aplicar acompanhar, atualizar e garantir que os recursos necessários para o projeto estejam disponíveis na data prevista no cronograma. Deve ser garantida a execução de todas as atividades previstas nesse processo para viabilizar o bom andamento do projeto. As diversas atividades envolvidas nos processos de gerenciamento dos recursos do projeto compõem o ciclo de vida dos contratos relacionados ao projeto. Com esse gerenciamento e uma definição detalhada dos termos e condições das aquisições, poderá evitar, mitigar ou transferir alguns riscos do projeto.
+" href="#b7054e99-ed7e-40eb-a2e7-ce03f00384a2" />
+<area shape="rect" class="diagelem" coords="378,229,468,289" title="A validação da entrega é uma atividade que ocorre sempre que uma entrega é concluída. É feito a verificação dos relatórios de qualidade, para verificar se tudo foi realizado conforme planejado, se o produto gerado na entrega atende os requisitos do cliente (funcionais e não funcionais), requisitos de qualidade e, principalmente, se atende o escopo do projeto, conforme especificado na declaração de escopo do projeto.Além dessa verificação, normalmente realizada pelo GP do projeto, é feito uma verificação do produto pelo cliente, a fim de determinar a sua satisfação com o produto gerado e sua usabilidade. Com isso, o cliente irá fornecer o seu aceite formal da entrega (que poderá ser documento escrito ou eletrônico, como e-mail), para que assim, o pacote de trabalho possa ser finalizado.
+" href="#86d198d6-8d2b-4616-b8ab-c89caf6ff510" />
+<area shape="rect" class="diagelem" coords="198,229,288,289" title="A finalização da entrega é uma atividade que ocorre logo após a validação do produto gerado pelo pacote de trabalho e tratará o tramite entre o projeto e a operação do produto, ou seja, a finalização da entrega irá tratar de todos os itens necessários para que o cliente possa usar o produto criado sem nenhuma dependência.A finalização da entrega inclui, mas não está limitado a, realização de treinamentos, criação de manuais, transferência de conhecimentos, implantação em ambiente de produção, documentação de funcionalidades, documentação de aquisições, arquivamento de itens de configuração, recolhimento de lições aprendidas, atualização de sistemas, atualização de diretivas de segurança, analise de tendências futuras, relatório de necessidades de capacidade, sugestões de projetos futuros, relatório de relacionamento de recursos de TI com o produto entregue, etc.
+" href="#810f4007-5f03-464b-8e31-6e249ef8e297" />
+<area shape="poly" class="diagelem" coords="34,259,54,239,74,259,54,279" title="Condicional para verificar, após realizada uma entrega, se o projeto também foi finalizado ou se existem mais entregas a serem realizadas.
+" href="#734a7875-66bd-4b2c-9cdf-f69500b9497c" />
+<area shape="poly" class="diagelem" coords="403,102,423,82,443,102,423,122" title="Fim de atividades em paralelo - Ponto de encontro das atividades que aconteceram em paralelo. Isso significa que a atividade seguinte só poderá ser executada após todas as anteriores terem sido realizadas com sucesso.
+" href="#6c20a6e8-8086-4fb5-96f7-cd91e75b9af6" />
+<area shape="circle" class="diagelem" coords="54,346,15" title="Finaliza a execursão do projeto e sinaliza que o mesmo passará pelos tramites de finalização (atividade 1.8)
+" href="#2bf736ce-f1d9-4249-8f4a-9178a939cd36" />
+<area shape="circle" class="diagelem" coords="54,102,15" title="Inicio do desenvolvimento do projeto, logo após a conclusão do plano do projeto
+" href="#61a16e31-316b-4bf3-b885-da1107111794" />
+
+							</map>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

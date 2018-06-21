@@ -1,0 +1,35 @@
+<div class="row">
+    <div ng-controller='ExecucaoTempoController'>
+        <div class="col-md-12">
+            <h3>Execucao tempo</h3>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Qtd Transformações</th>
+                        <th>Desc Job</th>
+                        <th>Tempo Duração</th>
+                        <th>Qtd Registros Saidas</th>
+                        <th>Qtd Registros Entradas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="execucaoTempo in execucoesTempos|itemsPerPage:5" pagination-id="execucaoTempoid">
+                        <td>{{execucaoTempo.nome_datamart}}</td>
+                         <td>{{execucaoTempo.car_dat_carga}}</td>
+                         <td>{{execucaoTempo.car_flg_concluida}}</td>
+                         <td>{{execucaoTempo.quantidade_transformacao}}</td>
+                         <td>{{execucaoTempo.flc_dsc_job}}</td>
+                         <td>{{execucaoTempo.tempo_duracao}}</td>
+                         <td>{{execucaoTempo.quantida_registro_saida}}</td>
+                         <td>{{execucaoTempo.quantida_registro_entrada}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="execucaoTempoid">
+            </dir-pagination-controls>
+        </div>
+    </div>
+</div>

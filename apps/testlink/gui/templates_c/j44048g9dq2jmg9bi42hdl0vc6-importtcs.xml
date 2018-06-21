@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="" >
+<node_order><![CDATA[]]></node_order>
+<details><![CDATA[]]></details> 
+<testsuite name="Versão 1.0.0" >
+<node_order><![CDATA[1]]></node_order>
+<details><![CDATA[]]></details> 
+<testsuite name="Mobile" >
+<node_order><![CDATA[103]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="1565" name="Carregar Dados das OS's">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[1]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Implementar o caso de uso 141.001 - Carregar Dados das OS&#39;s para o Mobile. Sistema de baixa de O.S.arregar Programa&ccedil;&atilde;o</p>
+]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+</testcase>
+
+<testcase internalid="1567" name="Descarregar Dados das OS's">
+	<node_order><![CDATA[101]]></node_order>
+	<externalid><![CDATA[2]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Implementar o caso de uso 141.002 - Descarregar Dados das OS&#39;s para o Sistema Prax.</p>
+]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+</testcase>
+
+<testcase internalid="1569" name="Executar OS's em Campo">
+	<node_order><![CDATA[102]]></node_order>
+	<externalid><![CDATA[3]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+
+</testcase>
+</testsuite></testsuite></testsuite>

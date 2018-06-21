@@ -1,0 +1,2 @@
+A pasta de instalação (install) deve ser removida!
+Você deve mudar a senha padrão da conta 'admin'!

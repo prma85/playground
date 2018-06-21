@@ -1,0 +1,892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=100" />
+	<title>CageceApp</title>
+	<link type="text/css" href="css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+	<link href="css/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <link media="screen" type="text/css" href="css/main.css" rel="stylesheet" />
+	<!--[if IE 7]>
+	<link media="screen" type="text/css" href="css/main_ie7.css" rel="stylesheet" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/ui.tabs.paging.js"></script>
+	<script type="text/javascript" src="js/jquery.maphilight.min.js"></script>
+	<script type="text/javascript" src="js/jquery.watermarkinput.js"></script>
+	<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+	<!--<script type="text/javascript" src="js/shiftzoom.js"></script>-->
+	<script type="text/javascript" src="js/jquery.hashtable-1.1.js"></script>
+	<script type="text/javascript">
+		/* Textbox Watermark plugin */
+		$(function($) {
+			$("#q").Watermark('Pesquisar');
+		});
+
+		/* Shiftzoom plugin */
+		//if (document.images && document.createElement && document.getElementById) {
+		//	document.writeln('<style type="text/css">');
+		//	document.writeln('	img.shiftzoom { visibility: hidden; }');
+		//	document.writeln('<\/style>');
+		//}
+
+		$(document).ready(function() { 
+
+			/* Tabs plugin */
+			$("#tabs").tabs({
+				selected: 0
+				, select: function(event, ui) {
+					var url = $.data(ui.tab, 'load.tabs');
+					if (url) {
+						location.href = url;
+						return false;
+					}
+					return true;
+				}
+			});
+
+			$("#tabs").tabs('paging');
+
+			/* Autocomplete plugin */
+			var ht = new jQuery.Hashtable();
+			ht.add("CageceApp","ed1d8881-8eec-48db-be94-b55cfad9eb18");
+ht.add("Cagece App v2","be0f06cf-67d7-4c78-b87e-915c7939d58c");
+ht.add("Inicia App","5e7b0e94-2702-4424-98d2-ff9d2356461e");
+ht.add("Verifica se está logado ini ciaConfig()","8e5d3328-cf50-4139-8f4e-b7c5737efb33");
+ht.add("Está logado?","10452b37-1a03-4b04-9f68-3c1d190ed65c");
+ht.add("Mostra tela inicial #main","8d2fcfbf-0f02-4660-9d5f-ec4d8ade08c7");
+ht.add("Fim","6b3ec88c-6975-45b7-895b-d02bde0c449b");
+ht.add("Tela de cadastro - #configuracao","45a9e11a-783f-4884-9416-b32d84e41511");
+ht.add("Verifica CPF/CNPJ checkCpfCnpj()","83917983-0074-4353-8a8f-146067be656a");
+ht.add("CPF/CNPJ de cliente?","a31cc453-d43b-4998-9276-c505c2604dfb");
+ht.add("Possui cadastro?","97cc0a46-b37a-4c3f-8ae7-2e761cf2b621");
+ht.add("Mostra apenas campos ainda não cadastrados","86d06e5c-5944-4588-ad8c-e1f76203c5f3");
+ht.add("Realiza Cadastro  contaEnviaCadastro()","93a44ba7-8bd3-44ad-bab2-cca7f1ff492d");
+ht.add("Cadastro com sucesso?","b585ecc5-341d-4ad9-bf5c-125fd0205084");
+ht.add("Executa atualizaCpfOcorrencias()","dfd34136-2c9c-4e7b-899e-840009ec7060");
+ht.add("Realizar Login","bcc7a9d6-fa03-4dcd-b4ce-1b0cb394f606");
+ht.add("Mostra todos os campos do formulário para preencher","29c849a5-4511-438e-8ca6-445ec371ddd7");
+ht.add("Tarefa 1","09584e71-7d1e-41d0-8a21-952950076e5a");
+ht.add("Sabe todos os dados?","a8fb2441-fbce-48c8-b48c-f17062806dc9");
+ht.add("Carrega Resetar a senha","b6bfe6e1-9eaf-41b2-8904-37511ac8533a");
+ht.add("Preenche os dados e envia contaSenha() ","6c70cf22-eb69-43b8-a4d0-76052e4e8811");
+ht.add("Realiza Login","512a0f80-a74d-42b1-b8c6-52533a773876");
+ht.add("Preenche e executa contaLogin()","a00d6fb4-3823-4872-b635-80dcd5ca1610");
+ht.add("Salva dados no localStorage","fdd65142-e252-43e1-8931-0f5f2501e913");
+ht.add("Fim do login","ddd7cbd0-dfdc-453a-bc7d-fb2c01c2f7b5");
+ht.add("Atualiza Contratos","5a76efed-f266-4da2-8982-81c4e16a0d78");
+ht.add("Realizar  novo Login","9ba5a602-d6db-48d3-9939-0fcae898d698");
+ht.add("Executa contaContratosAtualiza()","a6de7efc-4038-4b7e-a064-b0221f08ce03");
+ht.add("Insere no banco","560112db-148b-4484-854f-da04b5a25c32");
+ht.add("Executa contaContratos()","a99b82d0-930d-49dc-b584-8771e1b3497e");
+ht.add("Quantidade de contratos","14aa6fef-fdd7-48bb-b540-0c75e68528f3");
+ht.add("Exibe mensagem sem contratos","f0306929-b3f5-4368-af9b-5d2fad5430fd");
+ht.add("Executa 2 funcões montaPagContrato() montaPagDadosUsuario()","85e4b9ee-9b88-43ba-ba2c-dd6046f98035");
+ht.add("Visualiza página do contrato","75885efd-610e-476f-8f05-077129177cdf");
+ht.add("Solicitou atualização?","6a96e675-977f-4fa0-a753-4c4fce9dbba8");
+ht.add("Executa  contaContratoAtual()","ad41161e-3589-495a-845d-509c22d25a7c");
+ht.add("Executa updateFaturas()","00de26d1-a594-49c9-ab8c-48870682e86c");
+ht.add("Executa montaPagContrato()","f3a61323-acab-4b52-9721-cdb6a7f8b8b7");
+ht.add("Monta página com lista de contratos ","7c854c13-5e73-43a7-8311-c01387627cf3");
+ht.add("Seleciona um contrato na lista","59d308b5-07d7-43e8-8d1a-fd09c2609e97");
+ht.add("Executa contaLogout()","ad3f9a4c-271c-46b0-bac9-57ec6397eade");
+ht.add("Ler ocorrência do banco","81b71012-6e49-4f39-98a0-7d45c92ebc36");
+ht.add("Atualizar ocorrências?","b57dc2d2-14be-4277-a4ff-46ffb6d745d3");
+ht.add("Abre uma ocorrência","7e8478b9-f65d-489f-8bf8-cd582139116c");
+ht.add("Elemento","2956778b-b3c4-49d5-ad0f-dbac96d31dde");
+ht.add("Realizar avaliação","9c06835f-8828-46fc-8571-77a5214f820b");
+ht.add("Carrega tela de avaliação","6853c25f-5773-4f94-ace7-f4210fdc7e28");
+ht.add("Envia Formulário enviaAvaliacao() ","a5cad9b3-f9ea-47e1-a5c9-9a5e0c281d4b");
+ht.add("Realizar acompanhamento","6e871235-6e83-418d-a713-eb4c993b6341");
+ht.add("Executa publicaAcompanhamento()","bdcc84e1-c611-422a-abeb-0760953b1ece");
+ht.add("Executa atualizarMinhasOcorrencias()","e2ad105b-319c-4fbb-9905-bb5a95fa775d");
+ht.add("Seleciona tipo de ocorrência","313efc76-0cb7-4bf6-8057-ff9b8c84f09c");
+ht.add("Preenche formulário","bd659acf-9b53-470c-a815-f052c5e73a1a");
+ht.add("Usar GPS?","f8a5afe8-a180-4246-b82e-217badce4247");
+ht.add("Enviar foto?","7ec4f16c-8812-46b4-b02c-526f311b7b70");
+ht.add("Envia Formulário enviaOcorrencia()","35ce3984-e720-47c0-b59a-b152e802c801");
+ht.add("Executa validaUser() validaOcorrencia()","5b590705-4680-4d60-9028-35a57169f3d1");
+ht.add("Executa ajaxOcorrencia()","740e41a4-0428-4fcc-8c2b-ed65db0738dd");
+ht.add("Salva ocorrência no banco salvaOcorrencia()","aa1cf5b8-2e4b-4254-a13b-94a79e19da37");
+ht.add("Executa camera.capturePhoto()","2f66b7e8-3782-4b83-bb31-ab8288451f4f");
+ht.add("Executa getEndereco()","aa6fb1f3-ef67-4124-b30b-e13cbecf4d9b");
+ht.add("Login","a86eda8c-ba7f-4fd1-bfcc-f31ec511d205");
+ht.add("Loggout","6dbb155c-eb3c-4157-ac01-35dbe4ef52ea");
+ht.add("Novo Cadastro","6aa5651d-38c1-4cca-9c8d-079f36701d0a");
+ht.add("Minha Conta","1f66180e-b007-43b4-81e4-a8c86e19c875");
+ht.add("Acessar minhas ocorrências","a0eec92c-da1d-42fd-b085-9eddd603e8cb");
+ht.add("Registrar Ocorrência","4f034b30-a9f0-439f-876a-9e2108704932");
+ht.add("Minhas Ocorrências","8cb22638-2121-4e3a-b4a7-a9f9d7d7408a");
+ht.add("Usuário","6a3d169d-dfd7-4204-a9ec-7598c43ff7da");
+ht.add("Cadastro","6028e168-e1b2-4db7-bb34-c1624b242b9e");
+ht.add("Demais Funcões","494a2429-c2a0-4d32-af60-a7740ca10d26");
+
+			var data = 'CageceApp|Cagece App v2|Inicia App|Verifica se está logado ini ciaConfig()|Está logado?|Mostra tela inicial #main|Fim|Tela de cadastro - #configuracao|Verifica CPF/CNPJ checkCpfCnpj()|CPF/CNPJ de cliente?|Possui cadastro?|Mostra apenas campos ainda não cadastrados|Realiza Cadastro  contaEnviaCadastro()|Cadastro com sucesso?|Executa atualizaCpfOcorrencias()|Realizar Login|Mostra todos os campos do formulário para preencher|Tarefa 1|Sabe todos os dados?|Carrega Resetar a senha|Preenche os dados e envia contaSenha() |Realiza Login|Preenche e executa contaLogin()|Salva dados no localStorage|Fim do login|Atualiza Contratos|Realizar  novo Login|Executa contaContratosAtualiza()|Insere no banco|Executa contaContratos()|Quantidade de contratos|Exibe mensagem sem contratos|Executa 2 funcões montaPagContrato() montaPagDadosUsuario()|Visualiza página do contrato|Solicitou atualização?|Executa  contaContratoAtual()|Executa updateFaturas()|Executa montaPagContrato()|Monta página com lista de contratos |Seleciona um contrato na lista|Executa contaLogout()|Ler ocorrência do banco|Atualizar ocorrências?|Abre uma ocorrência|Elemento|Realizar avaliação|Carrega tela de avaliação|Envia Formulário enviaAvaliacao() |Realizar acompanhamento|Executa publicaAcompanhamento()|Executa atualizarMinhasOcorrencias()|Seleciona tipo de ocorrência|Preenche formulário|Usar GPS?|Enviar foto?|Envia Formulário enviaOcorrencia()|Executa validaUser() validaOcorrencia()|Executa ajaxOcorrencia()|Salva ocorrência no banco salvaOcorrencia()|Executa camera.capturePhoto()|Executa getEndereco()|Login|Loggout|Novo Cadastro|Minha Conta|Acessar minhas ocorrências|Registrar Ocorrência|Minhas Ocorrências|Usuário|Cadastro|Demais Funcões'.split('|');
+			$("#q").autocomplete(data, { matchContains: true});
+			$('#q').result(function(event, data, formatted) {
+				var val = ht.get(formatted.toString());
+				var anchor = '#' + val;
+				var dia = anchor + '_doc';
+				$(dia).dialog('open');
+			});
+
+			/* Show/hide Pan & Zoom */
+			//$('#diagramimagepan').hide();
+
+			//$('#pan').click(function() {
+			//	$(this).toggleClass("down");
+
+			//	if ($(this).hasClass("down")) {
+			//		$('#diagramimage').hide();
+			//		$('#diagramimagepan').show('slow');
+			//		$(this).text('Visão Normal');
+			//	} else {
+			//		$('#diagramimagepan').hide();
+			//		$('#diagramimage').show('slow');
+			//		$(this).text('Visão Pan & Zoom');
+			//	}
+			//});
+			
+			/* Dialog plugin */
+			var minWidth = 610;
+			if ($(".docelem img").hasClass("imageForm")) {
+				var width = $(".docelem .imageForm").width();
+			} else {
+				var width = minWidth;
+			};
+			$('.docelem').dialog({ 
+				autoOpen: false, 
+				width: (width + 30),
+				height: 480, 
+				modal: true,
+				show: 'slide'
+			});
+			$('.docelem').dialog('option', 'minWidth', 640);
+			
+			$('.diagelem').click(function() {
+				var t = $(this).attr('href');
+				t = t.replace('#', '');
+				var dia = $(this).attr('href') + '_doc';
+				
+				$(dia).dialog('open');
+			});
+
+			/* Map Highlight plugin */
+			$(function() {
+				$('.map').maphilight();
+			});
+
+            // Set height diagramimage
+            if($.browser.msie){                         
+                $("#diagram-image").height($("#diagramimage").height());               
+            }
+		});
+	</script>
+	
+   
+
+	<script type="text/javascript" src="js/cufon-yui.js"></script>
+	<script type="text/javascript" src="js/BeauSansRegular.js"></script>    
+    <!--<script type="text/javascript">
+	    // <![CDATA[
+	    Cufon.replace('h1');
+	    Cufon.replace('h2');
+	    Cufon.replace('h3');
+	    //Cufon.replace('h4');
+	    Cufon.replace('.ui-dialog-title');
+	    Cufon.replace('.layout-type a', {
+	        hover: true
+	    });
+	    Cufon.replace('.BizAgi li a', {
+	        hover: true
+	    });
+
+	    Cufon.replace('.tabs a', {
+	        hover: true
+	    });
+	    Cufon.replace('#topnav a', {
+	        hover: true
+	    });
+
+	    //]]>
+	</script>-->
+</head>
+<body>
+
+	<div id="contentwrapper">
+		
+		<div id="tabs">
+			
+			<div id="content">
+				<div id="tabs-0">
+					<div>
+						<!--|#bpm_back_to_parent#|--> <a href="#ed1d8881-8eec-48db-be94-b55cfad9eb18" class="diagelem"><h2>CageceApp</h2></a>
+					</div>
+					<div id="diagram-image">
+						<div id="diagramimage" align="center">
+							<div id="documentation" style="visibility: hidden;">
+							<div id="ed1d8881-8eec-48db-be94-b55cfad9eb18_doc" class="docelem" title="CageceApp">
+<a name="ed1d8881-8eec-48db-be94-b55cfad9eb18" id="ed1d8881-8eec-48db-be94-b55cfad9eb18"></a>
+
+<h4>Versão</h4><p>1.0</p><h4>Autor</h4><p>207447</p>
+
+
+</div>
+<div id="be0f06cf-67d7-4c78-b87e-915c7939d58c_doc" class="docelem" title="Cagece App v2">
+<a name="be0f06cf-67d7-4c78-b87e-915c7939d58c" id="be0f06cf-67d7-4c78-b87e-915c7939d58c"></a>
+<img class="icon" src="diagrams/bpmnimg/Participant.png" border="0" />
+
+
+
+</div>
+<div id="5e7b0e94-2702-4424-98d2-ff9d2356461e_doc" class="docelem" title="Inicia App">
+<a name="5e7b0e94-2702-4424-98d2-ff9d2356461e" id="5e7b0e94-2702-4424-98d2-ff9d2356461e"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneStart.png" border="0" />
+
+
+
+</div>
+<div id="8e5d3328-cf50-4139-8f4e-b7c5737efb33_doc" class="docelem" title="Verifica se está logado
+iniciaConfig()">
+<a name="8e5d3328-cf50-4139-8f4e-b7c5737efb33" id="8e5d3328-cf50-4139-8f4e-b7c5737efb33"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="10452b37-1a03-4b04-9f68-3c1d190ed65c_doc" class="docelem" title="Está logado?">
+<a name="10452b37-1a03-4b04-9f68-3c1d190ed65c" id="10452b37-1a03-4b04-9f68-3c1d190ed65c"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Sim</p><p>&nbsp;Não</p>
+</div>
+<div id="8d2fcfbf-0f02-4660-9d5f-ec4d8ade08c7_doc" class="docelem" title="Mostra tela inicial #main">
+<a name="8d2fcfbf-0f02-4660-9d5f-ec4d8ade08c7" id="8d2fcfbf-0f02-4660-9d5f-ec4d8ade08c7"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="6b3ec88c-6975-45b7-895b-d02bde0c449b_doc" class="docelem" title="Fim">
+<a name="6b3ec88c-6975-45b7-895b-d02bde0c449b" id="6b3ec88c-6975-45b7-895b-d02bde0c449b"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneEnd.png" border="0" />
+
+
+
+</div>
+<div id="45a9e11a-783f-4884-9416-b32d84e41511_doc" class="docelem" title="Tela de cadastro - #configuracao">
+<a name="45a9e11a-783f-4884-9416-b32d84e41511" id="45a9e11a-783f-4884-9416-b32d84e41511"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="83917983-0074-4353-8a8f-146067be656a_doc" class="docelem" title="Verifica CPF/CNPJ
+checkCpfCnpj()">
+<a name="83917983-0074-4353-8a8f-146067be656a" id="83917983-0074-4353-8a8f-146067be656a"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="a31cc453-d43b-4998-9276-c505c2604dfb_doc" class="docelem" title="CPF/CNPJ de cliente?">
+<a name="a31cc453-d43b-4998-9276-c505c2604dfb" id="a31cc453-d43b-4998-9276-c505c2604dfb"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Sim</p><p>&nbsp;Não</p>
+</div>
+<div id="97cc0a46-b37a-4c3f-8ae7-2e761cf2b621_doc" class="docelem" title="Possui cadastro?">
+<a name="97cc0a46-b37a-4c3f-8ae7-2e761cf2b621" id="97cc0a46-b37a-4c3f-8ae7-2e761cf2b621"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Não</p><p>&nbsp;Sim</p>
+</div>
+<div id="86d06e5c-5944-4588-ad8c-e1f76203c5f3_doc" class="docelem" title="Mostra apenas campos ainda não cadastrados">
+<a name="86d06e5c-5944-4588-ad8c-e1f76203c5f3" id="86d06e5c-5944-4588-ad8c-e1f76203c5f3"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="93a44ba7-8bd3-44ad-bab2-cca7f1ff492d_doc" class="docelem" title="Realiza Cadastro
+contaEnviaCadastro()">
+<a name="93a44ba7-8bd3-44ad-bab2-cca7f1ff492d" id="93a44ba7-8bd3-44ad-bab2-cca7f1ff492d"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="b585ecc5-341d-4ad9-bf5c-125fd0205084_doc" class="docelem" title="Cadastro com sucesso?">
+<a name="b585ecc5-341d-4ad9-bf5c-125fd0205084" id="b585ecc5-341d-4ad9-bf5c-125fd0205084"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Não</p><p>&nbsp;Sim</p>
+</div>
+<div id="dfd34136-2c9c-4e7b-899e-840009ec7060_doc" class="docelem" title="Executa
+atualizaCpfOcorrencias()">
+<a name="dfd34136-2c9c-4e7b-899e-840009ec7060" id="dfd34136-2c9c-4e7b-899e-840009ec7060"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="bcc7a9d6-fa03-4dcd-b4ce-1b0cb394f606_doc" class="docelem" title="Realizar Login">
+<a name="bcc7a9d6-fa03-4dcd-b4ce-1b0cb394f606" id="bcc7a9d6-fa03-4dcd-b4ce-1b0cb394f606"></a>
+<img class="icon" src="diagrams/bpmnimg/LinkIntermediate_Throw.png" border="0" />
+
+
+
+</div>
+<div id="29c849a5-4511-438e-8ca6-445ec371ddd7_doc" class="docelem" title="Mostra todos os campos do formulário para preencher">
+<a name="29c849a5-4511-438e-8ca6-445ec371ddd7" id="29c849a5-4511-438e-8ca6-445ec371ddd7"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="09584e71-7d1e-41d0-8a21-952950076e5a_doc" class="docelem" title="Tarefa 1">
+<a name="09584e71-7d1e-41d0-8a21-952950076e5a" id="09584e71-7d1e-41d0-8a21-952950076e5a"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="a8fb2441-fbce-48c8-b48c-f17062806dc9_doc" class="docelem" title="Sabe todos os dados?">
+<a name="a8fb2441-fbce-48c8-b48c-f17062806dc9" id="a8fb2441-fbce-48c8-b48c-f17062806dc9"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Sim</p><p>&nbsp;Não</p>
+</div>
+<div id="b6bfe6e1-9eaf-41b2-8904-37511ac8533a_doc" class="docelem" title="Carrega Resetar a senha">
+<a name="b6bfe6e1-9eaf-41b2-8904-37511ac8533a" id="b6bfe6e1-9eaf-41b2-8904-37511ac8533a"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="6c70cf22-eb69-43b8-a4d0-76052e4e8811_doc" class="docelem" title="Preenche os dados e envia
+contaSenha()">
+<a name="6c70cf22-eb69-43b8-a4d0-76052e4e8811" id="6c70cf22-eb69-43b8-a4d0-76052e4e8811"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="512a0f80-a74d-42b1-b8c6-52533a773876_doc" class="docelem" title="Realiza Login">
+<a name="512a0f80-a74d-42b1-b8c6-52533a773876" id="512a0f80-a74d-42b1-b8c6-52533a773876"></a>
+<img class="icon" src="diagrams/bpmnimg/LinkIntermediate_Throw.png" border="0" />
+
+
+
+</div>
+<div id="a00d6fb4-3823-4872-b635-80dcd5ca1610_doc" class="docelem" title="Preenche e executa
+contaLogin()">
+<a name="a00d6fb4-3823-4872-b635-80dcd5ca1610" id="a00d6fb4-3823-4872-b635-80dcd5ca1610"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="fdd65142-e252-43e1-8931-0f5f2501e913_doc" class="docelem" title="Salva dados no localStorage">
+<a name="fdd65142-e252-43e1-8931-0f5f2501e913" id="fdd65142-e252-43e1-8931-0f5f2501e913"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="ddd7cbd0-dfdc-453a-bc7d-fb2c01c2f7b5_doc" class="docelem" title="Fim do login">
+<a name="ddd7cbd0-dfdc-453a-bc7d-fb2c01c2f7b5" id="ddd7cbd0-dfdc-453a-bc7d-fb2c01c2f7b5"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneEnd.png" border="0" />
+
+
+
+</div>
+<div id="5a76efed-f266-4da2-8982-81c4e16a0d78_doc" class="docelem" title="Atualiza Contratos">
+<a name="5a76efed-f266-4da2-8982-81c4e16a0d78" id="5a76efed-f266-4da2-8982-81c4e16a0d78"></a>
+<img class="icon" src="diagrams/bpmnimg/LinkIntermediate_Throw.png" border="0" />
+
+
+
+</div>
+<div id="9ba5a602-d6db-48d3-9939-0fcae898d698_doc" class="docelem" title="Realizar  novo Login">
+<a name="9ba5a602-d6db-48d3-9939-0fcae898d698" id="9ba5a602-d6db-48d3-9939-0fcae898d698"></a>
+<img class="icon" src="diagrams/bpmnimg/LinkIntermediate_Throw.png" border="0" />
+
+
+
+</div>
+<div id="a6de7efc-4038-4b7e-a064-b0221f08ce03_doc" class="docelem" title="Executa
+contaContratosAtualiza()">
+<a name="a6de7efc-4038-4b7e-a064-b0221f08ce03" id="a6de7efc-4038-4b7e-a064-b0221f08ce03"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="560112db-148b-4484-854f-da04b5a25c32_doc" class="docelem" title="Insere no banco">
+<a name="560112db-148b-4484-854f-da04b5a25c32" id="560112db-148b-4484-854f-da04b5a25c32"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="a99b82d0-930d-49dc-b584-8771e1b3497e_doc" class="docelem" title="Executa
+contaContratos()">
+<a name="a99b82d0-930d-49dc-b584-8771e1b3497e" id="a99b82d0-930d-49dc-b584-8771e1b3497e"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="14aa6fef-fdd7-48bb-b540-0c75e68528f3_doc" class="docelem" title="Quantidade de contratos">
+<a name="14aa6fef-fdd7-48bb-b540-0c75e68528f3" id="14aa6fef-fdd7-48bb-b540-0c75e68528f3"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;1 contrato</p><p>&nbsp;0 contratos</p><p>&nbsp;>1 contratos</p>
+</div>
+<div id="f0306929-b3f5-4368-af9b-5d2fad5430fd_doc" class="docelem" title="Exibe mensagem sem contratos">
+<a name="f0306929-b3f5-4368-af9b-5d2fad5430fd" id="f0306929-b3f5-4368-af9b-5d2fad5430fd"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="906180e4-da60-4fc1-85a0-9281f86a92a8_doc" class="docelem" title="Fim">
+<a name="906180e4-da60-4fc1-85a0-9281f86a92a8" id="906180e4-da60-4fc1-85a0-9281f86a92a8"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneEnd.png" border="0" />
+
+
+
+</div>
+<div id="85e4b9ee-9b88-43ba-ba2c-dd6046f98035_doc" class="docelem" title="Executa 2 funcões
+montaPagContrato()
+montaPagDadosUsuario()">
+<a name="85e4b9ee-9b88-43ba-ba2c-dd6046f98035" id="85e4b9ee-9b88-43ba-ba2c-dd6046f98035"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="75885efd-610e-476f-8f05-077129177cdf_doc" class="docelem" title="Visualiza página do contrato">
+<a name="75885efd-610e-476f-8f05-077129177cdf" id="75885efd-610e-476f-8f05-077129177cdf"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="6a96e675-977f-4fa0-a753-4c4fce9dbba8_doc" class="docelem" title="Solicitou atualização?">
+<a name="6a96e675-977f-4fa0-a753-4c4fce9dbba8" id="6a96e675-977f-4fa0-a753-4c4fce9dbba8"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Sim</p><p>&nbsp;Não</p>
+</div>
+<div id="ad41161e-3589-495a-845d-509c22d25a7c_doc" class="docelem" title="Executa 
+contaContratoAtual()">
+<a name="ad41161e-3589-495a-845d-509c22d25a7c" id="ad41161e-3589-495a-845d-509c22d25a7c"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="00de26d1-a594-49c9-ab8c-48870682e86c_doc" class="docelem" title="Executa
+updateFaturas()">
+<a name="00de26d1-a594-49c9-ab8c-48870682e86c" id="00de26d1-a594-49c9-ab8c-48870682e86c"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="f3a61323-acab-4b52-9721-cdb6a7f8b8b7_doc" class="docelem" title="Executa
+montaPagContrato()">
+<a name="f3a61323-acab-4b52-9721-cdb6a7f8b8b7" id="f3a61323-acab-4b52-9721-cdb6a7f8b8b7"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="7c854c13-5e73-43a7-8311-c01387627cf3_doc" class="docelem" title="Monta página com lista de contratos">
+<a name="7c854c13-5e73-43a7-8311-c01387627cf3" id="7c854c13-5e73-43a7-8311-c01387627cf3"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="59d308b5-07d7-43e8-8d1a-fd09c2609e97_doc" class="docelem" title="Seleciona um contrato na lista">
+<a name="59d308b5-07d7-43e8-8d1a-fd09c2609e97" id="59d308b5-07d7-43e8-8d1a-fd09c2609e97"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="ad3f9a4c-271c-46b0-bac9-57ec6397eade_doc" class="docelem" title="Executa
+contaLogout()">
+<a name="ad3f9a4c-271c-46b0-bac9-57ec6397eade" id="ad3f9a4c-271c-46b0-bac9-57ec6397eade"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="81b71012-6e49-4f39-98a0-7d45c92ebc36_doc" class="docelem" title="Ler ocorrência do banco">
+<a name="81b71012-6e49-4f39-98a0-7d45c92ebc36" id="81b71012-6e49-4f39-98a0-7d45c92ebc36"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="b57dc2d2-14be-4277-a4ff-46ffb6d745d3_doc" class="docelem" title="Atualizar ocorrências?">
+<a name="b57dc2d2-14be-4277-a4ff-46ffb6d745d3" id="b57dc2d2-14be-4277-a4ff-46ffb6d745d3"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Não</p><p>&nbsp;Sim</p>
+</div>
+<div id="7e8478b9-f65d-489f-8bf8-cd582139116c_doc" class="docelem" title="Abre uma ocorrência">
+<a name="7e8478b9-f65d-489f-8bf8-cd582139116c" id="7e8478b9-f65d-489f-8bf8-cd582139116c"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="2956778b-b3c4-49d5-ad0f-dbac96d31dde_doc" class="docelem" title="Elemento">
+<a name="2956778b-b3c4-49d5-ad0f-dbac96d31dde" id="2956778b-b3c4-49d5-ad0f-dbac96d31dde"></a>
+<img class="icon" src="diagrams/bpmnimg/ParallelGateway.png" border="0" />
+
+
+
+</div>
+<div id="9c06835f-8828-46fc-8571-77a5214f820b_doc" class="docelem" title="Realizar avaliação">
+<a name="9c06835f-8828-46fc-8571-77a5214f820b" id="9c06835f-8828-46fc-8571-77a5214f820b"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="6853c25f-5773-4f94-ace7-f4210fdc7e28_doc" class="docelem" title="Carrega tela de avaliação">
+<a name="6853c25f-5773-4f94-ace7-f4210fdc7e28" id="6853c25f-5773-4f94-ace7-f4210fdc7e28"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="a5cad9b3-f9ea-47e1-a5c9-9a5e0c281d4b_doc" class="docelem" title="Envia Formulário
+enviaAvaliacao()
+">
+<a name="a5cad9b3-f9ea-47e1-a5c9-9a5e0c281d4b" id="a5cad9b3-f9ea-47e1-a5c9-9a5e0c281d4b"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="6e871235-6e83-418d-a713-eb4c993b6341_doc" class="docelem" title="Realizar acompanhamento">
+<a name="6e871235-6e83-418d-a713-eb4c993b6341" id="6e871235-6e83-418d-a713-eb4c993b6341"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="bdcc84e1-c611-422a-abeb-0760953b1ece_doc" class="docelem" title="Executa
+publicaAcompanhamento()">
+<a name="bdcc84e1-c611-422a-abeb-0760953b1ece" id="bdcc84e1-c611-422a-abeb-0760953b1ece"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="237bc25a-8520-4394-9419-94ee3117b47c_doc" class="docelem" title="Fim">
+<a name="237bc25a-8520-4394-9419-94ee3117b47c" id="237bc25a-8520-4394-9419-94ee3117b47c"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneEnd.png" border="0" />
+
+
+
+</div>
+<div id="e2ad105b-319c-4fbb-9905-bb5a95fa775d_doc" class="docelem" title="Executa
+atualizarMinhasOcorrencias()">
+<a name="e2ad105b-319c-4fbb-9905-bb5a95fa775d" id="e2ad105b-319c-4fbb-9905-bb5a95fa775d"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="313efc76-0cb7-4bf6-8057-ff9b8c84f09c_doc" class="docelem" title="Seleciona tipo de ocorrência">
+<a name="313efc76-0cb7-4bf6-8057-ff9b8c84f09c" id="313efc76-0cb7-4bf6-8057-ff9b8c84f09c"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="bd659acf-9b53-470c-a815-f052c5e73a1a_doc" class="docelem" title="Preenche formulário">
+<a name="bd659acf-9b53-470c-a815-f052c5e73a1a" id="bd659acf-9b53-470c-a815-f052c5e73a1a"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="f8a5afe8-a180-4246-b82e-217badce4247_doc" class="docelem" title="Usar GPS?">
+<a name="f8a5afe8-a180-4246-b82e-217badce4247" id="f8a5afe8-a180-4246-b82e-217badce4247"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Sim</p><p>&nbsp;Não</p>
+</div>
+<div id="7ec4f16c-8812-46b4-b02c-526f311b7b70_doc" class="docelem" title="Enviar foto?">
+<a name="7ec4f16c-8812-46b4-b02c-526f311b7b70" id="7ec4f16c-8812-46b4-b02c-526f311b7b70"></a>
+<img class="icon" src="diagrams/bpmnimg/ExclusiveGateway.png" border="0" />
+
+
+<h4>Portões</h4><p>&nbsp;Sim</p><p>&nbsp;Não</p>
+</div>
+<div id="35ce3984-e720-47c0-b59a-b152e802c801_doc" class="docelem" title="Envia Formulário
+enviaOcorrencia()">
+<a name="35ce3984-e720-47c0-b59a-b152e802c801" id="35ce3984-e720-47c0-b59a-b152e802c801"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="5b590705-4680-4d60-9028-35a57169f3d1_doc" class="docelem" title="Executa
+validaUser()
+validaOcorrencia()">
+<a name="5b590705-4680-4d60-9028-35a57169f3d1" id="5b590705-4680-4d60-9028-35a57169f3d1"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="740e41a4-0428-4fcc-8c2b-ed65db0738dd_doc" class="docelem" title="Executa
+ajaxOcorrencia()">
+<a name="740e41a4-0428-4fcc-8c2b-ed65db0738dd" id="740e41a4-0428-4fcc-8c2b-ed65db0738dd"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="aa1cf5b8-2e4b-4254-a13b-94a79e19da37_doc" class="docelem" title="Salva ocorrência no banco
+salvaOcorrencia()">
+<a name="aa1cf5b8-2e4b-4254-a13b-94a79e19da37" id="aa1cf5b8-2e4b-4254-a13b-94a79e19da37"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="0fe01409-9ca5-493e-a3b3-ba9931614ea9_doc" class="docelem" title="Fim">
+<a name="0fe01409-9ca5-493e-a3b3-ba9931614ea9" id="0fe01409-9ca5-493e-a3b3-ba9931614ea9"></a>
+<img class="icon" src="diagrams/bpmnimg/NoneEnd.png" border="0" />
+
+
+
+</div>
+<div id="2f66b7e8-3782-4b83-bb31-ab8288451f4f_doc" class="docelem" title="Executa
+camera.capturePhoto()">
+<a name="2f66b7e8-3782-4b83-bb31-ab8288451f4f" id="2f66b7e8-3782-4b83-bb31-ab8288451f4f"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="aa6fb1f3-ef67-4124-b30b-e13cbecf4d9b_doc" class="docelem" title="Executa
+getEndereco()">
+<a name="aa6fb1f3-ef67-4124-b30b-e13cbecf4d9b" id="aa6fb1f3-ef67-4124-b30b-e13cbecf4d9b"></a>
+<img class="icon" src="diagrams/bpmnimg/AbstractTask.png" border="0" />
+
+
+
+</div>
+<div id="319c941a-eaaa-46eb-acb4-941460a0b56f_doc" class="docelem" title="Realizar Login">
+<a name="319c941a-eaaa-46eb-acb4-941460a0b56f" id="319c941a-eaaa-46eb-acb4-941460a0b56f"></a>
+<img class="icon" src="diagrams/bpmnimg/LinkIntermediate_Throw.png" border="0" />
+
+
+
+</div>
+<div id="c42b3bfe-0a91-42d6-a11a-59a7be02a159_doc" class="docelem" title="Atualiza Contratos">
+<a name="c42b3bfe-0a91-42d6-a11a-59a7be02a159" id="c42b3bfe-0a91-42d6-a11a-59a7be02a159"></a>
+<img class="icon" src="diagrams/bpmnimg/LinkIntermediate_Throw.png" border="0" />
+
+
+
+</div>
+<div id="a86eda8c-ba7f-4fd1-bfcc-f31ec511d205_doc" class="docelem" title="Login">
+<a name="a86eda8c-ba7f-4fd1-bfcc-f31ec511d205" id="a86eda8c-ba7f-4fd1-bfcc-f31ec511d205"></a>
+<img class="icon" src="diagrams/bpmnimg/SignalStart.png" border="0" />
+
+
+
+</div>
+<div id="6dbb155c-eb3c-4157-ac01-35dbe4ef52ea_doc" class="docelem" title="Loggout">
+<a name="6dbb155c-eb3c-4157-ac01-35dbe4ef52ea" id="6dbb155c-eb3c-4157-ac01-35dbe4ef52ea"></a>
+<img class="icon" src="diagrams/bpmnimg/SignalStart.png" border="0" />
+
+
+
+</div>
+<div id="6aa5651d-38c1-4cca-9c8d-079f36701d0a_doc" class="docelem" title="Novo Cadastro">
+<a name="6aa5651d-38c1-4cca-9c8d-079f36701d0a" id="6aa5651d-38c1-4cca-9c8d-079f36701d0a"></a>
+<img class="icon" src="diagrams/bpmnimg/SignalStart.png" border="0" />
+
+
+
+</div>
+<div id="1f66180e-b007-43b4-81e4-a8c86e19c875_doc" class="docelem" title="Minha Conta">
+<a name="1f66180e-b007-43b4-81e4-a8c86e19c875" id="1f66180e-b007-43b4-81e4-a8c86e19c875"></a>
+<img class="icon" src="diagrams/bpmnimg/SignalStart.png" border="0" />
+
+
+
+</div>
+<div id="a0eec92c-da1d-42fd-b085-9eddd603e8cb_doc" class="docelem" title="Acessar minhas ocorrências">
+<a name="a0eec92c-da1d-42fd-b085-9eddd603e8cb" id="a0eec92c-da1d-42fd-b085-9eddd603e8cb"></a>
+<img class="icon" src="diagrams/bpmnimg/SignalStart.png" border="0" />
+
+
+
+</div>
+<div id="4f034b30-a9f0-439f-876a-9e2108704932_doc" class="docelem" title="Registrar Ocorrência">
+<a name="4f034b30-a9f0-439f-876a-9e2108704932" id="4f034b30-a9f0-439f-876a-9e2108704932"></a>
+<img class="icon" src="diagrams/bpmnimg/SignalStart.png" border="0" />
+
+
+
+</div>
+<div id="aa9364fd-ae72-4944-a164-7627f88a3229_doc" class="docelem" title="Registrar Ocorrência">
+<a name="aa9364fd-ae72-4944-a164-7627f88a3229" id="aa9364fd-ae72-4944-a164-7627f88a3229"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="8cb22638-2121-4e3a-b4a7-a9f9d7d7408a_doc" class="docelem" title="Minhas Ocorrências">
+<a name="8cb22638-2121-4e3a-b4a7-a9f9d7d7408a" id="8cb22638-2121-4e3a-b4a7-a9f9d7d7408a"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="f1ad2209-21fe-4224-9e9a-d8497bba312d_doc" class="docelem" title="Minha Conta">
+<a name="f1ad2209-21fe-4224-9e9a-d8497bba312d" id="f1ad2209-21fe-4224-9e9a-d8497bba312d"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="6a3d169d-dfd7-4204-a9ec-7598c43ff7da_doc" class="docelem" title="Usuário">
+<a name="6a3d169d-dfd7-4204-a9ec-7598c43ff7da" id="6a3d169d-dfd7-4204-a9ec-7598c43ff7da"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="6028e168-e1b2-4db7-bb34-c1624b242b9e_doc" class="docelem" title="Cadastro">
+<a name="6028e168-e1b2-4db7-bb34-c1624b242b9e" id="6028e168-e1b2-4db7-bb34-c1624b242b9e"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+<div id="494a2429-c2a0-4d32-af60-a7740ca10d26_doc" class="docelem" title="Demais Funcões">
+<a name="494a2429-c2a0-4d32-af60-a7740ca10d26" id="494a2429-c2a0-4d32-af60-a7740ca10d26"></a>
+<img class="icon" src="diagrams/bpmnimg/Lane.png" border="0" />
+
+
+
+</div>
+
+							</div>
+							<img src="diagrams/CageceApp.png" border="0" usemap="#map" class="map" />
+							<map name="map">
+								<area shape="rect" class="diagelem" coords="20,22,70,1368" title="" href="#be0f06cf-67d7-4c78-b87e-915c7939d58c" />
+<area shape="circle" class="diagelem" coords="149,1300,15" title="" href="#5e7b0e94-2702-4424-98d2-ff9d2356461e" />
+<area shape="rect" class="diagelem" coords="218,1270,308,1330" title="" href="#8e5d3328-cf50-4139-8f4e-b7c5737efb33" />
+<area shape="poly" class="diagelem" coords="344,1300,364,1280,384,1300,364,1320" title="" href="#10452b37-1a03-4b04-9f68-3c1d190ed65c" />
+<area shape="rect" class="diagelem" coords="427,1270,517,1330" title="" href="#8d2fcfbf-0f02-4660-9d5f-ec4d8ade08c7" />
+<area shape="circle" class="diagelem" coords="587,1300,15" title="" href="#6b3ec88c-6975-45b7-895b-d02bde0c449b" />
+<area shape="rect" class="diagelem" coords="123,1114,213,1174" title="" href="#45a9e11a-783f-4884-9416-b32d84e41511" />
+<area shape="rect" class="diagelem" coords="245,1114,335,1174" title="" href="#83917983-0074-4353-8a8f-146067be656a" />
+<area shape="poly" class="diagelem" coords="358,1144,378,1124,398,1144,378,1164" title="" href="#a31cc453-d43b-4998-9276-c505c2604dfb" />
+<area shape="poly" class="diagelem" coords="443,1144,463,1124,483,1144,463,1164" title="" href="#97cc0a46-b37a-4c3f-8ae7-2e761cf2b621" />
+<area shape="rect" class="diagelem" coords="538,1080,638,1140" title="" href="#86d06e5c-5944-4588-ad8c-e1f76203c5f3" />
+<area shape="rect" class="diagelem" coords="689,1053,809,1113" title="" href="#93a44ba7-8bd3-44ad-bab2-cca7f1ff492d" />
+<area shape="poly" class="diagelem" coords="830,1083,850,1063,870,1083,850,1103" title="" href="#b585ecc5-341d-4ad9-bf5c-125fd0205084" />
+<area shape="rect" class="diagelem" coords="903,1053,1039,1113" title="" href="#dfd34136-2c9c-4e7b-899e-840009ec7060" />
+<area shape="circle" class="diagelem" coords="971,1171,15" title="" href="#bcc7a9d6-fa03-4dcd-b4ce-1b0cb394f606" />
+<area shape="rect" class="diagelem" coords="524,1011,651,1071" title="" href="#29c849a5-4511-438e-8ca6-445ec371ddd7" />
+<area shape="rect" class="diagelem" coords="187,815,277,875" title="" href="#09584e71-7d1e-41d0-8a21-952950076e5a" />
+<area shape="poly" class="diagelem" coords="310,845,330,825,350,845,330,865" title="" href="#a8fb2441-fbce-48c8-b48c-f17062806dc9" />
+<area shape="rect" class="diagelem" coords="404,771,494,831" title="" href="#b6bfe6e1-9eaf-41b2-8904-37511ac8533a" />
+<area shape="rect" class="diagelem" coords="529,771,619,831" title="" href="#6c70cf22-eb69-43b8-a4d0-76052e4e8811" />
+<area shape="circle" class="diagelem" coords="684,801,15" title="" href="#512a0f80-a74d-42b1-b8c6-52533a773876" />
+<area shape="rect" class="diagelem" coords="401,852,491,912" title="" href="#a00d6fb4-3823-4872-b635-80dcd5ca1610" />
+<area shape="rect" class="diagelem" coords="529,852,619,912" title="" href="#fdd65142-e252-43e1-8931-0f5f2501e913" />
+<area shape="circle" class="diagelem" coords="686,882,15" title="" href="#ddd7cbd0-dfdc-453a-bc7d-fb2c01c2f7b5" />
+<area shape="circle" class="diagelem" coords="574,954,15" title="" href="#5a76efed-f266-4da2-8982-81c4e16a0d78" />
+<area shape="circle" class="diagelem" coords="369,954,15" title="" href="#9ba5a602-d6db-48d3-9939-0fcae898d698" />
+<area shape="rect" class="diagelem" coords="211,680,349,740" title="" href="#a6de7efc-4038-4b7e-a064-b0221f08ce03" />
+<area shape="rect" class="diagelem" coords="404,680,494,740" title="" href="#560112db-148b-4484-854f-da04b5a25c32" />
+<area shape="rect" class="diagelem" coords="115,515,213,575" title="" href="#a99b82d0-930d-49dc-b584-8771e1b3497e" />
+<area shape="poly" class="diagelem" coords="239,545,259,525,279,545,259,565" title="" href="#14aa6fef-fdd7-48bb-b540-0c75e68528f3" />
+<area shape="rect" class="diagelem" coords="404,438,494,498" title="" href="#f0306929-b3f5-4368-af9b-5d2fad5430fd" />
+<area shape="circle" class="diagelem" coords="632,468,15" title="" href="#906180e4-da60-4fc1-85a0-9281f86a92a8" />
+<area shape="rect" class="diagelem" coords="377,516,522,574" title="" href="#85e4b9ee-9b88-43ba-ba2c-dd6046f98035" />
+<area shape="rect" class="diagelem" coords="586,515,676,575" title="" href="#75885efd-610e-476f-8f05-077129177cdf" />
+<area shape="poly" class="diagelem" coords="706,545,726,525,746,545,726,565" title="" href="#6a96e675-977f-4fa0-a753-4c4fce9dbba8" />
+<area shape="rect" class="diagelem" coords="781,515,902,575" title="" href="#ad41161e-3589-495a-845d-509c22d25a7c" />
+<area shape="rect" class="diagelem" coords="944,515,1036,575" title="" href="#00de26d1-a594-49c9-ab8c-48870682e86c" />
+<area shape="rect" class="diagelem" coords="930,438,1052,498" title="" href="#f3a61323-acab-4b52-9721-cdb6a7f8b8b7" />
+<area shape="rect" class="diagelem" coords="404,599,494,659" title="" href="#7c854c13-5e73-43a7-8311-c01387627cf3" />
+<area shape="rect" class="diagelem" coords="586,599,676,659" title="" href="#59d308b5-07d7-43e8-8d1a-fd09c2609e97" />
+<area shape="rect" class="diagelem" coords="187,924,277,984" title="" href="#ad3f9a4c-271c-46b0-bac9-57ec6397eade" />
+<area shape="rect" class="diagelem" coords="193,243,283,303" title="" href="#81b71012-6e49-4f39-98a0-7d45c92ebc36" />
+<area shape="poly" class="diagelem" coords="348,273,368,253,388,273,368,293" title="" href="#b57dc2d2-14be-4277-a4ff-46ffb6d745d3" />
+<area shape="rect" class="diagelem" coords="452,243,542,303" title="" href="#7e8478b9-f65d-489f-8bf8-cd582139116c" />
+<area shape="poly" class="diagelem" coords="577,273,597,253,617,273,597,293" title="" href="#2956778b-b3c4-49d5-ad0f-dbac96d31dde" />
+<area shape="rect" class="diagelem" coords="678,243,768,303" title="" href="#9c06835f-8828-46fc-8571-77a5214f820b" />
+<area shape="rect" class="diagelem" coords="810,243,900,303" title="" href="#6853c25f-5773-4f94-ace7-f4210fdc7e28" />
+<area shape="rect" class="diagelem" coords="948,243,1042,303" title="" href="#a5cad9b3-f9ea-47e1-a5c9-9a5e0c281d4b" />
+<area shape="rect" class="diagelem" coords="665,338,780,398" title="" href="#6e871235-6e83-418d-a713-eb4c993b6341" />
+<area shape="rect" class="diagelem" coords="844,338,996,398" title="" href="#bdcc84e1-c611-422a-abeb-0760953b1ece" />
+<area shape="circle" class="diagelem" coords="597,368,15" title="" href="#237bc25a-8520-4394-9419-94ee3117b47c" />
+<area shape="rect" class="diagelem" coords="288,328,448,388" title="" href="#e2ad105b-319c-4fbb-9905-bb5a95fa775d" />
+<area shape="rect" class="diagelem" coords="193,29,283,89" title="" href="#313efc76-0cb7-4bf6-8057-ff9b8c84f09c" />
+<area shape="rect" class="diagelem" coords="306,29,396,89" title="" href="#bd659acf-9b53-470c-a815-f052c5e73a1a" />
+<area shape="poly" class="diagelem" coords="434,59,454,39,474,59,454,79" title="" href="#f8a5afe8-a180-4246-b82e-217badce4247" />
+<area shape="poly" class="diagelem" coords="575,59,595,39,615,59,595,79" title="" href="#7ec4f16c-8812-46b4-b02c-526f311b7b70" />
+<area shape="rect" class="diagelem" coords="672,29,774,89" title="" href="#35ce3984-e720-47c0-b59a-b152e802c801" />
+<area shape="rect" class="diagelem" coords="795,29,905,89" title="" href="#5b590705-4680-4d60-9028-35a57169f3d1" />
+<area shape="rect" class="diagelem" coords="943,29,1038,89" title="" href="#740e41a4-0428-4fcc-8c2b-ed65db0738dd" />
+<area shape="rect" class="diagelem" coords="932,116,1050,176" title="" href="#aa1cf5b8-2e4b-4254-a13b-94a79e19da37" />
+<area shape="circle" class="diagelem" coords="845,146,15" title="" href="#0fe01409-9ca5-493e-a3b3-ba9931614ea9" />
+<area shape="rect" class="diagelem" coords="532,122,658,182" title="" href="#2f66b7e8-3782-4b83-bb31-ab8288451f4f" />
+<area shape="rect" class="diagelem" coords="409,118,499,178" title="" href="#aa6fb1f3-ef67-4124-b30b-e13cbecf4d9b" />
+<area shape="circle" class="diagelem" coords="140,882,15" title="" href="#319c941a-eaaa-46eb-acb4-941460a0b56f" />
+<area shape="circle" class="diagelem" coords="164,710,15" title="" href="#c42b3bfe-0a91-42d6-a11a-59a7be02a159" />
+<area shape="circle" class="diagelem" coords="140,801,15" title="" href="#a86eda8c-ba7f-4fd1-bfcc-f31ec511d205" />
+<area shape="circle" class="diagelem" coords="135,954,15" title="" href="#6dbb155c-eb3c-4157-ac01-35dbe4ef52ea" />
+<area shape="circle" class="diagelem" coords="168,1036,15" title="" href="#6aa5651d-38c1-4cca-9c8d-079f36701d0a" />
+<area shape="circle" class="diagelem" coords="164,467,15" title="" href="#1f66180e-b007-43b4-81e4-a8c86e19c875" />
+<area shape="circle" class="diagelem" coords="144,273,15" title="" href="#a0eec92c-da1d-42fd-b085-9eddd603e8cb" />
+<area shape="circle" class="diagelem" coords="144,59,15" title="" href="#4f034b30-a9f0-439f-876a-9e2108704932" />
+<area shape="rect" class="diagelem" coords="70,22,100,221" title="" href="#aa9364fd-ae72-4944-a164-7627f88a3229" />
+<area shape="rect" class="diagelem" coords="70,221,100,428" title="" href="#8cb22638-2121-4e3a-b4a7-a9f9d7d7408a" />
+<area shape="rect" class="diagelem" coords="70,428,100,757" title="" href="#f1ad2209-21fe-4224-9e9a-d8497bba312d" />
+<area shape="rect" class="diagelem" coords="70,757,100,1004" title="" href="#6a3d169d-dfd7-4204-a9ec-7598c43ff7da" />
+<area shape="rect" class="diagelem" coords="70,1004,100,1221" title="" href="#6028e168-e1b2-4db7-bb34-c1624b242b9e" />
+<area shape="rect" class="diagelem" coords="70,1221,100,1368" title="" href="#494a2429-c2a0-4d32-af60-a7740ca10d26" />
+							</map>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

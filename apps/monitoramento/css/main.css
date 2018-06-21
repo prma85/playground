@@ -1,0 +1,136 @@
+body{
+    width: 1349px;
+    margin: 4px auto;
+    background: #fff;
+}
+
+#content {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #efefef;
+}
+
+#left {
+    border-right: 4px solid black;
+    width: 1275px; 
+    height: 707px;
+    clear: left;
+    float: left;
+    display: block;
+}
+
+
+#right {
+    height: 707px;
+    clear: right;
+    float: left;
+    display: block;
+    background-color: white;
+    width: 70px;
+}
+#right  img{
+    height: 175px;
+    width: 70px;
+}
+#right  #img2, #right #img3{
+    margin-top: -1px;
+}
+#right  #img1{
+    height: 110px;
+}
+#right  #img2{
+    height: 103px;
+}
+#right  #img3{
+    height: 129px;
+}
+#right  #img4{
+    height: 125px;
+}
+#right  #img5{
+    height: 125px;
+}
+#right  #img6{
+    height: 105px;
+}
+
+#bottom {
+    background: url("../img/barra-relogio.png") repeat scroll 0 0 transparent;
+    width: 100%;
+    display: block;
+    height: 47px;
+    float: left;
+    color: white;
+    font-size: 18px;
+    border-top: 7px solid black;
+}
+#bottom p {
+    padding: 0;
+    text-align: center;
+    line-height: 47px;
+    width: 1015px;
+    margin: 0;
+    font-weight: bold;
+    float: left;
+    font-size: 24px;
+}
+#bottom #play {
+    float: right;
+    padding-right: 12px; margin-top: 1px;
+    height: 43px;
+    text-align: center;
+    cursor: pointer;
+    width: 43px;
+    margin-left: 14px;
+    text-decoration: none;
+    line-height: 43px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+
+}
+
+#bottom  .false{ /* pause */
+    background: url('../img/bt-pause.png')no-repeat;
+}
+#bottom  .true{ /* play */
+    background: url('../img/bt-play.png')no-repeat;
+}
+#bottom img {
+    width: 149px;
+    height: 47px;
+    float: left;
+}
+
+#bottom  #datahora {
+    padding: 15px  9px 16px  16px   ;
+
+    float:left;
+    width: 90px;
+    text-align: center;
+    font-size:18pt; 
+    font-weight: bold;
+    background: url('../img/barra-relogio.png');
+}
+
+#bottom  span {
+    text-align: center;
+}
+#bottom  #datahora #data{
+    margin-bottom: 5px;
+    display: block;
+}
+
+iframe {
+    width: 1342px; height: 745px;
+    overflow: hidden;
+    /*zoom: 0.75;*/
+    -moz-transform: scale(0.95);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.95);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.95);
+    -webkit-transform-origin: 0 0;
+}

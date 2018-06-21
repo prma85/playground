@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MONITORAMENTO DOS SERVIÇOS DE SUPORTE</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+		body {
+			margin: 0 auto;
+			background: #000;
+			width: 1338px;
+		}
+		.topo {
+			background: url('images/image-topo.jpg') no-repeat ;
+			width: 1104px;
+			height: 93px;
+		}
+			.texto {
+				padding: 50px  0 0 193px ;
+			}
+			
+			.topo p {
+				float: left;
+				font-family: verdana;
+				font-size: 16px;
+				font-weight: bold;
+				color: #B8DB7C;
+				margin: 10px;
+			}	
+				 .titulo2 {
+					padding-right: 54px;
+				}.titulo3 {
+					padding-right: 26px;
+				}.titulo4 {
+					padding-right: 14px;
+				}.titulo5 {
+					padding-right: 87px;
+				}
+		.preto {
+			background-image: url('images/image-24h.jpg') ;
+			width: 193px;
+			height: 125px;
+		}
+		.vermelho {
+			background-image: url('images/image-4-24h.jpg') ;
+			width: 193px;
+			height: 130px;
+		}
+		.laranja {
+			background-image: url('images/image-2-4-hs.jpg') ;
+			width: 193px;
+			height: 131px;
+		}
+		.amarelo {
+			background-image: url('images/image-1-2hs.jpg') ;
+			width: 193px;
+			height: 130px;
+		}
+		.verde {
+			background-image: url('images/image-0-1h.jpg') ;
+			width: 193px;
+			height: 141px;
+		}
+		.colunas{
+			float: left;
+		}
+		.coluna1 {
+			width: 194px;
+			float: left;
+			
+			}
+			.n-preto, .n-vermelho, .n-laranja, .n-amarelo, .n-verde {
+				margin: 0 0 0 39px;
+				padding: 25px;
+				font-family: verdana;
+				font-size: 50px;
+				color: #FFF;
+				font-weight: bold;
+			}
+				.n-vermelho {
+					padding-top: 31px;
+				}
+				
+				.n-laranja {
+					padding-top: 33px;
+				}
+				.n-amarelo {
+					padding-top: 35px;
+				}
+				.n-verde {
+					padding-top: 35px;
+				}
+			
+					
+		.coluna2 {
+			background-image: url('images/image-meio.jpg') ;
+			width: 911px;
+			height: 657px;
+			margin-left: 193px;
+			font-family: verdana;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		.tabela-preto {
+			width: 910px;
+			height: 125px;
+		}	
+			.tabela-preto-resultado {
+				padding: 10px 10px 15px 10px;
+			}	
+			
+		.tabela-vermelho {
+			width: 910px;
+			height: 130px;
+		}
+			.tabela-vermelho-resultado {
+				padding: 15px 15px 15px 15px;
+			}
+		.tabela-laranja {
+			width: 910px;
+			height: 131px;
+		}
+			.tabela-laranja-resultado {
+				padding: 15px 15px 15px 15px;
+				
+			}
+		.tabela-amarelo {
+			width: 910px;
+			height: 130px;
+		}
+			.tabela-amarelo-resultado {
+				padding: 15px 15px 15px 15px;
+			}
+		.tabela-verde {
+			width: 910px;
+			height: 141px;
+		}
+			.tabela-verde-resultado {
+				padding: 15px 15px 15px 15px;
+			}
+	
+		.direita {
+			margin-left: 1104px;
+			margin-top: -93px;
+		}
+			.direita p {
+				float: left;
+				font-family: verdana;
+				font-size: 82px;
+				font-weight: bold;
+				color: #FFF;
+				margin: 10px;
+			}
+		
+		.fecdia {
+				background: url('images/image-fec-dia.jpg') no-repeat ;
+				 width: 232px;
+				 height: 255px;
+		}
+			.fecdia p {
+					margin: 10px 22px 22px 22px;
+			}
+		.fecmes {
+			background: url('images/image-fec-mes.jpg') no-repeat ;
+			width: 232px;
+			height: 244px;
+		}
+			.fecmes p {
+					margin: 99px 22px 22px 22px;
+					font-size: 62px;
+			}
+		.pendentes {
+			background: url('images/image-pendentes.jpg') no-repeat ;
+			width: 232px;
+			height: 251px;
+		}
+			.pendentes p {
+					margin: 99px 22px 22px 22px;
+			}
+		  
+	</style>
+
+</head>
+<body>
+<div class="esquerda"> 
+	<div class="topo"> 
+		<div class="texto"> 
+			<p class="titulo1">Chamado</p>
+			<p class="titulo2">Solicitante</p>
+			<p class="titulo3">Categoria</p>
+			<p class="titulo4">Depto</p>
+			<p class="titulo5">Técnico</p>
+			<p class="titulo6">Data Criação</p>
+		</div>
+	</div>
+	<div class="colunas">
+		<div class="coluna1"> 
+			<div class="preto"> 
+				<p class="n-preto">235</p>
+			</div>
+			<div class="vermelho"> 
+				<p class="n-vermelho">235</p>
+			</div>
+			<div class="laranja"> 
+				<p class="n-laranja">235</p>
+			</div>
+			<div class="amarelo"> 
+				<p class="n-amarelo">235</p>
+			</div>
+			<div class="verde"> 
+				<p class="n-verde">235</p>
+			</div>
+		</div>
+		
+		<div class="coluna2"> 
+			<div class="tabela-preto"> 
+				<table border="0" cellpadding="0" cellspacing="0" width="98%" class="tabela-preto-resultado">
+					<thead>
+						<tr>
+							<th width="11%"></th>
+							<th width="20%"></th>
+							<th width="15%"></th>
+							<th width="10%"></th>
+							<th width="20%"></th>
+							<th width="23%"></th>
+						</tr>
+					</thead>
+					<tbody> <!-- Aqui vai ser colocado o php -->
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tabela-vermelho"> 
+				<table border="0" cellpadding="0" cellspacing="0" width="98%" class="tabela-vermelho-resultado">
+					<thead>
+						<tr>
+							<th width="11%"></th>
+							<th width="20%"></th>
+							<th width="15%"></th>
+							<th width="10%"></th>
+							<th width="20%"></th>
+							<th width="23%"></th>
+						</tr>
+					</thead>
+					<tbody> <!-- Aqui vai ser colocado o php -->
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tabela-laranja"> 
+				<table border="0" cellpadding="0" cellspacing="0" width="98%" class="tabela-laranja-resultado">
+					<thead>
+						<tr>
+							<th width="11%"></th>
+							<th width="20%"></th>
+							<th width="15%"></th>
+							<th width="10%"></th>
+							<th width="20%"></th>
+							<th width="23%"></th>
+						</tr>
+					</thead>
+					<tbody> <!-- Aqui vai ser colocado o php -->
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tabela-amarelo"> 
+				<table border="0" cellpadding="0" cellspacing="0" width="98%" class="tabela-amarelo-resultado">
+					<thead>
+						<tr>
+							<th width="11%"></th>
+							<th width="20%"></th>
+							<th width="15%"></th>
+							<th width="10%"></th>
+							<th width="20%"></th>
+							<th width="23%"></th>
+						</tr>
+					</thead>
+					<tbody> <!-- Aqui vai ser colocado o php -->
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tabela-verde"> 
+				<table border="0" cellpadding="0" cellspacing="0" width="98%" class="tabela-verde-resultado">
+					<thead>
+						<tr>
+							<th width="11%"></th>
+							<th width="20%"></th>
+							<th width="15%"></th>
+							<th width="10%"></th>
+							<th width="20%"></th>
+							<th width="23%"></th>
+						</tr>
+					</thead>
+					<tbody> <!-- Aqui vai ser colocado o php -->
+						<tr>
+							<td><!-- <php echo $lista->; ?> -->158754</td>
+							<td><!-- <php echo $lista->; ?> -->FRANK FREDERIK</td>
+							<td><!-- <php echo $lista->; ?> -->IMPRESSORA</td>
+							<td><!-- <php echo $lista->; ?> -->UN-BBJ</td>
+							<td><!-- <php echo $lista->; ?> -->SAMIR SANTOS</td>
+							<td><!-- <php echo $lista->; ?> -->02/08/2012 - 10:59:12</td>
+						</tr>
+					</tbody>	
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="direita"> 
+	<div class="fecdia"> 
+		<p class="">000</p>
+	</div>
+	<div class="fecmes"> 
+		<p class="">0000</p>
+	</div>
+	<div class="pendentes"> 
+		<p class="">000</p>
+	</div>
+</div>
+</body>
+</html>
